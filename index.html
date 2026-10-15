@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Adopción de EDS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"
+    ></script>
+    <script defer src="js/app.js"></script>
+    <script defer src="js/export.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrap header-content">
+        <div class="header-brand">
+          <img src="assets/logo_imss_bienestar.png" alt="IMSS-BIENESTAR" />
+        </div>
+        <div class="header-text">
+          <p class="eyebrow">IMSS-BIENESTAR · SEGUIMIENTO OPERATIVO</p>
+          <h1>Tablero de adopción de EDS</h1>
+          <p class="sub">
+            Comparación de registros por semanas ISO completas · Universo
+            compartido de CLUES
+          </p>
+        </div>
+        <div class="header-updated">
+          <span>ÚLTIMA ACTUALIZACIÓN</span><strong id="updatedAt">—</strong>
+        </div>
+      </div>
+    </header>
+    <main class="wrap">
+      <section class="controls">
+        <label
+          >Grupo de unidades<select id="group">
+            <option value="general">Unidades generales (sin HRAES)</option>
+            <option value="hraes">HRAES (7 CLUES del catálogo)</option>
+          </select></label
+        ><label
+          >Área de atención<select id="area">
+            <option>Consulta externa</option>
+            <option>Cirugías</option>
+            <option>Hospitalizaciones</option>
+          </select></label
+        ><label
+          >Entidad<select id="entity">
+            <option value="ALL">todas las entidades</option>
+          </select></label
+        ><label
+          >CLUES<select id="clues">
+            <option value="ALL">todas las CLUES</option>
+          </select></label
+        ><label
+          >Visualización<select id="view">
+            <option value="weekly">Semanal</option>
+            <option value="monthly">Mensual</option>
+            <option value="cumulative">Acumulada</option>
+          </select></label
+        ><label>Hasta la semana ISO<select id="week"></select></label
+        ><button
+          type="button"
+          id="resetFilters"
+          class="reset-filters"
+          title="Restablecer grupo, área, entidad, CLUES, vista y semana"
+        >
+          ↺ Restablecer filtros
+        </button>
+      </section>
+      <p class="filter-note" id="filterNotice">
+        El filtro aplica al universo compartido de CLUES del área seleccionada.
+      </p>
+      <div class="cohort-warning" id="cohortWarning" hidden></div>
+      <section class="cards">
+        <article>
+          <span>CLUES con EDS</span><strong id="cohort">—</strong
+          ><small>Unidades con registros EDS en el periodo</small>
+        </article>
+        <article>
+          <span>SINBA 2025 · acumulado</span><strong id="sinba2025">—</strong
+          ><small>Hasta la semana de corte equivalente</small>
+        </article>
+        <article>
+          <span>SINBA 2026 · acumulado</span><strong id="sinba2026">—</strong
+          ><small>Hasta la semana de corte</small>
+        </article>
+        <article>
+          <span>EDS 2026 · acumulado</span><strong id="eds">—</strong
+          ><small>Hasta la semana de corte</small>
+        </article>
+        <article>
+          <span id="shareTitle">Relación EDS 2026 / SINBA 2025</span
+          ><strong id="share">—</strong
+          ><small id="shareExplanation"
+            >Referencia histórica; no mide adopción</small
+          >
+        </article>
+      </section>
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2 id="chartTitle">Evolución de registros</h2>
+            <p id="chartSubtitle"></p>
+          </div>
+          <div class="export-actions">
+            <button id="csv">Exportar CSV agregado</button
+            ><button id="pptx">PowerPoint · escenarios visibles</button
+            ><button id="pdf">PDF · escenarios visibles</button>
+          </div>
+        </div>
+        <div
+          id="chart"
+          role="img"
+          aria-label="Comparación principal de tres series"
+        ></div>
+        <p class="note" id="emptyNotice" hidden>
+          Sin CLUES compartidas en esta área: los gráficos con valor cero no
+          representan ausencia de actividad institucional.
+        </p>
+        <div class="interpretation">
+          <strong>Lectura ejecutiva</strong>
+          <p id="executiveReading">
+            La relación compara los registros de EDS 2026 con el volumen
+            histórico de SINBA 2025.
+          </p>
+        </div>
+      </section>
+      <section class="panel">
+        <div class="territory-layout">
+          <div class="territory-map">
+            <div class="panel-head">
+              <div>
+                <h2>Relación histórica por entidad</h2>
+                <p>
+                  EDS 2026 / SINBA 2025 · El 100% representa igualdad de
+                  volúmenes
+                </p>
+              </div>
+            </div>
+            <div
+              id="mexicoMap"
+              class="mexico-map"
+              role="img"
+              aria-label="Mapa de México con relaciones por entidad"
+            ></div>
+            <p class="note" id="mapStatus">Preparando mapa…</p>
+          </div>
+          <div class="territory-bars">
+            <div class="panel-head">
+              <div>
+                <h2>Volúmenes comparativos por entidad</h2>
+                <p>
+                  <!-- SINBA 2025: referencia · EDS 2026: barra verde · SINBA 2026:
+                  marca dorada -->
+                </p>
+              </div>
+              <label
+                >Ordenar entidades<select id="barSort">
+                  <option value="alpha">Alfabéticamente</option>
+                  <option value="desc">Mayor relación histórica</option>
+                  <option value="asc">Menor relación histórica</option>
+                </select></label
+              >
+            </div>
+            <div class="bars-scroll">
+              <div
+                id="entityBars"
+                class="entity-bars"
+                role="img"
+                aria-label="Barras de volumen y marca de referencia por entidad"
+              ></div>
+            </div>
+            <p class="note">
+              Las barras se superponen desde cero; no se suman registros de años
+              diferentes. El porcentaje dentro de la barra verde es EDS 2026 /
+              SINBA 2025.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Calidad y cobertura de los datos del grupo seleccionado</h2>
+        <p id="auditContext">
+          Resumen de registros procesados y excluidos según los filtros
+          disponibles. Las filas sin CLUES no son atribuibles geográficamente y
+          solo se muestran en el resumen global.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Fuente</th>
+                <th>Filas</th>
+                <th>Sin CLUES</th>
+                <th>Fecha inválida</th>
+                <th>Fuera de periodo</th>
+                <th>Excluidas del cruce</th>
+              </tr>
+            </thead>
+            <tbody id="quality"></tbody>
+          </table>
+        </div>
+        <p class="note" id="auditNote">
+          La auditoría de esta tabla corresponde a las CLUES compartidas
+          seleccionadas; los totales globales de exclusiones permanecen en
+          resumen_calidad.json.
+        </p>
+        <p class="note">
+          Un registro puede carecer simultáneamente de CLUES y de fecha válida.
+          Por eso, sumar estas categorías no representa el número de registros
+          únicos excluidos.
+        </p>
+      </section>
+      <footer id="status">Cargando información...</footer>
+    </main>
+  </body>
+</html>

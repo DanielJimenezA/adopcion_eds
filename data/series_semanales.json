@@ -1,0 +1,2170 @@
+{
+  "metadata": {
+    "fecha_proceso": "2026-10-09",
+    "ultima_semana_completa": "2026-10-04",
+    "ultima_semana_iso": 40,
+    "semana_iso_anio": 2026,
+    "metodo_cruce": "Intersección fija por área: CLUES con actividad en SINBA 2026 y EDS 2026",
+    "nota": "Se cuentan filas, no eventos clínicos deduplicados; escenarios CE simples conservados para auditoría"
+  },
+  "escenarios": [
+    {
+      "id": "ce_2025",
+      "area": "Consulta externa",
+      "sinba_sources": [
+        "sinba_ce"
+      ],
+      "sinba_year": 2025,
+      "eds_source": "eds_moce",
+      "eds_year": 2026,
+      "clues_compartidas": 133,
+      "series": [
+        {
+          "week": 1,
+          "sinba": 7337,
+          "eds": 39
+        },
+        {
+          "week": 2,
+          "sinba": 25422,
+          "eds": 611
+        },
+        {
+          "week": 3,
+          "sinba": 33505,
+          "eds": 1536
+        },
+        {
+          "week": 4,
+          "sinba": 34021,
+          "eds": 2081
+        },
+        {
+          "week": 5,
+          "sinba": 33494,
+          "eds": 2605
+        },
+        {
+          "week": 6,
+          "sinba": 31192,
+          "eds": 1911
+        },
+        {
+          "week": 7,
+          "sinba": 36110,
+          "eds": 2657
+        },
+        {
+          "week": 8,
+          "sinba": 36033,
+          "eds": 2589
+        },
+        {
+          "week": 9,
+          "sinba": 35169,
+          "eds": 2989
+        },
+        {
+          "week": 10,
+          "sinba": 35588,
+          "eds": 3194
+        },
+        {
+          "week": 11,
+          "sinba": 36428,
+          "eds": 3598
+        },
+        {
+          "week": 12,
+          "sinba": 32102,
+          "eds": 3259
+        },
+        {
+          "week": 13,
+          "sinba": 36312,
+          "eds": 4928
+        },
+        {
+          "week": 14,
+          "sinba": 35643,
+          "eds": 2819
+        },
+        {
+          "week": 15,
+          "sinba": 35952,
+          "eds": 5557
+        },
+        {
+          "week": 16,
+          "sinba": 24215,
+          "eds": 7142
+        },
+        {
+          "week": 17,
+          "sinba": 31028,
+          "eds": 7890
+        },
+        {
+          "week": 18,
+          "sinba": 26611,
+          "eds": 6699
+        },
+        {
+          "week": 19,
+          "sinba": 29804,
+          "eds": 6785
+        },
+        {
+          "week": 20,
+          "sinba": 34858,
+          "eds": 8822
+        },
+        {
+          "week": 21,
+          "sinba": 35207,
+          "eds": 9247
+        },
+        {
+          "week": 22,
+          "sinba": 34937,
+          "eds": 11660
+        },
+        {
+          "week": 23,
+          "sinba": 37143,
+          "eds": 11749
+        },
+        {
+          "week": 24,
+          "sinba": 37663,
+          "eds": 12586
+        },
+        {
+          "week": 25,
+          "sinba": 36528,
+          "eds": 13493
+        },
+        {
+          "week": 26,
+          "sinba": 35764,
+          "eds": 11040
+        },
+        {
+          "week": 27,
+          "sinba": 38000,
+          "eds": 13970
+        },
+        {
+          "week": 28,
+          "sinba": 39760,
+          "eds": 14224
+        },
+        {
+          "week": 29,
+          "sinba": 38550,
+          "eds": 13802
+        },
+        {
+          "week": 30,
+          "sinba": 36894,
+          "eds": 14214
+        },
+        {
+          "week": 31,
+          "sinba": 36127,
+          "eds": 14098
+        },
+        {
+          "week": 32,
+          "sinba": 38457,
+          "eds": 14883
+        },
+        {
+          "week": 33,
+          "sinba": 39630,
+          "eds": 15838
+        },
+        {
+          "week": 34,
+          "sinba": 41407,
+          "eds": 16987
+        },
+        {
+          "week": 35,
+          "sinba": 39989,
+          "eds": 17955
+        },
+        {
+          "week": 36,
+          "sinba": 43569,
+          "eds": 18645
+        },
+        {
+          "week": 37,
+          "sinba": 45290,
+          "eds": 20745
+        },
+        {
+          "week": 38,
+          "sinba": 35758,
+          "eds": 16977
+        },
+        {
+          "week": 39,
+          "sinba": 44331,
+          "eds": 24445
+        },
+        {
+          "week": 40,
+          "sinba": 45045,
+          "eds": 27129
+        }
+      ],
+      "sinba_total": 1410873,
+      "eds_total": 391398
+    },
+    {
+      "id": "integral_2025",
+      "area": "Consulta externa",
+      "sinba_sources": [
+        "sinba_ce",
+        "sinba_pf",
+        "sinba_sm",
+        "sinba_sb"
+      ],
+      "sinba_year": 2025,
+      "eds_source": "eds_moce",
+      "eds_year": 2026,
+      "clues_compartidas": 133,
+      "series": [
+        {
+          "week": 1,
+          "sinba": 9422,
+          "eds": 39
+        },
+        {
+          "week": 2,
+          "sinba": 31681,
+          "eds": 611
+        },
+        {
+          "week": 3,
+          "sinba": 41762,
+          "eds": 1536
+        },
+        {
+          "week": 4,
+          "sinba": 42351,
+          "eds": 2081
+        },
+        {
+          "week": 5,
+          "sinba": 41670,
+          "eds": 2605
+        },
+        {
+          "week": 6,
+          "sinba": 39442,
+          "eds": 1911
+        },
+        {
+          "week": 7,
+          "sinba": 45196,
+          "eds": 2657
+        },
+        {
+          "week": 8,
+          "sinba": 45222,
+          "eds": 2589
+        },
+        {
+          "week": 9,
+          "sinba": 43884,
+          "eds": 2989
+        },
+        {
+          "week": 10,
+          "sinba": 44759,
+          "eds": 3194
+        },
+        {
+          "week": 11,
+          "sinba": 45451,
+          "eds": 3598
+        },
+        {
+          "week": 12,
+          "sinba": 39996,
+          "eds": 3259
+        },
+        {
+          "week": 13,
+          "sinba": 44781,
+          "eds": 4928
+        },
+        {
+          "week": 14,
+          "sinba": 44397,
+          "eds": 2819
+        },
+        {
+          "week": 15,
+          "sinba": 44661,
+          "eds": 5557
+        },
+        {
+          "week": 16,
+          "sinba": 29832,
+          "eds": 7142
+        },
+        {
+          "week": 17,
+          "sinba": 37999,
+          "eds": 7890
+        },
+        {
+          "week": 18,
+          "sinba": 33090,
+          "eds": 6699
+        },
+        {
+          "week": 19,
+          "sinba": 37149,
+          "eds": 6785
+        },
+        {
+          "week": 20,
+          "sinba": 43454,
+          "eds": 8822
+        },
+        {
+          "week": 21,
+          "sinba": 43179,
+          "eds": 9247
+        },
+        {
+          "week": 22,
+          "sinba": 43139,
+          "eds": 11660
+        },
+        {
+          "week": 23,
+          "sinba": 46318,
+          "eds": 11749
+        },
+        {
+          "week": 24,
+          "sinba": 46501,
+          "eds": 12586
+        },
+        {
+          "week": 25,
+          "sinba": 45116,
+          "eds": 13493
+        },
+        {
+          "week": 26,
+          "sinba": 44029,
+          "eds": 11040
+        },
+        {
+          "week": 27,
+          "sinba": 47027,
+          "eds": 13970
+        },
+        {
+          "week": 28,
+          "sinba": 48878,
+          "eds": 14224
+        },
+        {
+          "week": 29,
+          "sinba": 46888,
+          "eds": 13802
+        },
+        {
+          "week": 30,
+          "sinba": 45148,
+          "eds": 14214
+        },
+        {
+          "week": 31,
+          "sinba": 44495,
+          "eds": 14098
+        },
+        {
+          "week": 32,
+          "sinba": 47245,
+          "eds": 14883
+        },
+        {
+          "week": 33,
+          "sinba": 48791,
+          "eds": 15838
+        },
+        {
+          "week": 34,
+          "sinba": 50493,
+          "eds": 16987
+        },
+        {
+          "week": 35,
+          "sinba": 49031,
+          "eds": 17955
+        },
+        {
+          "week": 36,
+          "sinba": 53078,
+          "eds": 18645
+        },
+        {
+          "week": 37,
+          "sinba": 55163,
+          "eds": 20745
+        },
+        {
+          "week": 38,
+          "sinba": 43627,
+          "eds": 16977
+        },
+        {
+          "week": 39,
+          "sinba": 53706,
+          "eds": 24445
+        },
+        {
+          "week": 40,
+          "sinba": 54860,
+          "eds": 27129
+        }
+      ],
+      "sinba_total": 1742911,
+      "eds_total": 391398
+    },
+    {
+      "id": "ce_2026",
+      "area": "Consulta externa",
+      "sinba_sources": [
+        "sinba_ce"
+      ],
+      "sinba_year": 2026,
+      "eds_source": "eds_moce",
+      "eds_year": 2026,
+      "clues_compartidas": 133,
+      "series": [
+        {
+          "week": 1,
+          "sinba": 15682,
+          "eds": 39
+        },
+        {
+          "week": 2,
+          "sinba": 35666,
+          "eds": 611
+        },
+        {
+          "week": 3,
+          "sinba": 45212,
+          "eds": 1536
+        },
+        {
+          "week": 4,
+          "sinba": 47812,
+          "eds": 2081
+        },
+        {
+          "week": 5,
+          "sinba": 46125,
+          "eds": 2605
+        },
+        {
+          "week": 6,
+          "sinba": 43216,
+          "eds": 1911
+        },
+        {
+          "week": 7,
+          "sinba": 48937,
+          "eds": 2657
+        },
+        {
+          "week": 8,
+          "sinba": 49207,
+          "eds": 2589
+        },
+        {
+          "week": 9,
+          "sinba": 47717,
+          "eds": 2989
+        },
+        {
+          "week": 10,
+          "sinba": 48760,
+          "eds": 3194
+        },
+        {
+          "week": 11,
+          "sinba": 50612,
+          "eds": 3598
+        },
+        {
+          "week": 12,
+          "sinba": 43858,
+          "eds": 3259
+        },
+        {
+          "week": 13,
+          "sinba": 49419,
+          "eds": 4928
+        },
+        {
+          "week": 14,
+          "sinba": 32111,
+          "eds": 2819
+        },
+        {
+          "week": 15,
+          "sinba": 45352,
+          "eds": 5557
+        },
+        {
+          "week": 16,
+          "sinba": 45042,
+          "eds": 7142
+        },
+        {
+          "week": 17,
+          "sinba": 46728,
+          "eds": 7890
+        },
+        {
+          "week": 18,
+          "sinba": 38903,
+          "eds": 6699
+        },
+        {
+          "week": 19,
+          "sinba": 38920,
+          "eds": 6785
+        },
+        {
+          "week": 20,
+          "sinba": 44199,
+          "eds": 8822
+        },
+        {
+          "week": 21,
+          "sinba": 42785,
+          "eds": 9247
+        },
+        {
+          "week": 22,
+          "sinba": 42558,
+          "eds": 11660
+        },
+        {
+          "week": 23,
+          "sinba": 41751,
+          "eds": 11749
+        },
+        {
+          "week": 24,
+          "sinba": 41312,
+          "eds": 12586
+        },
+        {
+          "week": 25,
+          "sinba": 39800,
+          "eds": 13493
+        },
+        {
+          "week": 26,
+          "sinba": 37401,
+          "eds": 11040
+        },
+        {
+          "week": 27,
+          "sinba": 38337,
+          "eds": 13970
+        },
+        {
+          "week": 28,
+          "sinba": 40365,
+          "eds": 14224
+        },
+        {
+          "week": 29,
+          "sinba": 39065,
+          "eds": 13802
+        },
+        {
+          "week": 30,
+          "sinba": 38321,
+          "eds": 14214
+        },
+        {
+          "week": 31,
+          "sinba": 36774,
+          "eds": 14098
+        },
+        {
+          "week": 32,
+          "sinba": 35458,
+          "eds": 14883
+        },
+        {
+          "week": 33,
+          "sinba": 36307,
+          "eds": 15838
+        },
+        {
+          "week": 34,
+          "sinba": 38743,
+          "eds": 16987
+        },
+        {
+          "week": 35,
+          "sinba": 37184,
+          "eds": 17955
+        },
+        {
+          "week": 36,
+          "sinba": 33971,
+          "eds": 18645
+        },
+        {
+          "week": 37,
+          "sinba": 34912,
+          "eds": 20745
+        },
+        {
+          "week": 38,
+          "sinba": 27805,
+          "eds": 16977
+        },
+        {
+          "week": 39,
+          "sinba": 31001,
+          "eds": 24445
+        },
+        {
+          "week": 40,
+          "sinba": 25027,
+          "eds": 27129
+        }
+      ],
+      "sinba_total": 1602355,
+      "eds_total": 391398
+    },
+    {
+      "id": "integral_2026",
+      "area": "Consulta externa",
+      "sinba_sources": [
+        "sinba_ce",
+        "sinba_pf",
+        "sinba_sm",
+        "sinba_sb"
+      ],
+      "sinba_year": 2026,
+      "eds_source": "eds_moce",
+      "eds_year": 2026,
+      "clues_compartidas": 133,
+      "series": [
+        {
+          "week": 1,
+          "sinba": 18542,
+          "eds": 39
+        },
+        {
+          "week": 2,
+          "sinba": 43707,
+          "eds": 611
+        },
+        {
+          "week": 3,
+          "sinba": 55741,
+          "eds": 1536
+        },
+        {
+          "week": 4,
+          "sinba": 58753,
+          "eds": 2081
+        },
+        {
+          "week": 5,
+          "sinba": 56559,
+          "eds": 2605
+        },
+        {
+          "week": 6,
+          "sinba": 52410,
+          "eds": 1911
+        },
+        {
+          "week": 7,
+          "sinba": 59288,
+          "eds": 2657
+        },
+        {
+          "week": 8,
+          "sinba": 59361,
+          "eds": 2589
+        },
+        {
+          "week": 9,
+          "sinba": 57480,
+          "eds": 2989
+        },
+        {
+          "week": 10,
+          "sinba": 58813,
+          "eds": 3194
+        },
+        {
+          "week": 11,
+          "sinba": 61117,
+          "eds": 3598
+        },
+        {
+          "week": 12,
+          "sinba": 52864,
+          "eds": 3259
+        },
+        {
+          "week": 13,
+          "sinba": 59411,
+          "eds": 4928
+        },
+        {
+          "week": 14,
+          "sinba": 38774,
+          "eds": 2819
+        },
+        {
+          "week": 15,
+          "sinba": 54613,
+          "eds": 5557
+        },
+        {
+          "week": 16,
+          "sinba": 54431,
+          "eds": 7142
+        },
+        {
+          "week": 17,
+          "sinba": 56532,
+          "eds": 7890
+        },
+        {
+          "week": 18,
+          "sinba": 46729,
+          "eds": 6699
+        },
+        {
+          "week": 19,
+          "sinba": 47263,
+          "eds": 6785
+        },
+        {
+          "week": 20,
+          "sinba": 53485,
+          "eds": 8822
+        },
+        {
+          "week": 21,
+          "sinba": 51669,
+          "eds": 9247
+        },
+        {
+          "week": 22,
+          "sinba": 51742,
+          "eds": 11660
+        },
+        {
+          "week": 23,
+          "sinba": 51202,
+          "eds": 11749
+        },
+        {
+          "week": 24,
+          "sinba": 50322,
+          "eds": 12586
+        },
+        {
+          "week": 25,
+          "sinba": 48784,
+          "eds": 13493
+        },
+        {
+          "week": 26,
+          "sinba": 45814,
+          "eds": 11040
+        },
+        {
+          "week": 27,
+          "sinba": 46602,
+          "eds": 13970
+        },
+        {
+          "week": 28,
+          "sinba": 49464,
+          "eds": 14224
+        },
+        {
+          "week": 29,
+          "sinba": 47590,
+          "eds": 13802
+        },
+        {
+          "week": 30,
+          "sinba": 46972,
+          "eds": 14214
+        },
+        {
+          "week": 31,
+          "sinba": 44717,
+          "eds": 14098
+        },
+        {
+          "week": 32,
+          "sinba": 43917,
+          "eds": 14883
+        },
+        {
+          "week": 33,
+          "sinba": 44423,
+          "eds": 15838
+        },
+        {
+          "week": 34,
+          "sinba": 46693,
+          "eds": 16987
+        },
+        {
+          "week": 35,
+          "sinba": 45108,
+          "eds": 17955
+        },
+        {
+          "week": 36,
+          "sinba": 42226,
+          "eds": 18645
+        },
+        {
+          "week": 37,
+          "sinba": 42957,
+          "eds": 20745
+        },
+        {
+          "week": 38,
+          "sinba": 34780,
+          "eds": 16977
+        },
+        {
+          "week": 39,
+          "sinba": 38933,
+          "eds": 24445
+        },
+        {
+          "week": 40,
+          "sinba": 30882,
+          "eds": 27129
+        }
+      ],
+      "sinba_total": 1950670,
+      "eds_total": 391398
+    },
+    {
+      "id": "proc_2025",
+      "area": "Cirugías",
+      "sinba_sources": [
+        "sinba_proc"
+      ],
+      "sinba_year": 2025,
+      "eds_source": "eds_cir",
+      "eds_year": 2026,
+      "clues_compartidas": 75,
+      "series": [
+        {
+          "week": 1,
+          "sinba": 1155,
+          "eds": 25
+        },
+        {
+          "week": 2,
+          "sinba": 2093,
+          "eds": 78
+        },
+        {
+          "week": 3,
+          "sinba": 1990,
+          "eds": 87
+        },
+        {
+          "week": 4,
+          "sinba": 2218,
+          "eds": 112
+        },
+        {
+          "week": 5,
+          "sinba": 2078,
+          "eds": 140
+        },
+        {
+          "week": 6,
+          "sinba": 2030,
+          "eds": 135
+        },
+        {
+          "week": 7,
+          "sinba": 2108,
+          "eds": 171
+        },
+        {
+          "week": 8,
+          "sinba": 2201,
+          "eds": 184
+        },
+        {
+          "week": 9,
+          "sinba": 2186,
+          "eds": 252
+        },
+        {
+          "week": 10,
+          "sinba": 2264,
+          "eds": 282
+        },
+        {
+          "week": 11,
+          "sinba": 2273,
+          "eds": 272
+        },
+        {
+          "week": 12,
+          "sinba": 2277,
+          "eds": 230
+        },
+        {
+          "week": 13,
+          "sinba": 2388,
+          "eds": 317
+        },
+        {
+          "week": 14,
+          "sinba": 2417,
+          "eds": 232
+        },
+        {
+          "week": 15,
+          "sinba": 2343,
+          "eds": 355
+        },
+        {
+          "week": 16,
+          "sinba": 2021,
+          "eds": 597
+        },
+        {
+          "week": 17,
+          "sinba": 2117,
+          "eds": 665
+        },
+        {
+          "week": 18,
+          "sinba": 2149,
+          "eds": 636
+        },
+        {
+          "week": 19,
+          "sinba": 2074,
+          "eds": 632
+        },
+        {
+          "week": 20,
+          "sinba": 2273,
+          "eds": 692
+        },
+        {
+          "week": 21,
+          "sinba": 2297,
+          "eds": 730
+        },
+        {
+          "week": 22,
+          "sinba": 2323,
+          "eds": 856
+        },
+        {
+          "week": 23,
+          "sinba": 2431,
+          "eds": 1191
+        },
+        {
+          "week": 24,
+          "sinba": 2368,
+          "eds": 1064
+        },
+        {
+          "week": 25,
+          "sinba": 2396,
+          "eds": 1027
+        },
+        {
+          "week": 26,
+          "sinba": 2308,
+          "eds": 984
+        },
+        {
+          "week": 27,
+          "sinba": 2345,
+          "eds": 1206
+        },
+        {
+          "week": 28,
+          "sinba": 2390,
+          "eds": 1224
+        },
+        {
+          "week": 29,
+          "sinba": 2333,
+          "eds": 1140
+        },
+        {
+          "week": 30,
+          "sinba": 2333,
+          "eds": 1229
+        },
+        {
+          "week": 31,
+          "sinba": 2307,
+          "eds": 1247
+        },
+        {
+          "week": 32,
+          "sinba": 2397,
+          "eds": 1309
+        },
+        {
+          "week": 33,
+          "sinba": 2431,
+          "eds": 1333
+        },
+        {
+          "week": 34,
+          "sinba": 2296,
+          "eds": 1521
+        },
+        {
+          "week": 35,
+          "sinba": 2448,
+          "eds": 1379
+        },
+        {
+          "week": 36,
+          "sinba": 2609,
+          "eds": 1630
+        },
+        {
+          "week": 37,
+          "sinba": 2529,
+          "eds": 1628
+        },
+        {
+          "week": 38,
+          "sinba": 2157,
+          "eds": 1378
+        },
+        {
+          "week": 39,
+          "sinba": 2499,
+          "eds": 1458
+        },
+        {
+          "week": 40,
+          "sinba": 2573,
+          "eds": 1216
+        }
+      ],
+      "sinba_total": 90425,
+      "eds_total": 30844
+    },
+    {
+      "id": "proc_total_2025",
+      "area": "Cirugías",
+      "sinba_sources": [
+        "sinba_proc",
+        "sinba_proc_q"
+      ],
+      "sinba_year": 2025,
+      "eds_source": "eds_cir",
+      "eds_year": 2026,
+      "clues_compartidas": 75,
+      "series": [
+        {
+          "week": 1,
+          "sinba": 1211,
+          "eds": 25
+        },
+        {
+          "week": 2,
+          "sinba": 2210,
+          "eds": 78
+        },
+        {
+          "week": 3,
+          "sinba": 2103,
+          "eds": 87
+        },
+        {
+          "week": 4,
+          "sinba": 2324,
+          "eds": 112
+        },
+        {
+          "week": 5,
+          "sinba": 2227,
+          "eds": 140
+        },
+        {
+          "week": 6,
+          "sinba": 2143,
+          "eds": 135
+        },
+        {
+          "week": 7,
+          "sinba": 2241,
+          "eds": 171
+        },
+        {
+          "week": 8,
+          "sinba": 2393,
+          "eds": 184
+        },
+        {
+          "week": 9,
+          "sinba": 2335,
+          "eds": 252
+        },
+        {
+          "week": 10,
+          "sinba": 2396,
+          "eds": 282
+        },
+        {
+          "week": 11,
+          "sinba": 2461,
+          "eds": 272
+        },
+        {
+          "week": 12,
+          "sinba": 2437,
+          "eds": 230
+        },
+        {
+          "week": 13,
+          "sinba": 2539,
+          "eds": 317
+        },
+        {
+          "week": 14,
+          "sinba": 2567,
+          "eds": 232
+        },
+        {
+          "week": 15,
+          "sinba": 2503,
+          "eds": 355
+        },
+        {
+          "week": 16,
+          "sinba": 2163,
+          "eds": 597
+        },
+        {
+          "week": 17,
+          "sinba": 2242,
+          "eds": 665
+        },
+        {
+          "week": 18,
+          "sinba": 2289,
+          "eds": 636
+        },
+        {
+          "week": 19,
+          "sinba": 2187,
+          "eds": 632
+        },
+        {
+          "week": 20,
+          "sinba": 2391,
+          "eds": 692
+        },
+        {
+          "week": 21,
+          "sinba": 2430,
+          "eds": 730
+        },
+        {
+          "week": 22,
+          "sinba": 2483,
+          "eds": 856
+        },
+        {
+          "week": 23,
+          "sinba": 2598,
+          "eds": 1191
+        },
+        {
+          "week": 24,
+          "sinba": 2540,
+          "eds": 1064
+        },
+        {
+          "week": 25,
+          "sinba": 2566,
+          "eds": 1027
+        },
+        {
+          "week": 26,
+          "sinba": 2453,
+          "eds": 984
+        },
+        {
+          "week": 27,
+          "sinba": 2487,
+          "eds": 1206
+        },
+        {
+          "week": 28,
+          "sinba": 2573,
+          "eds": 1224
+        },
+        {
+          "week": 29,
+          "sinba": 2470,
+          "eds": 1140
+        },
+        {
+          "week": 30,
+          "sinba": 2488,
+          "eds": 1229
+        },
+        {
+          "week": 31,
+          "sinba": 2444,
+          "eds": 1247
+        },
+        {
+          "week": 32,
+          "sinba": 2562,
+          "eds": 1309
+        },
+        {
+          "week": 33,
+          "sinba": 2561,
+          "eds": 1333
+        },
+        {
+          "week": 34,
+          "sinba": 2436,
+          "eds": 1521
+        },
+        {
+          "week": 35,
+          "sinba": 2600,
+          "eds": 1379
+        },
+        {
+          "week": 36,
+          "sinba": 2814,
+          "eds": 1630
+        },
+        {
+          "week": 37,
+          "sinba": 2724,
+          "eds": 1628
+        },
+        {
+          "week": 38,
+          "sinba": 2280,
+          "eds": 1378
+        },
+        {
+          "week": 39,
+          "sinba": 2669,
+          "eds": 1458
+        },
+        {
+          "week": 40,
+          "sinba": 2758,
+          "eds": 1216
+        }
+      ],
+      "sinba_total": 96298,
+      "eds_total": 30844
+    },
+    {
+      "id": "proc_2026",
+      "area": "Cirugías",
+      "sinba_sources": [
+        "sinba_proc"
+      ],
+      "sinba_year": 2026,
+      "eds_source": "eds_cir",
+      "eds_year": 2026,
+      "clues_compartidas": 75,
+      "series": [
+        {
+          "week": 1,
+          "sinba": 1587,
+          "eds": 25
+        },
+        {
+          "week": 2,
+          "sinba": 1975,
+          "eds": 78
+        },
+        {
+          "week": 3,
+          "sinba": 2280,
+          "eds": 87
+        },
+        {
+          "week": 4,
+          "sinba": 2289,
+          "eds": 112
+        },
+        {
+          "week": 5,
+          "sinba": 2453,
+          "eds": 140
+        },
+        {
+          "week": 6,
+          "sinba": 2189,
+          "eds": 135
+        },
+        {
+          "week": 7,
+          "sinba": 2461,
+          "eds": 171
+        },
+        {
+          "week": 8,
+          "sinba": 2427,
+          "eds": 184
+        },
+        {
+          "week": 9,
+          "sinba": 2550,
+          "eds": 252
+        },
+        {
+          "week": 10,
+          "sinba": 2779,
+          "eds": 282
+        },
+        {
+          "week": 11,
+          "sinba": 2700,
+          "eds": 272
+        },
+        {
+          "week": 12,
+          "sinba": 2318,
+          "eds": 230
+        },
+        {
+          "week": 13,
+          "sinba": 2551,
+          "eds": 317
+        },
+        {
+          "week": 14,
+          "sinba": 2124,
+          "eds": 232
+        },
+        {
+          "week": 15,
+          "sinba": 2315,
+          "eds": 355
+        },
+        {
+          "week": 16,
+          "sinba": 2308,
+          "eds": 597
+        },
+        {
+          "week": 17,
+          "sinba": 2566,
+          "eds": 665
+        },
+        {
+          "week": 18,
+          "sinba": 2442,
+          "eds": 636
+        },
+        {
+          "week": 19,
+          "sinba": 2246,
+          "eds": 632
+        },
+        {
+          "week": 20,
+          "sinba": 2420,
+          "eds": 692
+        },
+        {
+          "week": 21,
+          "sinba": 2367,
+          "eds": 730
+        },
+        {
+          "week": 22,
+          "sinba": 2452,
+          "eds": 856
+        },
+        {
+          "week": 23,
+          "sinba": 2650,
+          "eds": 1191
+        },
+        {
+          "week": 24,
+          "sinba": 2199,
+          "eds": 1064
+        },
+        {
+          "week": 25,
+          "sinba": 2311,
+          "eds": 1027
+        },
+        {
+          "week": 26,
+          "sinba": 2456,
+          "eds": 984
+        },
+        {
+          "week": 27,
+          "sinba": 2284,
+          "eds": 1206
+        },
+        {
+          "week": 28,
+          "sinba": 2377,
+          "eds": 1224
+        },
+        {
+          "week": 29,
+          "sinba": 2313,
+          "eds": 1140
+        },
+        {
+          "week": 30,
+          "sinba": 2234,
+          "eds": 1229
+        },
+        {
+          "week": 31,
+          "sinba": 2297,
+          "eds": 1247
+        },
+        {
+          "week": 32,
+          "sinba": 2245,
+          "eds": 1309
+        },
+        {
+          "week": 33,
+          "sinba": 2269,
+          "eds": 1333
+        },
+        {
+          "week": 34,
+          "sinba": 2270,
+          "eds": 1521
+        },
+        {
+          "week": 35,
+          "sinba": 2162,
+          "eds": 1379
+        },
+        {
+          "week": 36,
+          "sinba": 2177,
+          "eds": 1630
+        },
+        {
+          "week": 37,
+          "sinba": 2384,
+          "eds": 1628
+        },
+        {
+          "week": 38,
+          "sinba": 1725,
+          "eds": 1378
+        },
+        {
+          "week": 39,
+          "sinba": 1765,
+          "eds": 1458
+        },
+        {
+          "week": 40,
+          "sinba": 1462,
+          "eds": 1216
+        }
+      ],
+      "sinba_total": 91379,
+      "eds_total": 30844
+    },
+    {
+      "id": "proc_total_2026",
+      "area": "Cirugías",
+      "sinba_sources": [
+        "sinba_proc",
+        "sinba_proc_q"
+      ],
+      "sinba_year": 2026,
+      "eds_source": "eds_cir",
+      "eds_year": 2026,
+      "clues_compartidas": 75,
+      "series": [
+        {
+          "week": 1,
+          "sinba": 1697,
+          "eds": 25
+        },
+        {
+          "week": 2,
+          "sinba": 2115,
+          "eds": 78
+        },
+        {
+          "week": 3,
+          "sinba": 2474,
+          "eds": 87
+        },
+        {
+          "week": 4,
+          "sinba": 2478,
+          "eds": 112
+        },
+        {
+          "week": 5,
+          "sinba": 2637,
+          "eds": 140
+        },
+        {
+          "week": 6,
+          "sinba": 2376,
+          "eds": 135
+        },
+        {
+          "week": 7,
+          "sinba": 2655,
+          "eds": 171
+        },
+        {
+          "week": 8,
+          "sinba": 2581,
+          "eds": 184
+        },
+        {
+          "week": 9,
+          "sinba": 2720,
+          "eds": 252
+        },
+        {
+          "week": 10,
+          "sinba": 2958,
+          "eds": 282
+        },
+        {
+          "week": 11,
+          "sinba": 2881,
+          "eds": 272
+        },
+        {
+          "week": 12,
+          "sinba": 2468,
+          "eds": 230
+        },
+        {
+          "week": 13,
+          "sinba": 2779,
+          "eds": 317
+        },
+        {
+          "week": 14,
+          "sinba": 2244,
+          "eds": 232
+        },
+        {
+          "week": 15,
+          "sinba": 2448,
+          "eds": 355
+        },
+        {
+          "week": 16,
+          "sinba": 2477,
+          "eds": 597
+        },
+        {
+          "week": 17,
+          "sinba": 2750,
+          "eds": 665
+        },
+        {
+          "week": 18,
+          "sinba": 2597,
+          "eds": 636
+        },
+        {
+          "week": 19,
+          "sinba": 2430,
+          "eds": 632
+        },
+        {
+          "week": 20,
+          "sinba": 2629,
+          "eds": 692
+        },
+        {
+          "week": 21,
+          "sinba": 2599,
+          "eds": 730
+        },
+        {
+          "week": 22,
+          "sinba": 2620,
+          "eds": 856
+        },
+        {
+          "week": 23,
+          "sinba": 2890,
+          "eds": 1191
+        },
+        {
+          "week": 24,
+          "sinba": 2368,
+          "eds": 1064
+        },
+        {
+          "week": 25,
+          "sinba": 2518,
+          "eds": 1027
+        },
+        {
+          "week": 26,
+          "sinba": 2657,
+          "eds": 984
+        },
+        {
+          "week": 27,
+          "sinba": 2468,
+          "eds": 1206
+        },
+        {
+          "week": 28,
+          "sinba": 2591,
+          "eds": 1224
+        },
+        {
+          "week": 29,
+          "sinba": 2552,
+          "eds": 1140
+        },
+        {
+          "week": 30,
+          "sinba": 2388,
+          "eds": 1229
+        },
+        {
+          "week": 31,
+          "sinba": 2523,
+          "eds": 1247
+        },
+        {
+          "week": 32,
+          "sinba": 2384,
+          "eds": 1309
+        },
+        {
+          "week": 33,
+          "sinba": 2461,
+          "eds": 1333
+        },
+        {
+          "week": 34,
+          "sinba": 2386,
+          "eds": 1521
+        },
+        {
+          "week": 35,
+          "sinba": 2283,
+          "eds": 1379
+        },
+        {
+          "week": 36,
+          "sinba": 2328,
+          "eds": 1630
+        },
+        {
+          "week": 37,
+          "sinba": 2509,
+          "eds": 1628
+        },
+        {
+          "week": 38,
+          "sinba": 1849,
+          "eds": 1378
+        },
+        {
+          "week": 39,
+          "sinba": 1915,
+          "eds": 1458
+        },
+        {
+          "week": 40,
+          "sinba": 1605,
+          "eds": 1216
+        }
+      ],
+      "sinba_total": 98288,
+      "eds_total": 30844
+    },
+    {
+      "id": "egr_2025",
+      "area": "Hospitalizaciones",
+      "sinba_sources": [
+        "sinba_egr"
+      ],
+      "sinba_year": 2025,
+      "eds_source": "eds_hosp",
+      "eds_year": 2026,
+      "clues_compartidas": 96,
+      "series": [
+        {
+          "week": 1,
+          "sinba": 2728,
+          "eds": 172
+        },
+        {
+          "week": 2,
+          "sinba": 4678,
+          "eds": 239
+        },
+        {
+          "week": 3,
+          "sinba": 4750,
+          "eds": 261
+        },
+        {
+          "week": 4,
+          "sinba": 4934,
+          "eds": 288
+        },
+        {
+          "week": 5,
+          "sinba": 4948,
+          "eds": 317
+        },
+        {
+          "week": 6,
+          "sinba": 4844,
+          "eds": 270
+        },
+        {
+          "week": 7,
+          "sinba": 5189,
+          "eds": 334
+        },
+        {
+          "week": 8,
+          "sinba": 5115,
+          "eds": 347
+        },
+        {
+          "week": 9,
+          "sinba": 4984,
+          "eds": 518
+        },
+        {
+          "week": 10,
+          "sinba": 5259,
+          "eds": 595
+        },
+        {
+          "week": 11,
+          "sinba": 5305,
+          "eds": 603
+        },
+        {
+          "week": 12,
+          "sinba": 5070,
+          "eds": 567
+        },
+        {
+          "week": 13,
+          "sinba": 5215,
+          "eds": 755
+        },
+        {
+          "week": 14,
+          "sinba": 5336,
+          "eds": 757
+        },
+        {
+          "week": 15,
+          "sinba": 5241,
+          "eds": 1202
+        },
+        {
+          "week": 16,
+          "sinba": 4688,
+          "eds": 1605
+        },
+        {
+          "week": 17,
+          "sinba": 5047,
+          "eds": 1888
+        },
+        {
+          "week": 18,
+          "sinba": 4904,
+          "eds": 1743
+        },
+        {
+          "week": 19,
+          "sinba": 4901,
+          "eds": 1857
+        },
+        {
+          "week": 20,
+          "sinba": 5234,
+          "eds": 1963
+        },
+        {
+          "week": 21,
+          "sinba": 5189,
+          "eds": 1834
+        },
+        {
+          "week": 22,
+          "sinba": 5074,
+          "eds": 2006
+        },
+        {
+          "week": 23,
+          "sinba": 5217,
+          "eds": 2604
+        },
+        {
+          "week": 24,
+          "sinba": 5195,
+          "eds": 2698
+        },
+        {
+          "week": 25,
+          "sinba": 5259,
+          "eds": 2886
+        },
+        {
+          "week": 26,
+          "sinba": 4986,
+          "eds": 2815
+        },
+        {
+          "week": 27,
+          "sinba": 5014,
+          "eds": 2981
+        },
+        {
+          "week": 28,
+          "sinba": 5287,
+          "eds": 2996
+        },
+        {
+          "week": 29,
+          "sinba": 5176,
+          "eds": 3235
+        },
+        {
+          "week": 30,
+          "sinba": 5094,
+          "eds": 3354
+        },
+        {
+          "week": 31,
+          "sinba": 5100,
+          "eds": 3345
+        },
+        {
+          "week": 32,
+          "sinba": 5003,
+          "eds": 3383
+        },
+        {
+          "week": 33,
+          "sinba": 5118,
+          "eds": 3436
+        },
+        {
+          "week": 34,
+          "sinba": 5150,
+          "eds": 3744
+        },
+        {
+          "week": 35,
+          "sinba": 5031,
+          "eds": 3574
+        },
+        {
+          "week": 36,
+          "sinba": 5362,
+          "eds": 3958
+        },
+        {
+          "week": 37,
+          "sinba": 5478,
+          "eds": 4250
+        },
+        {
+          "week": 38,
+          "sinba": 4949,
+          "eds": 3845
+        },
+        {
+          "week": 39,
+          "sinba": 5478,
+          "eds": 4051
+        },
+        {
+          "week": 40,
+          "sinba": 5442,
+          "eds": 3614
+        }
+      ],
+      "sinba_total": 201972,
+      "eds_total": 80890
+    },
+    {
+      "id": "egr_2026",
+      "area": "Hospitalizaciones",
+      "sinba_sources": [
+        "sinba_egr"
+      ],
+      "sinba_year": 2026,
+      "eds_source": "eds_hosp",
+      "eds_year": 2026,
+      "clues_compartidas": 96,
+      "series": [
+        {
+          "week": 1,
+          "sinba": 3922,
+          "eds": 172
+        },
+        {
+          "week": 2,
+          "sinba": 4785,
+          "eds": 239
+        },
+        {
+          "week": 3,
+          "sinba": 5128,
+          "eds": 261
+        },
+        {
+          "week": 4,
+          "sinba": 5132,
+          "eds": 288
+        },
+        {
+          "week": 5,
+          "sinba": 5283,
+          "eds": 317
+        },
+        {
+          "week": 6,
+          "sinba": 4970,
+          "eds": 270
+        },
+        {
+          "week": 7,
+          "sinba": 5324,
+          "eds": 334
+        },
+        {
+          "week": 8,
+          "sinba": 5262,
+          "eds": 347
+        },
+        {
+          "week": 9,
+          "sinba": 5425,
+          "eds": 518
+        },
+        {
+          "week": 10,
+          "sinba": 5651,
+          "eds": 595
+        },
+        {
+          "week": 11,
+          "sinba": 5848,
+          "eds": 603
+        },
+        {
+          "week": 12,
+          "sinba": 5139,
+          "eds": 567
+        },
+        {
+          "week": 13,
+          "sinba": 5454,
+          "eds": 755
+        },
+        {
+          "week": 14,
+          "sinba": 4878,
+          "eds": 757
+        },
+        {
+          "week": 15,
+          "sinba": 5099,
+          "eds": 1202
+        },
+        {
+          "week": 16,
+          "sinba": 5278,
+          "eds": 1605
+        },
+        {
+          "week": 17,
+          "sinba": 5456,
+          "eds": 1888
+        },
+        {
+          "week": 18,
+          "sinba": 5250,
+          "eds": 1743
+        },
+        {
+          "week": 19,
+          "sinba": 4985,
+          "eds": 1857
+        },
+        {
+          "week": 20,
+          "sinba": 5241,
+          "eds": 1963
+        },
+        {
+          "week": 21,
+          "sinba": 5218,
+          "eds": 1834
+        },
+        {
+          "week": 22,
+          "sinba": 5093,
+          "eds": 2006
+        },
+        {
+          "week": 23,
+          "sinba": 5438,
+          "eds": 2604
+        },
+        {
+          "week": 24,
+          "sinba": 5066,
+          "eds": 2698
+        },
+        {
+          "week": 25,
+          "sinba": 5253,
+          "eds": 2886
+        },
+        {
+          "week": 26,
+          "sinba": 5259,
+          "eds": 2815
+        },
+        {
+          "week": 27,
+          "sinba": 5127,
+          "eds": 2981
+        },
+        {
+          "week": 28,
+          "sinba": 5214,
+          "eds": 2996
+        },
+        {
+          "week": 29,
+          "sinba": 5257,
+          "eds": 3235
+        },
+        {
+          "week": 30,
+          "sinba": 5204,
+          "eds": 3354
+        },
+        {
+          "week": 31,
+          "sinba": 5133,
+          "eds": 3345
+        },
+        {
+          "week": 32,
+          "sinba": 4798,
+          "eds": 3383
+        },
+        {
+          "week": 33,
+          "sinba": 4797,
+          "eds": 3436
+        },
+        {
+          "week": 34,
+          "sinba": 4865,
+          "eds": 3744
+        },
+        {
+          "week": 35,
+          "sinba": 4707,
+          "eds": 3574
+        },
+        {
+          "week": 36,
+          "sinba": 4406,
+          "eds": 3958
+        },
+        {
+          "week": 37,
+          "sinba": 4524,
+          "eds": 4250
+        },
+        {
+          "week": 38,
+          "sinba": 3876,
+          "eds": 3845
+        },
+        {
+          "week": 39,
+          "sinba": 3633,
+          "eds": 4051
+        },
+        {
+          "week": 40,
+          "sinba": 2951,
+          "eds": 3614
+        }
+      ],
+      "sinba_total": 199329,
+      "eds_total": 80890
+    }
+  ]
+}

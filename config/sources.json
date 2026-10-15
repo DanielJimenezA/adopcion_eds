@@ -1,0 +1,76 @@
+{
+  "output_dir": "data",
+  "sources": {
+    "sinba_ce": {
+      "clues_column": "clues",
+      "date_column": "fecha_consulta",
+      "paths": {
+        "2025": "C:/Users/daniel.jimenez/Desktop/2025/consulta_externa_01_01_2025_a_31_12_2025.parquet",
+        "2026": "C:/Users/daniel.jimenez/Desktop/consultas_01_01_2026_a_07_10_2026/filtrada/final/consulta_externa_01_01_2026_a_07_10_2026.parquet"
+      }
+    },
+    "sinba_pf": {
+      "clues_column": "clues",
+      "date_column": "fecha_consulta",
+      "paths": {
+        "2025": "C:/Users/daniel.jimenez/Desktop/2025/planificacion_familiar_01_01_2025_a_31_12_2025.parquet",
+        "2026": "C:/Users/daniel.jimenez/Desktop/consultas_01_01_2026_a_07_10_2026/filtrada/final/planificacion_familiar_01_01_2026_a_07_10_2026.parquet"
+      }
+    },
+    "sinba_sm": {
+      "clues_column": "clues",
+      "date_column": "fecha_consulta",
+      "paths": {
+        "2025": "C:/Users/daniel.jimenez/Desktop/2025/salud_mental_01_01_2025_a_31_12_2025.parquet",
+        "2026": "C:/Users/daniel.jimenez/Desktop/consultas_01_01_2026_a_07_10_2026/filtrada/final/salud_mental_01_01_2026_a_07_10_2026.parquet"
+      }
+    },
+    "sinba_sb": {
+      "clues_column": "clues",
+      "date_column": "fecha_consulta",
+      "paths": {
+        "2025": "C:/Users/daniel.jimenez/Desktop/2025/salud_bucal_01_01_2025_a_31_12_2025.parquet",
+        "2026": "C:/Users/daniel.jimenez/Desktop/consultas_01_01_2026_a_07_10_2026/filtrada/final/salud_bucal_01_01_2026_a_07_10_2026.parquet"
+      }
+    },
+    "sinba_proc": {
+      "clues_column": "clues",
+      "date_column": "fecha_egreso_x",
+      "paths": {
+        "2025": "C:/Users/daniel.jimenez/Desktop/2025/procedimientos_quirurgicos_01_01_2025_a_31_12_2025.parquet",
+        "2026": "C:/Users/daniel.jimenez/Desktop/consultas_01_01_2026_a_07_10_2026/filtrada/final/procedimientos_quirugicos_01_01_2026_a_07_10_2026.parquet"
+      }
+    },
+    "sinba_proc_q": {
+      "clues_column": "clues",
+      "date_column": "fecha_egreso_x",
+      "paths": {
+        "2025": "C:/Users/daniel.jimenez/Desktop/2025/procedimientos_quirurgicos_dentro_quirofano_01_01_2025_a_31_12_2025.parquet",
+        "2026": "C:/Users/daniel.jimenez/Desktop/consultas_01_01_2026_a_07_10_2026/filtrada/final/procedimientos_quirurgicos_dentro_quirofano_01_01_2026_a_07_10_2026.parquet"
+      }
+    },
+    "sinba_egr": {
+      "clues_column": "clues",
+      "date_column": "fecha_egreso",
+      "paths": {
+        "2025": "C:/Users/daniel.jimenez/Desktop/2025/egresos_01_01_2025_a_31_12_2025.parquet",
+        "2026": "C:/Users/daniel.jimenez/Desktop/consultas_01_01_2026_a_07_10_2026/filtrada/final/egresos_01_01_2026_a_07_10_2026.parquet"
+      }
+    },
+    "eds_moce": {
+      "path": "C:/Users/daniel.jimenez/Desktop/IMMS layout/SABANAS/07_10_2026/MoCE corte 08102026.csv",
+      "clues_column": "clues",
+      "date_column": "fecha_atencion"
+    },
+    "eds_cir": {
+      "path": "C:/Users/daniel.jimenez/Desktop/IMMS layout/SABANAS/07_10_2026/MV_CIRUGIA_08102026.csv",
+      "clues_column": "clues",
+      "date_column": "Fecha de Realización"
+    },
+    "eds_hosp": {
+      "path": "C:/Users/daniel.jimenez/Desktop/IMMS layout/SABANAS/07_10_2026/MV_INGRESO_EGRESO_HOSPITAL_08102026.csv",
+      "clues_column": "clues",
+      "date_column": "fecha_hora_egreso"
+    }
+  }
+}

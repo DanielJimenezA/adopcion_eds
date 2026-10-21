@@ -146,8 +146,14 @@ function updateClues() {
     previous = $("clues").value,
     entity = $("entity").value;
   const { values, diagnostic } = availableClues(area);
+  const term = ($("cluesSearch")?.value || "").trim().toLocaleLowerCase("es");
   const clues = values
-    .filter((c) => entity === "ALL" || c.startsWith(entity))
+    .filter(
+      (c) =>
+        (entity === "ALL" || c.startsWith(entity)) &&
+        (!term ||
+          `${c} ${unitNames[c] || ""}`.toLocaleLowerCase("es").includes(term))
+    )
     .sort();
   $("clues").replaceChildren(
     new Option(
@@ -196,9 +202,11 @@ function selected() {
   return mainScenario($("area").value);
 }
 function seriesFor(s, rows, isCumulative) {
-  let a = 0,
-    b = 0,
-    c = 0;
+  const start = Number($("weekStart")?.value) || 1;
+  const prior = isCumulative ? s.series.filter((r) => r.week < start) : [];
+  let a = prior.reduce((n, r) => n + r.sinba, 0),
+    b = prior.reduce((n, r) => n + r.eds, 0),
+    c = prior.reduce((n, r) => n + (r.sinba2026 || 0), 0);
   const triple = s.id === "integral_triple";
   return triple
     ? [
@@ -355,10 +363,11 @@ function renderMatrix(cut) {
         : "Comparación 2026: permite evaluar la distribución del volumen registrado entre sistemas.";
     card.append(head, plot, note);
     host.append(card);
+    const start = Number($("weekStart").value) || 1;
     const rows =
       $("view").value === "monthly"
-        ? monthlyRows(s, cut)
-        : s.series.filter((r) => r.week <= cut);
+        ? monthlyRows(s, cut).filter((r) => r.week >= start)
+        : s.series.filter((r) => r.week >= start && r.week <= cut);
     const instance = echarts.init(plot);
     instance.setOption(
       graphOption(s, rows, $("view").value === "cumulative", true)
@@ -401,9 +410,10 @@ function render() {
   if (!s) return;
   const cut = Number($("week").value),
     monthly = $("view").value === "monthly",
+    start = Number($("weekStart").value) || 1,
     rows = monthly
-      ? monthlyRows(s, cut)
-      : s.series.filter((r) => r.week <= cut),
+      ? monthlyRows(s, cut).filter((r) => r.week >= start)
+      : s.series.filter((r) => r.week >= start && r.week <= cut),
     isCumulative = $("view").value === "cumulative";
   let a = 0,
     b = 0;
@@ -476,9 +486,9 @@ function render() {
       : isCumulative
       ? "Evolución acumulada"
       : "Evolución semanal") + " · comparación integral";
-  $("chartSubtitle").textContent = `Semanas ISO 1–${cut} · ${scenarioName(
-    s
-  )} · ${
+  $(
+    "chartSubtitle"
+  ).textContent = `Semanas ISO ${start}–${cut} · ${scenarioName(s)} · ${
     monthly
       ? "volumen mensual (mes final no necesariamente comparable: revisar cobertura)"
       : isCumulative
@@ -511,6 +521,7 @@ function render() {
       ];
   chart.setOption(graphOption(s, rows, isCumulative), true);
   renderTerritory(s, cut);
+  renderWeekComparison(s, start, cut);
   const historical = yearTotal(2025);
   const ratio = historical ? (100 * edsCorte) / historical : null;
   const edsModule = names[s.eds_source];
@@ -520,8 +531,6 @@ function render() {
       : `En el periodo seleccionado, los registros generados en ${edsModule} durante 2026 representan el ${ratio.toFixed(
           1
         )}% de los registros reportados en SINBA en el mismo periodo de 2025. Este indicador permite dimensionar el avance del registro en ${edsModule} respecto al volumen observado el año previo. No representa el porcentaje de unidades que utilizan el sistema ni la proporción de registros migrados desde SINBA. Los conteos corresponden a registros (filas), sin deduplicación de eventos.`;
-
-  renderAudit();
 }
 function rebuild() {
   updateEntities();
@@ -530,12 +539,13 @@ function download() {
   const s = filteredScenario(selected()),
     cut = Number($("week").value);
   const triple = s.id === "integral_triple";
+  const start = Number($("weekStart").value) || 1;
   const lines = [
     triple
       ? "semana_iso,sinba_2025,sinba_2026,eds_2026"
       : "semana_iso,sinba_" + s.sinba_year + ",eds_2026",
     ...s.series
-      .filter((r) => r.week <= cut)
+      .filter((r) => r.week >= start && r.week <= cut)
       .map((r) =>
         triple
           ? `${r.week},${r.sinba},${r.sinba2026},${r.eds}`
@@ -548,7 +558,7 @@ function download() {
   const url = URL.createObjectURL(blob),
     a = document.createElement("a");
   a.href = url;
-  a.download = `adopcion_${s.id}_semana_${cut}.csv`;
+  a.download = `adopcion_${s.id}_semanas_${start}_a_${cut}.csv`;
   a.click();
   URL.revokeObjectURL(url);
 }
@@ -576,6 +586,11 @@ async function init() {
     monthlyDetails = await md.json();
 
     chart = echarts.init($("chart"));
+    // window.addEventListener("resize", () => {
+    //   chart.resize();
+    //   mapChart?.resize();
+    //   barChart?.resize();
+    // });
     window.addEventListener("resize", () => {
       chart.resize();
       mapChart?.resize();
@@ -605,17 +620,37 @@ async function init() {
     $("week").replaceChildren(
       ...Array.from(
         { length: last },
-        (_, i) => new Option("Semana " + (i + 1), String(i + 1))
+        (_, i) =>
+          new Option("Semana " + String(i + 1).padStart(2, "0"), String(i + 1))
       )
     );
+    $("weekStart").replaceChildren(
+      ...Array.from(
+        { length: last },
+        (_, i) =>
+          new Option("Semana " + String(i + 1).padStart(2, "0"), String(i + 1))
+      )
+    );
+    $("weekStart").value = "1";
     $("week").value = String(last);
     $("group").addEventListener("change", () => {
       $("entity").value = "ALL";
       $("clues").value = "ALL";
       updateEntities();
     });
-    for (const id of ["area", "view", "week"])
+    for (const id of ["area", "view"])
       $(id).addEventListener("change", id === "area" ? rebuild : render);
+    for (const id of ["weekStart", "week"])
+      $(id).addEventListener("change", () => {
+        const first = Number($("weekStart").value),
+          lastWeek = Number($("week").value);
+        if (first > lastWeek) {
+          if (id === "weekStart") $("week").value = String(first);
+          else $("weekStart").value = String(lastWeek);
+        }
+        render();
+      });
+    $("cluesSearch").addEventListener("input", updateClues);
     $("entity").addEventListener("change", updateClues);
     $("clues").addEventListener("change", render);
     $("csv").addEventListener("click", download);
@@ -627,7 +662,9 @@ async function init() {
       $("entity").value = "ALL";
       updateClues();
       $("clues").value = "ALL";
+      $("cluesSearch").value = "";
       $("view").value = "weekly";
+      $("weekStart").value = "1";
       $("week").value = String(last);
       render();
     });
@@ -654,6 +691,7 @@ window.dashboardState = () => ({
     .map(filteredScenario),
   selectedClues: matchingClues($("area").value),
   group: $("group").value,
+  start: Number($("weekStart").value),
   cut: Number($("week").value),
   view: $("view").value,
 });
@@ -709,8 +747,10 @@ function renderAudit() {
 }
 
 window.dashboardExportRows = (s, cut) => {
-  const v = $("view").value;
-  if (v === "monthly") return monthlyRows(s, cut);
+  const v = $("view").value,
+    start = Number($("weekStart").value) || 1;
+  if (v === "monthly")
+    return monthlyRows(s, cut).filter((r) => r.week >= start);
   if (v === "cumulative") {
     let a = 0,
       b = 0,
@@ -722,9 +762,10 @@ window.dashboardExportRows = (s, cut) => {
         sinba: (a += r.sinba),
         eds: (b += r.eds),
         sinba2026: (c += r.sinba2026 || 0),
-      }));
+      }))
+      .filter((r) => r.week >= start);
   }
-  return s.series.filter((r) => r.week <= cut);
+  return s.series.filter((r) => r.week >= start && r.week <= cut);
 };
 
 // El mapa utiliza GeoJSON estatal; se conserva un estado informativo si la red no permite obtenerlo.
@@ -863,13 +904,10 @@ function territoryValues(s, cut) {
     p26: o.s26 ? (100 * o.eds) / o.s26 : null,
   }));
 }
-
 function renderTerritory(s, cut) {
   if (!barChart) return;
-
-  const values = territoryValues(s, cut);
-  const sort = $("barSort").value;
-
+  const values = territoryValues(s, cut),
+    sort = $("barSort").value;
   values.sort((a, b) =>
     sort === "alpha"
       ? a.name.localeCompare(b.name, "es")
@@ -877,75 +915,42 @@ function renderTerritory(s, cut) {
       ? (b.p25 ?? -1) - (a.p25 ?? -1)
       : (a.p25 ?? Infinity) - (b.p25 ?? Infinity)
   );
-
   const tooltip = (o) =>
-    `${o.name}<br>CLUES comparables: ${fmt(o.clues)}
-    <br>CLUES con EDS: ${fmt(o.withEds)}
-    <br>SINBA 2025: ${fmt(o.s25)}
-    <br>SINBA 2026: ${fmt(o.s26)}
-    <br>EDS 2026: ${fmt(o.eds)}
-    <br>EDS / SINBA 2025: ${
+    `${o.name}<br>CLUES comparables: ${fmt(o.clues)}<br>CLUES con EDS: ${fmt(
+      o.withEds
+    )}<br>SINBA 2025: ${fmt(o.s25)}<br>SINBA 2026: ${fmt(
+      o.s26
+    )}<br>EDS 2026: ${fmt(o.eds)}<br>EDS / SINBA 2025: ${
       o.p25 === null ? "No calculable" : o.p25.toFixed(1) + "%"
-    }
-    <br>EDS / SINBA 2026: ${
+    }<br>EDS / SINBA 2026: ${
       o.p26 === null ? "No calculable" : o.p26.toFixed(1) + "%"
     }`;
-
-  // Escala absoluta compartida.
+  // Una sola escala absoluta: SINBA 2025 como referencia, EDS 2026 desde cero,
+  // y SINBA 2026 como marca horizontal. Nunca apilar volúmenes entre años.
   const maxValue = Math.max(1, ...values.flatMap((v) => [v.s25, v.s26, v.eds]));
-
-  // // Configuración visual.
-  // const columnWidth = 28;
-  // const visibleCount = 7;
-  // Configuración de distribución de columnas
-  const visibleCount = 10;
-
-  // Ancho disponible para dibujar las entidades
+  const columnWidth = 76,
+    step = 112;
   const plot = $("entityBars");
-  const availableWidth = Math.max(200, plot.parentElement.clientWidth - 110);
-
-  // Espacio estimado por entidad
-  const categoryWidth =
-    availableWidth / Math.max(1, Math.min(values.length, visibleCount));
-
-  // Barras más anchas y con menor separación
-  const columnWidth = Math.max(28, Math.min(65, categoryWidth * 0.82));
-
-  const zoomEnd =
-    values.length <= visibleCount ? 100 : (visibleCount / values.length) * 100;
-
-  // Evitar desbordamiento horizontal.
-  plot.style.width = "100%";
-  plot.style.maxWidth = "100%";
-  plot.style.minWidth = "0";
-  plot.style.height = "580px";
-
+  plot.style.width =
+    Math.max(plot.parentElement.clientWidth - 12, values.length * step + 100) +
+    "px";
+  plot.style.height = "440px";
   barChart.resize();
-
   const barData = values.map((v) => ({
     value: v.s25,
-    itemStyle: {
-      color: "#f1c7d7",
-      borderRadius: [5, 5, 0, 0],
-    },
+    itemStyle: { color: "#f1c7d7", borderRadius: [5, 5, 0, 0] },
   }));
-
   const edsData = values.map((v) => ({
     value: v.eds,
-    itemStyle: {
-      color: "#9bd1bd",
-      borderRadius: [4, 4, 0, 0],
-    },
+    itemStyle: { color: "#9bd1bd", borderRadius: [4, 4, 0, 0] },
   }));
-
   const markData = values.map((v, i) => [i, v.s26]);
-
+  const legendNames = ["SINBA 2025", "EDS 2026", "SINBA 2026"];
   barChart.setOption(
     {
       animation: true,
       animationDuration: 1000,
       animationEasing: "cubicOut",
-
       legend: {
         show: true,
         top: 2,
@@ -955,80 +960,35 @@ function renderTerritory(s, cut) {
         data: [
           { name: "SINBA 2025", icon: "roundRect" },
           { name: "EDS 2026", icon: "roundRect" },
-          {
-            name: "SINBA 2026",
-            icon: "path://M0,4 L28,4 L28,7 L0,7 Z",
-          },
+          { name: "SINBA 2026", icon: "path://M0,4 L28,4 L28,7 L0,7 Z" },
         ],
-        textStyle: {
-          color: "#235B4E",
-          fontSize: 11,
-        },
+        textStyle: { color: "#235B4E", fontSize: 11 },
         itemWidth: 19,
         itemHeight: 11,
         itemGap: 12,
       },
-
       tooltip: {
         trigger: "axis",
         axisPointer: { type: "shadow" },
         formatter: (params) => {
           const i = params.find((p) => p.dataIndex !== undefined)?.dataIndex;
-
           return i === undefined ? "" : tooltip(values[i]);
         },
       },
-
-      grid: {
-        left: 67,
-        right: 22,
-        top: 68,
-        bottom: 125,
-      },
-
-      // Desplazamiento horizontal dentro del gráfico.
-      dataZoom: [
-        {
-          type: "inside",
-          xAxisIndex: 0,
-          start: 0,
-          end: zoomEnd,
-          zoomLock: false,
-        },
-        {
-          type: "slider",
-          xAxisIndex: 0,
-          show: values.length > visibleCount,
-          start: 0,
-          end: zoomEnd,
-          bottom: 8,
-          height: 18,
-          borderColor: "#dbe7e1",
-          fillerColor: "rgba(35,91,78,0.12)",
-          handleStyle: {
-            color: "#235B4E",
-          },
-        },
-      ],
-
+      grid: { left: 67, right: 22, top: 68, bottom: 92 },
       xAxis: {
         type: "category",
         data: values.map((v) => v.name),
         axisLabel: {
           interval: 0,
-          rotate: values.length > 5 ? 40 : 0,
-          margin: 15,
-          hideOverlap: true,
+          rotate: values.length > 5 ? 38 : 0,
           fontSize: 10,
           color: "#235B4E",
           width: 95,
           overflow: "truncate",
         },
-        axisTick: {
-          alignWithLabel: true,
-        },
+        axisTick: { alignWithLabel: true },
       },
-
       yAxis: {
         type: "value",
         min: 0,
@@ -1042,83 +1002,49 @@ function renderTerritory(s, cut) {
               ? Math.round(v / 1000) + " mil"
               : v,
         },
-        splitLine: {
-          lineStyle: {
-            color: "#e6ece8",
-          },
-        },
+        splitLine: { lineStyle: { color: "#e6ece8" } },
       },
-
       series: [
-        // SINBA 2025: referencia histórica.
         {
           name: "SINBA 2025",
           type: "bar",
           data: barData,
-          itemStyle: {
-            color: "#f1c7d7",
-          },
+          itemStyle: { color: "#f1c7d7" },
           barWidth: columnWidth,
           barGap: "-100%",
           z: 1,
         },
-
-        // EDS 2026: volumen desde cero.
         {
           name: "EDS 2026",
           type: "bar",
           data: edsData,
-          itemStyle: {
-            color: "#9bd1bd",
-          },
+          itemStyle: { color: "#9bd1bd" },
           barWidth: columnWidth,
           barGap: "-100%",
           z: 3,
-
           label: {
-            show: true,
+            show: values.length <= 8,
             position: "insideTop",
             color: "#10312B",
             fontSize: 10,
-
-            formatter: (p) => {
-              const item = values[p.dataIndex];
-
-              if (!item || item.p25 === null || item.eds <= 0) {
-                return "";
-              }
-
-              // Evitar porcentajes en barras pequeñas.
-              const plotHeight = Math.max(0, plot.clientHeight - 68 - 125);
-
-              const barHeight =
-                (item.eds / Math.ceil(maxValue * 1.12)) * plotHeight;
-
-              return barHeight >= 35 ? item.p25.toFixed(1) + "%" : "";
-            },
+            formatter: (p) =>
+              values[p.dataIndex].p25 === null
+                ? ""
+                : values[p.dataIndex].p25.toFixed(1) + "%",
           },
         },
-
-        // SINBA 2026: marca horizontal dorada.
         {
           name: "SINBA 2026",
           type: "custom",
           data: markData,
-          itemStyle: {
-            color: "#A57F2C",
-          },
+          itemStyle: { color: "#A57F2C" },
           z: 6,
-          tooltip: {
-            show: false,
-          },
-
+          tooltip: { show: false },
           renderItem: (params, api) => {
-            const index = api.value(0);
-            const val = api.value(1);
-
+            const index = api.value(0),
+              val = api.value(1);
             const point = api.coord([index, val]);
-            const half = columnWidth / 2 + 3;
-
+            const half = columnWidth / 2 + 5;
             return {
               type: "line",
               shape: {
@@ -1127,10 +1053,7 @@ function renderTerritory(s, cut) {
                 x2: point[0] + half,
                 y2: point[1],
               },
-              style: {
-                stroke: "#A57F2C",
-                lineWidth: 3,
-              },
+              style: { stroke: "#A57F2C", lineWidth: 3 },
             };
           },
         },
@@ -1138,76 +1061,58 @@ function renderTerritory(s, cut) {
     },
     true
   );
-
-  // ==========================================================
-  // MAPA DE MÉXICO - RELACIÓN HISTÓRICA POR ENTIDAD
-  // ==========================================================
-
   if (mapReady) {
     const byCode = Object.fromEntries(values.map((v) => [v.code, v]));
-
     const geo = echarts.getMap("mexico_eds").geoJson;
-
     const entries = geo.features.map((f) => {
-      const n = f.properties.name;
-      const o = byCode[geoCode(n)];
-
+      const n = f.properties.name,
+        o = byCode[geoCode(n)];
       return {
         name: n,
         value: o?.p25 ?? null,
         itemStyle: !o || o.p25 === null ? { areaColor: "#e3e6e3" } : undefined,
       };
     });
-
     mapChart.setOption(
       {
         animation: true,
-
         tooltip: {
           trigger: "item",
           formatter: (p) => {
             const o = byCode[geoCode(p.name)];
-
             return o
               ? tooltip(o)
               : `${p.name}<br>Sin referencia histórica en la selección`;
           },
         },
-
         visualMap: {
           type: "piecewise",
           left: "center",
           bottom: 5,
           orient: "horizontal",
           textStyle: { fontSize: 9 },
-
           pieces: [
-            { min: 100, color: "#75ae95", label: "≥100%" },
-            { min: 75, max: 99.999, color: "#b2d9ba", label: "75–99.9%" },
-            { min: 50, max: 74.999, color: "#e6d194", label: "50–74.9%" },
-            { min: 25, max: 49.999, color: "#f3bdab", label: "25–49.9%" },
-            { min: 0, max: 24.999, color: "#e9a2a9", label: "0–24.9%" },
+            { min: 75, color: "#75ae95", label: "75–100%+" },
+            { min: 50, max: 74.999999, color: "#b2d9ba", label: "50–75%" },
+            { min: 25, max: 49.999999, color: "#e6d194", label: "25–50%" },
+            { min: 0, max: 24.999999, color: "#e9a2a9", label: "0–25%" },
           ],
-
-          outOfRange: {
-            color: "#e3e6e3",
-          },
+          outOfRange: { color: "#e3e6e3" },
         },
-
         series: [
           {
             type: "map",
             map: "mexico_eds",
+            aspectScale: 1,
             roam: false,
             selectedMode: false,
-
-            layoutCenter: ["50%", "45%"],
-            layoutSize: "115%",
-
-            emphasis: {
-              label: { show: true },
-            },
-
+            layoutCenter: ["50%", "50%"],
+            layoutSize: "85%",
+            // Evitar desplazamientos adicionales
+            left: "center",
+            top: "middle",
+            roam: false,
+            emphasis: { label: { show: true } },
             label: { show: false },
             data: entries,
           },
@@ -1215,7 +1120,43 @@ function renderTerritory(s, cut) {
       },
       true
     );
+  }
+}
 
-    mapChart.resize();
+// Comparación de cortes acumulados (el primer corte incluye su propia semana).
+function renderWeekComparison(s, start, end) {
+  const series = s.series.filter((r) => r.week <= end);
+  const sums = (cut, key) =>
+    series.filter((r) => r.week <= cut).reduce((v, r) => v + (r[key] || 0), 0);
+  const format = (key, label) => {
+    const initial = sums(start, key),
+      final = sums(end, key),
+      delta = final - initial;
+    return `${label}: S${String(start).padStart(2, "0")} ${fmt(
+      initial
+    )} → S${String(end).padStart(2, "0")} ${fmt(final)} (incremento +${fmt(
+      delta
+    )})`;
+  };
+  const weekComparisonElement = $("weekComparison");
+
+  if (weekComparisonElement) {
+    $("weekComparison").textContent = [
+      format("sinba", "SINBA 2025"),
+      format("sinba2026", "SINBA 2026"),
+      format("eds", "EDS 2026"),
+    ].join("  |  ");
+  }
+
+  // La sección de auditoría está oculta actualmente.
+  // Solo actualizar su nota si el elemento existe.
+  const auditWeekNoteElement = $("auditWeekNote");
+
+  if (auditWeekNoteElement) {
+    auditWeekNoteElement.textContent =
+      `Semanas seleccionadas: S${String(start).padStart(2, "0")}–` +
+      `S${String(end).padStart(2, "0")}. ` +
+      `La auditoría por CLUES se actualiza con los filtros de unidad, grupo y entidad, ` +
+      `pero sus cifras corresponden al procesamiento completo, no al intervalo seleccionado.`;
   }
 }

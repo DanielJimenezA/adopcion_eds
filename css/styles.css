@@ -602,203 +602,156 @@ button:hover {
     height: 430px;
   }
 }
-color: var(--burgundy);
-font-size: 10px;
-font-weight: 800;
-letter-spacing: 1.25px;
-}
-h1 {
-font-size: 24px;
-letter-spacing: -0.45px;
-color: #263b38;
-}
-.sub {
-font-size: 12px;
-margin: 0;
-}
-.header-updated {
-background: #e8f2ee;
-border-radius: 12px;
-padding: 12px;
-text-align: center;
-display: flex;
-flex-direction: column;
-gap: 5px;
-color: #235b4e;
-}
-.header-updated span {
-font-size: 10px;
-font-weight: 800;
-letter-spacing: 0.35px;
-}
-.header-updated strong {
-font-size: 12px;
-}
-.controls {
-border-top: 3px solid var(--green);
-box-shadow: 0 8px 26px #235b4e0b;
-}
-.controls select:focus {
-outline: 2px solid var(--balmoral);
-outline-offset: 1px;
-}
-.cards {
-grid-template-columns: repeat(5, minmax(0, 1fr));
-gap: 12px;
-}
-.cards article {
-border: 1px solid #dce8e2;
-border-top: 4px solid var(--green);
-background: linear-gradient(165deg, #fff, #f1f7f3);
-}
-.cards article:nth-child(2) {
-border-top-color: var(--gold);
-background: linear-gradient(165deg, #fff, #fbf7eb);
-}
-.cards article:nth-child(3) {
-border-top-color: var(--burgundy);
-background: linear-gradient(165deg, #fff, #fdf1f4);
-}
-.cards article:nth-child(4) {
-border-top-color: #438777;
-}
-.cards article:nth-child(5) {
-border-top-color: var(--sage);
-}
-.cards strong {
-font-size: 24px;
-color: var(--ink);
-}
-.cards span {
-font-size: 11px;
-font-weight: 700;
-}
-.panel {
-border-top: 3px solid #d2e2d8;
-}
-h2 {
-color: #235b4e;
-font-size: 19px;
-}
-button {
-background: #eaf3ef;
-color: var(--green);
-font-weight: 600;
-}
-button:hover {
-background: #dcece4;
-}
-#chart {
-height: 465px;
-}
-@media (max-width: 1100px) {
-.cards {
-  grid-template-columns: repeat(3, 1fr);
-}
-.header-content {
-  grid-template-columns: 160px 1fr 160px;
-}
-}
-@media (max-width: 720px) {
-.header-content {
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-.header-brand {
-  width: 210px;
-}
-.header-updated {
-  max-width: 220px;
-  text-align: left;
-}
-.cards {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-}
-@media (max-width: 440px) {
-.cards {
-  grid-template-columns: 1fr;
-}
-}
-
-.reset-filters {
-align-self: end;
-min-height: 43px;
-background: #f3f3e7 !important;
-color: #235b4e !important;
-border: 1px solid #b6c8be !important;
-font-weight: 700;
-white-space: nowrap;
-}
-.reset-filters:hover {
-background: #e2eee7 !important;
-}
-.interpretation {
-margin: 12px 0 0;
-padding: 16px 18px;
-border-left: 4px solid #006657;
-background: #f0f6f2;
-border-radius: 8px;
-color: #235b4e;
-}
-.interpretation p {
-margin: 7px 0;
-line-height: 1.6;
-}
-.interpretation small {
-color: #52675d;
-line-height: 1.5;
-display: block;
-}
-
-/* v3.5: narrativa ejecutiva y matriz de escenarios */
-.section-label {
-margin: 28px 0 14px;
-}
-.section-label h2 {
-font-size: 19px;
-}
-.section-label p {
-color: var(--muted);
-font-size: 12px;
-margin: 5px 0;
-
-/* Evitar desbordamiento de la sección territorial */
+/* =====================================================
+   DISTRIBUCIÓN TERRITORIAL
+   Mapa y comparativo en renglones independientes
+   ===================================================== */
 
 .territory-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
-    gap: 12px;
-    width: 100%;
-    min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  width: 100%;
+  align-items: start;
+}
+
+/* Contenedores independientes */
+.territory-map,
+.territory-bars {
+  grid-column: 1 / -1;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+
+  border: 1px solid #dce7df;
+  border-radius: 12px;
+  background: #fff;
+  padding: 18px;
+}
+
+/* Encabezados */
+.territory-map .panel-head,
+.territory-bars .panel-head {
+  align-items: start;
+  margin-bottom: 16px;
+}
+
+.territory-map .panel-head h2,
+.territory-bars .panel-head h2 {
+  font-size: 18px;
+}
+
+.territory-map .panel-head p,
+.territory-bars .panel-head p {
+  font-size: 12px;
+}
+
+/* Mapa de México */
+.territory-map #mexicoMap {
+  display: block;
+  width: 100%;
+  height: 550px;
+  min-height: 550px;
+}
+
+/* Barras comparativas */
+.bars-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
+}
+
+.territory-bars .entity-bars {
+  width: 100%;
+  height: 440px;
+  min-height: 440px;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 950px) {
+  .territory-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .territory-map,
+  .territory-bars {
+    padding: 12px;
+  }
+
+  .territory-map #mexicoMap {
+    height: 420px;
+    min-height: 420px;
+  }
+}
+
+/* v4.3: búsqueda de unidades y lectura comparativa */
+.controls input[type="search"] {
+  display: block;
+  width: 100%;
+  min-width: 170px;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #cbdcd4;
+  border-radius: 8px;
+  background: white;
+  color: #235b4e;
+}
+.comparison-note {
+  padding: 12px 14px;
+  background: #f3f7f4;
+  border-left: 3px solid #235b4e;
+  border-radius: 6px;
+  color: #235b4e;
+  line-height: 1.65;
+  font-size: 12px;
+  margin: 12px 0;
+  overflow-wrap: anywhere;
+}
+.territory-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
 }
 
 .territory-map,
 .territory-bars {
-    min-width: 0;
-    max-width: 100%;
-    box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
 }
 
-/* Contenedor del gráfico de barras */
+.territory-map .mexico-map {
+  width: 100%;
+  height: 600px;
+  min-height: 600px;
+}
+/* Ocultar únicamente la sección de calidad */
+#id-de-la-seccion-calidad {
+  display: none !important;
+}
+/* Mapa y comparativo en renglones independientes */
+.territory-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 24px;
+  width: 100%;
+}
 
+.territory-layout > * {
+  grid-column: 1 / -1 !important;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Contenedor del mapa */
+.territory-map {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Contenedor de las barras */
 .territory-bars {
-    overflow: hidden;
+  width: 100%;
+  min-width: 0;
 }
-
-.territory-bars .entity-bars {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    height: 580px;
-    overflow: hidden;
-}
-
-/* Evitar que ECharts expanda la página */
-
-.territory-bars canvas,
-.territory-bars svg {
-    max-width: 100%;
-}
-
-

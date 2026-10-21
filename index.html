@@ -62,7 +62,13 @@
             <option value="ALL">todas las entidades</option>
           </select></label
         ><label
-          >CLUES<select id="clues">
+          >Buscar CLUES o unidad<input
+            id="cluesSearch"
+            type="search"
+            placeholder="Código o nombre de unidad"
+            autocomplete="off"
+            aria-label="Buscar CLUES o nombre de unidad"
+          /><select id="clues">
             <option value="ALL">todas las CLUES</option>
           </select></label
         ><label
@@ -71,6 +77,7 @@
             <option value="monthly">Mensual</option>
             <option value="cumulative">Acumulada</option>
           </select></label
+        ><label>Desde la semana ISO<select id="weekStart"></select></label
         ><label>Hasta la semana ISO<select id="week"></select></label
         ><button
           type="button"
@@ -122,6 +129,7 @@
             ><button id="pdf">PDF · escenarios visibles</button>
           </div>
         </div>
+        <p class="comparison-note" id="weekComparison" aria-live="polite"></p>
         <div
           id="chart"
           role="img"
@@ -164,8 +172,8 @@
               <div>
                 <h2>Volúmenes comparativos por entidad</h2>
                 <p>
-                  <!-- SINBA 2025: referencia · EDS 2026: barra verde · SINBA 2026:
-                  marca dorada -->
+                  SINBA 2025: referencia · EDS 2026: barra verde · SINBA 2026:
+                  marca dorada
                 </p>
               </div>
               <label
@@ -191,39 +199,6 @@
             </p>
           </div>
         </div>
-      </section>
-      <section class="panel">
-        <h2>Calidad y cobertura de los datos del grupo seleccionado</h2>
-        <p id="auditContext">
-          Resumen de registros procesados y excluidos según los filtros
-          disponibles. Las filas sin CLUES no son atribuibles geográficamente y
-          solo se muestran en el resumen global.
-        </p>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Fuente</th>
-                <th>Filas</th>
-                <th>Sin CLUES</th>
-                <th>Fecha inválida</th>
-                <th>Fuera de periodo</th>
-                <th>Excluidas del cruce</th>
-              </tr>
-            </thead>
-            <tbody id="quality"></tbody>
-          </table>
-        </div>
-        <p class="note" id="auditNote">
-          La auditoría de esta tabla corresponde a las CLUES compartidas
-          seleccionadas; los totales globales de exclusiones permanecen en
-          resumen_calidad.json.
-        </p>
-        <p class="note">
-          Un registro puede carecer simultáneamente de CLUES y de fecha válida.
-          Por eso, sumar estas categorías no representa el número de registros
-          únicos excluidos.
-        </p>
       </section>
       <footer id="status">Cargando información...</footer>
     </main>

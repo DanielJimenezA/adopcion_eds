@@ -141,6 +141,18 @@ function updateEntities() {
   $("entity").value = prefixes.includes(previous) ? previous : "ALL";
   updateClues();
 }
+function normalizeClues(value) {
+  return String(value ?? "")
+    .trim()
+    .toUpperCase();
+}
+
+function cluesLabel(clues) {
+  const code = normalizeClues(clues);
+  const name = unitNames[code];
+
+  return name ? `${code} — ${name}` : code;
+}
 function updateClues() {
   const area = $("area").value,
     previous = $("clues").value,
@@ -600,22 +612,61 @@ async function init() {
     mapChart = echarts.init($("mexicoMap"));
     loadMexicoMap();
     const last = data.metadata.ultima_semana_iso;
+
     try {
-      const nr = await fetch("config/unidades_catalogo.csv");
-      if (nr.ok) {
-        const lines = (await nr.text())
-          .replace(/^\uFEFF/, "")
-          .split(/\r?\n/)
-          .filter(Boolean);
-        const sep = lines[0]?.includes(";") ? ";" : ",";
-        for (const line of lines.slice(1)) {
-          const [c, ...rest] = line.split(sep);
-          if (c && rest.length)
-            unitNames[c.trim().toUpperCase()] = rest.join(sep).trim();
+      const response = await fetch("config/unidades_catalogo.csv");
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const csv = (await response.text()).replace(/^\uFEFF/, "");
+      const lines = csv.split(/\r?\n/).filter(Boolean);
+
+      // Extrae campos CSV con comillas y comas internas.
+      function parseCSVLine(line) {
+        const fields = [];
+        let field = "";
+        let quoted = false;
+
+        for (let i = 0; i < line.length; i++) {
+          const ch = line[i];
+
+          if (ch === '"') {
+            if (quoted && line[i + 1] === '"') {
+              field += '"';
+              i++;
+            } else {
+              quoted = !quoted;
+            }
+          } else if (ch === "," && !quoted) {
+            fields.push(field);
+            field = "";
+          } else {
+            field += ch;
+          }
+        }
+
+        fields.push(field);
+        return fields;
+      }
+
+      const delimiter = lines[0].includes(";") ? ";" : ",";
+
+      for (const line of lines.slice(1)) {
+        const fields = delimiter === "," ? parseCSVLine(line) : line.split(";");
+
+        const clues = (fields[0] || "").trim().toUpperCase();
+        const nombre = (fields[1] || "").trim();
+
+        if (clues && nombre) {
+          unitNames[clues] = nombre;
         }
       }
-    } catch (e) {
-      console.warn("Catálogo opcional no disponible", e);
+
+      console.log("Unidades del catálogo:", Object.keys(unitNames).length);
+    } catch (error) {
+      console.warn("No se pudo cargar el catálogo de unidades:", error);
     }
     $("week").replaceChildren(
       ...Array.from(
@@ -915,16 +966,49 @@ function renderTerritory(s, cut) {
       ? (b.p25 ?? -1) - (a.p25 ?? -1)
       : (a.p25 ?? Infinity) - (b.p25 ?? Infinity)
   );
-  const tooltip = (o) =>
-    `${o.name}<br>CLUES comparables: ${fmt(o.clues)}<br>CLUES con EDS: ${fmt(
-      o.withEds
-    )}<br>SINBA 2025: ${fmt(o.s25)}<br>SINBA 2026: ${fmt(
-      o.s26
-    )}<br>EDS 2026: ${fmt(o.eds)}<br>EDS / SINBA 2025: ${
-      o.p25 === null ? "No calculable" : o.p25.toFixed(1) + "%"
-    }<br>EDS / SINBA 2026: ${
-      o.p26 === null ? "No calculable" : o.p26.toFixed(1) + "%"
-    }`;
+  const tooltip = (o) => {
+    const porcentaje = (v) =>
+      v === null || v === undefined ? "No calculable" : `${v.toFixed(1)}%`;
+
+    return `
+      <div style="max-width:340px;line-height:1.5;white-space:normal;">
+        <strong style="font-size:14px;">${o.name}</strong>
+  
+        <div style="margin-top:8px;font-weight:600;">
+          Cobertura de establecimientos
+        </div>
+  
+        <div>CLUES comparables: <b>${fmt(o.clues)}</b></div>
+        <div style="font-size:11px;color:#66736d;">
+          Unidades incluidas en el universo común de comparación.
+        </div>
+  
+        <div>CLUES con EDS: <b>${fmt(o.withEds)}</b></div>
+        <div style="font-size:11px;color:#66736d;">
+          Unidades con registros EDS en el periodo evaluado.
+        </div>
+  
+        <hr style="border:0;border-top:1px solid #e5e9e6;">
+  
+        <div style="font-weight:600;">Volumen de registros</div>
+        <div>SINBA 2025: <b>${fmt(o.s25)}</b></div>
+        <div>SINBA 2026: <b>${fmt(o.s26)}</b></div>
+        <div>EDS 2026: <b>${fmt(o.eds)}</b></div>
+  
+        <hr style="border:0;border-top:1px solid #e5e9e6;">
+  
+        <div style="font-weight:600;">Relación de volúmenes</div>
+        <div>EDS / SINBA 2025: <b>${porcentaje(o.p25)}</b></div>
+        <div>EDS / SINBA 2026: <b>${porcentaje(o.p26)}</b></div>
+  
+        <div style="margin-top:8px;font-size:11px;color:#66736d;">
+          Los porcentajes expresan la relación entre volúmenes
+          de registros, no el porcentaje de adopción de EDS.
+          Los valores corresponden al corte temporal aplicado al mapa.
+        </div>
+      </div>
+    `;
+  };
   // Una sola escala absoluta: SINBA 2025 como referencia, EDS 2026 desde cero,
   // y SINBA 2026 como marca horizontal. Nunca apilar volúmenes entre años.
   const maxValue = Math.max(1, ...values.flatMap((v) => [v.s25, v.s26, v.eds]));
@@ -1107,11 +1191,10 @@ function renderTerritory(s, cut) {
             roam: false,
             selectedMode: false,
             layoutCenter: ["50%", "50%"],
-            layoutSize: "85%",
+            layoutSize: "110%",
             // Evitar desplazamientos adicionales
             left: "center",
             top: "middle",
-            roam: false,
             emphasis: { label: { show: true } },
             label: { show: false },
             data: entries,

@@ -43,47 +43,77 @@
     </header>
     <main class="wrap">
       <section class="controls">
-        <label
-          >Grupo de unidades<select id="group">
+        <label class="filter-group">
+          Grupo de unidades
+          <select id="group">
             <option value="general">Unidades generales (sin HRAES)</option>
             <option value="hraes">HRAES (7 CLUES del catálogo)</option>
-          </select></label
-        ><label
-          >Área de atención<select id="area">
+          </select>
+        </label>
+
+        <label class="filter-area">
+          Área de atención
+          <select id="area">
             <option>Consulta externa</option>
             <option>Cirugías</option>
             <option>Hospitalizaciones</option>
-          </select></label
-        ><label
-          >Entidad<select id="entity">
-            <option value="ALL">todas las entidades</option>
-          </select></label
-        ><label
-          >Buscar CLUES o unidad<input
+          </select>
+        </label>
+
+        <label class="filter-entity">
+          Entidad
+          <select id="entity">
+            <option value="ALL">Todas las entidades</option>
+          </select>
+        </label>
+
+        <label class="filter-view">
+          Visualización
+          <select id="view">
+            <option value="weekly">Semanal</option>
+            <option value="monthly">Mensual</option>
+            <option value="cumulative">Acumulada</option>
+          </select>
+        </label>
+
+        <label class="filter-search">
+          Buscar CLUES o unidad
+          <input
             id="cluesSearch"
             type="search"
             placeholder="Código o nombre de unidad"
             autocomplete="off"
             aria-label="Buscar CLUES o nombre de unidad"
-          /><select id="clues">
-            <option value="ALL">todas las CLUES</option>
-          </select></label
-        ><label
-          >Visualización<select id="view">
-            <option value="weekly">Semanal</option>
-            <option value="monthly">Mensual</option>
-            <option value="cumulative">Acumulada</option>
-          </select></label
-        ><label>Desde la semana ISO<select id="weekStart"></select></label
-        ><label>Hasta la semana ISO<select id="week"></select></label
-        ><button
-          type="button"
-          id="resetFilters"
-          class="reset-filters"
-          title="Restablecer grupo, área, entidad, CLUES, vista y semana"
-        >
-          ↺ Restablecer filtros
-        </button>
+          />
+        </label>
+
+        <label class="filter-clues">
+          Seleccionar CLUES
+          <select id="clues">
+            <option value="ALL">Todas las CLUES</option>
+          </select>
+        </label>
+
+        <label class="filter-week-start">
+          Desde la semana ISO
+          <select id="weekStart"></select>
+        </label>
+
+        <label class="filter-week-end">
+          Hasta la semana ISO
+          <select id="week"></select>
+        </label>
+
+        <div class="filter-actions">
+          <button
+            type="button"
+            id="resetFilters"
+            class="reset-filters"
+            title="Restablecer grupo, área, entidad, CLUES, vista y semana"
+          >
+            ↺ Restablecer filtros
+          </button>
+        </div>
       </section>
       <p class="filter-note" id="filterNotice"></p>
       <div class="cohort-warning" id="cohortWarning" hidden></div>

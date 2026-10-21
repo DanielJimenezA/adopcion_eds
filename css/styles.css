@@ -755,3 +755,45 @@ button:hover {
   width: 100%;
   min-width: 0;
 }
+/* Distribución de filtros */
+main .controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px 16px;
+  align-items: end;
+}
+
+main .controls > label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+}
+
+main .controls select,
+main .controls input {
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+main .controls .filter-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1050px) {
+  main .controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  main .controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

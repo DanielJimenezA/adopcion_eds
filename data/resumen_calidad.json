@@ -1,132 +1,132 @@
 {
   "fuentes": {
-    "sinba_pf": {
-      "total": 3801209,
+    "eds_cir": {
+      "total": 56686,
       "clues_faltante": 0,
-      "fecha_invalida": 0,
+      "fecha_invalida": 19243,
       "ambas_faltantes": 0,
-      "fuera_periodo": 10566,
-      "registros_fecha_valida_clues_valida_periodo": 3790643,
-      "anio_no_corresponde_archivo": 0
-    },
-    "sinba_sm": {
-      "total": 4677882,
-      "clues_faltante": 0,
-      "fecha_invalida": 0,
-      "ambas_faltantes": 0,
-      "fuera_periodo": 16257,
-      "registros_fecha_valida_clues_valida_periodo": 4661625,
-      "anio_no_corresponde_archivo": 0
-    },
-    "sinba_sb": {
-      "total": 6919117,
-      "clues_faltante": 0,
-      "fecha_invalida": 0,
-      "ambas_faltantes": 0,
-      "fuera_periodo": 23783,
-      "registros_fecha_valida_clues_valida_periodo": 6895334,
-      "anio_no_corresponde_archivo": 0
-    },
-    "sinba_proc": {
-      "total": 1407188,
-      "clues_faltante": 0,
-      "fecha_invalida": 0,
-      "ambas_faltantes": 0,
-      "fuera_periodo": 1047,
-      "registros_fecha_valida_clues_valida_periodo": 1406141,
-      "anio_no_corresponde_archivo": 0
-    },
-    "sinba_proc_q": {
-      "total": 124681,
-      "clues_faltante": 0,
-      "fecha_invalida": 0,
-      "ambas_faltantes": 0,
-      "fuera_periodo": 130,
-      "registros_fecha_valida_clues_valida_periodo": 124551,
-      "anio_no_corresponde_archivo": 0
-    },
-    "sinba_egr": {
-      "total": 2853893,
-      "clues_faltante": 0,
-      "fecha_invalida": 0,
-      "ambas_faltantes": 0,
-      "fuera_periodo": 2347,
-      "registros_fecha_valida_clues_valida_periodo": 2851546,
+      "fuera_periodo": 1057,
+      "registros_fecha_valida_clues_valida_periodo": 36386,
       "anio_no_corresponde_archivo": 0
     },
     "eds_moce": {
-      "total": 435523,
+      "total": 495725,
       "clues_faltante": 0,
       "fecha_invalida": 0,
       "ambas_faltantes": 0,
-      "fuera_periodo": 16077,
-      "registros_fecha_valida_clues_valida_periodo": 419446,
+      "fuera_periodo": 17443,
+      "registros_fecha_valida_clues_valida_periodo": 478282,
       "anio_no_corresponde_archivo": 0
     },
-    "sinba_ce": {
-      "total": 78138829,
+    "sinba_pf": {
+      "total": 3872628,
       "clues_faltante": 0,
       "fecha_invalida": 0,
       "ambas_faltantes": 0,
-      "fuera_periodo": 303626,
-      "registros_fecha_valida_clues_valida_periodo": 77835203,
+      "fuera_periodo": 10377,
+      "registros_fecha_valida_clues_valida_periodo": 3862251,
+      "anio_no_corresponde_archivo": 0
+    },
+    "sinba_egr": {
+      "total": 2915169,
+      "clues_faltante": 0,
+      "fecha_invalida": 0,
+      "ambas_faltantes": 0,
+      "fuera_periodo": 2527,
+      "registros_fecha_valida_clues_valida_periodo": 2912642,
+      "anio_no_corresponde_archivo": 0
+    },
+    "sinba_proc_q": {
+      "total": 129051,
+      "clues_faltante": 0,
+      "fecha_invalida": 0,
+      "ambas_faltantes": 0,
+      "fuera_periodo": 159,
+      "registros_fecha_valida_clues_valida_periodo": 128892,
       "anio_no_corresponde_archivo": 0
     },
     "eds_hosp": {
-      "total": 98465,
+      "total": 109123,
       "clues_faltante": 0,
-      "fecha_invalida": 6272,
+      "fecha_invalida": 6966,
       "ambas_faltantes": 0,
-      "fuera_periodo": 2740,
-      "registros_fecha_valida_clues_valida_periodo": 89453,
+      "fuera_periodo": 3451,
+      "registros_fecha_valida_clues_valida_periodo": 98706,
       "anio_no_corresponde_archivo": 0
     },
-    "eds_cir": {
-      "total": 51674,
+    "sinba_sb": {
+      "total": 7062346,
       "clues_faltante": 0,
-      "fecha_invalida": 17510,
+      "fecha_invalida": 0,
       "ambas_faltantes": 0,
-      "fuera_periodo": 851,
-      "registros_fecha_valida_clues_valida_periodo": 33313,
+      "fuera_periodo": 19415,
+      "registros_fecha_valida_clues_valida_periodo": 7042931,
+      "anio_no_corresponde_archivo": 0
+    },
+    "sinba_sm": {
+      "total": 4787656,
+      "clues_faltante": 0,
+      "fecha_invalida": 0,
+      "ambas_faltantes": 0,
+      "fuera_periodo": 16098,
+      "registros_fecha_valida_clues_valida_periodo": 4771558,
+      "anio_no_corresponde_archivo": 0
+    },
+    "sinba_ce": {
+      "total": 80030983,
+      "clues_faltante": 0,
+      "fecha_invalida": 0,
+      "ambas_faltantes": 0,
+      "fuera_periodo": 296105,
+      "registros_fecha_valida_clues_valida_periodo": 79734878,
+      "anio_no_corresponde_archivo": 0
+    },
+    "sinba_proc": {
+      "total": 1438083,
+      "clues_faltante": 0,
+      "fecha_invalida": 0,
+      "ambas_faltantes": 0,
+      "fuera_periodo": 1099,
+      "registros_fecha_valida_clues_valida_periodo": 1436984,
       "anio_no_corresponde_archivo": 0
     }
   },
   "exclusiones_cruce": {
     "sinba_ce": {
-      "registros_excluidos_por_no_pertenecer_al_cruce": 74346313
+      "registros_excluidos_por_no_pertenecer_al_cruce": 75893676
     },
     "sinba_pf": {
-      "registros_excluidos_por_no_pertenecer_al_cruce": 3703267
+      "registros_excluidos_por_no_pertenecer_al_cruce": 3766270
     },
     "sinba_sm": {
-      "registros_excluidos_por_no_pertenecer_al_cruce": 4184219
+      "registros_excluidos_por_no_pertenecer_al_cruce": 4264304
     },
     "sinba_sb": {
-      "registros_excluidos_por_no_pertenecer_al_cruce": 6678413
+      "registros_excluidos_por_no_pertenecer_al_cruce": 6809150
     },
     "eds_moce": {
-      "registros_excluidos_por_no_pertenecer_al_cruce": 27496
+      "registros_excluidos_por_no_pertenecer_al_cruce": 30023
     },
     "sinba_proc": {
-      "registros_excluidos_por_no_pertenecer_al_cruce": 1195081
+      "registros_excluidos_por_no_pertenecer_al_cruce": 1208735
     },
     "sinba_proc_q": {
-      "registros_excluidos_por_no_pertenecer_al_cruce": 109598
+      "registros_excluidos_por_no_pertenecer_al_cruce": 112401
     },
     "eds_cir": {
-      "registros_excluidos_por_no_pertenecer_al_cruce": 2251
+      "registros_excluidos_por_no_pertenecer_al_cruce": 2580
     },
     "sinba_egr": {
-      "registros_excluidos_por_no_pertenecer_al_cruce": 2388782
+      "registros_excluidos_por_no_pertenecer_al_cruce": 2429902
     },
     "eds_hosp": {
-      "registros_excluidos_por_no_pertenecer_al_cruce": 7414
+      "registros_excluidos_por_no_pertenecer_al_cruce": 8058
     }
   },
   "cohortes": {
-    "Consulta externa": 133,
-    "Cirugías": 75,
-    "Hospitalizaciones": 96
+    "Consulta externa": 142,
+    "Cirugías": 82,
+    "Hospitalizaciones": 103
   },
   "catalogos_clues": {
     "Consulta externa": {
@@ -609,6 +609,7 @@
         "CMIMB001182",
         "CMIMB001194",
         "CMIMB001206",
+        "CMIMB001264",
         "CMIMB001281",
         "CMIMB001293",
         "CMIMB001305",
@@ -2509,6 +2510,7 @@
         "GRIMB009281",
         "GRIMB009293",
         "GRIMB009305",
+        "GRIMB009310",
         "GRIMB009322",
         "GRIMB009334",
         "GRIMB009346",
@@ -6041,7 +6043,9 @@
         "OCIMB007082",
         "OCIMB007094",
         "OCIMB007106",
+        "OCIMB007111",
         "OCIMB007123",
+        "OCIMB007135",
         "OCIMB007152",
         "OCIMB007181",
         "OCIMB007210",
@@ -6064,6 +6068,7 @@
         "OCIMB007386",
         "OCIMB007391",
         "OCIMB007403",
+        "OCIMB007415",
         "OCIMB007420",
         "OCIMB007432",
         "OCIMB007456",
@@ -6129,9 +6134,11 @@
         "OCIMB008062",
         "OCIMB008074",
         "OCIMB008086",
+        "OCIMB008103",
         "OCIMB008115",
         "OCIMB008120",
         "OCIMB008132",
+        "OCIMB008144",
         "OCIMB008161",
         "OCIMB008173",
         "OCIMB008185",
@@ -6152,6 +6159,7 @@
         "OCIMB008342",
         "OCIMB008354",
         "OCIMB008366",
+        "OCIMB008383",
         "OCIMB008395",
         "OCIMB008400",
         "OCIMB008412",
@@ -6232,6 +6240,7 @@
         "OCIMB009235",
         "OCIMB009240",
         "OCIMB009252",
+        "OCIMB009264",
         "OCIMB009281",
         "OCIMB009293",
         "OCIMB009305",
@@ -6262,6 +6271,7 @@
         "OCIMB009561",
         "OCIMB009573",
         "OCIMB009590",
+        "OCIMB009602",
         "OCIMB009614",
         "OCIMB009626",
         "OCIMB009631",
@@ -9180,6 +9190,7 @@
         "TSIMB003722",
         "TSIMB003746",
         "TSIMB003751",
+        "TSIMB003763",
         "VZIMB000015",
         "VZIMB000020",
         "VZIMB000032",
@@ -10328,13 +10339,18 @@
       ],
       "eds": [
         "BCIMB000734",
+        "BSIMB000346",
         "BSIMB000520",
+        "BSIMB000643",
+        "BSIMB000754",
         "BSIMB000783",
         "CCIMB000172",
         "CMIMB000103",
         "CMIMB000470",
         "CMIMB000844",
         "CMIMB001141",
+        "CMIMB001153",
+        "CMIMB001445",
         "CSIMB000023",
         "CSIMB000151",
         "CSIMB000175",
@@ -10416,6 +10432,7 @@
         "HGIMB005005",
         "HGIMB005034",
         "MCIMB001515",
+        "MCIMB009676",
         "MCIMB010825",
         "MCIMB011945",
         "MCIMB011986",
@@ -10444,6 +10461,7 @@
         "TLIMB001050",
         "TLIMB001395",
         "TLIMB001412",
+        "TLIMB001820",
         "TLIMB001890",
         "TLIMB002025",
         "TLIMB002095",
@@ -10459,6 +10477,7 @@
         "ZSIMB000620",
         "ZSIMB000900",
         "ZSIMB001233",
+        "ZSIMB001320",
         "ZSIMB001653",
         "ZSIMB001834",
         "ZSIMB002015",
@@ -10469,13 +10488,18 @@
       ],
       "coincidentes": [
         "BCIMB000734",
+        "BSIMB000346",
         "BSIMB000520",
+        "BSIMB000643",
+        "BSIMB000754",
         "BSIMB000783",
         "CCIMB000172",
         "CMIMB000103",
         "CMIMB000470",
         "CMIMB000844",
         "CMIMB001141",
+        "CMIMB001153",
+        "CMIMB001445",
         "CSIMB000023",
         "CSIMB000151",
         "CSIMB000175",
@@ -10555,6 +10579,7 @@
         "HGIMB005005",
         "HGIMB005034",
         "MCIMB001515",
+        "MCIMB009676",
         "MCIMB010825",
         "MCIMB011945",
         "MCIMB011986",
@@ -10581,12 +10606,14 @@
         "TLIMB001050",
         "TLIMB001395",
         "TLIMB001412",
+        "TLIMB001820",
         "TLIMB001890",
         "TLIMB002025",
         "TLIMB002095",
         "TLIMB002100",
         "TLIMB002136",
         "TSIMB002865",
+        "TSIMB003763",
         "YNIMB000012",
         "YNIMB000024",
         "ZSIMB000113",
@@ -10594,6 +10621,7 @@
         "ZSIMB000620",
         "ZSIMB000900",
         "ZSIMB001233",
+        "ZSIMB001320",
         "ZSIMB001653",
         "ZSIMB001834",
         "ZSIMB002015",
@@ -10746,6 +10774,7 @@
         "GRIMB009730",
         "GRIMB009742",
         "GRIMB009906",
+        "GRIMB010285",
         "GRIMB010290",
         "GRIMB010401",
         "GRIMB010495",
@@ -11096,6 +11125,7 @@
         "TSIMB003075",
         "TSIMB003466",
         "TSIMB003483",
+        "TSIMB003763",
         "VZIMB000230",
         "VZIMB000254",
         "VZIMB000691",
@@ -11174,6 +11204,7 @@
         "ZSIMB002481"
       ],
       "eds": [
+        "BSIMB000643",
         "CSIMB000023",
         "CSIMB000151",
         "CSIMB000175",
@@ -11207,6 +11238,7 @@
         "CSIMB006125",
         "CSIMB006241",
         "CSIMB006533",
+        "DFIMB000026",
         "DFIMB000183",
         "DFIMB001822",
         "DFIMB001921",
@@ -11231,28 +11263,34 @@
         "MCIMB011986",
         "MCIMB012476",
         "MSIMB000386",
+        "MSIMB001861",
         "MSIMB002112",
         "MSIMB002351",
         "MSIMB002515",
         "SRIMB001964",
+        "SRIMB002355",
         "TLIMB000181",
         "TLIMB000555",
         "TLIMB000975",
         "TLIMB001050",
         "TLIMB001395",
         "TLIMB001412",
+        "TLIMB001820",
         "TLIMB002095",
         "TLIMB002100",
         "TSIMB002865",
         "YNIMB000012",
         "YNIMB000024",
         "YNIMB000036",
+        "ZSIMB000620",
         "ZSIMB000900",
+        "ZSIMB001233",
         "ZSIMB002015",
         "ZSIMB002126",
         "ZSIMB002295"
       ],
       "coincidentes": [
+        "BSIMB000643",
         "CSIMB000023",
         "CSIMB000151",
         "CSIMB000175",
@@ -11286,6 +11324,7 @@
         "CSIMB006125",
         "CSIMB006241",
         "CSIMB006533",
+        "DFIMB000026",
         "DFIMB000183",
         "DFIMB001822",
         "DFIMB001921",
@@ -11310,21 +11349,26 @@
         "MCIMB011986",
         "MCIMB012476",
         "MSIMB000386",
+        "MSIMB001861",
         "MSIMB002112",
         "MSIMB002351",
         "SRIMB001964",
+        "SRIMB002355",
         "TLIMB000181",
         "TLIMB000555",
         "TLIMB000975",
         "TLIMB001050",
         "TLIMB001395",
         "TLIMB001412",
+        "TLIMB001820",
         "TLIMB002095",
         "TLIMB002100",
         "TSIMB002865",
         "YNIMB000012",
         "YNIMB000024",
+        "ZSIMB000620",
         "ZSIMB000900",
+        "ZSIMB001233",
         "ZSIMB002015",
         "ZSIMB002126",
         "ZSIMB002295"
@@ -11880,6 +11924,7 @@
         "TSIMB003075",
         "TSIMB003466",
         "TSIMB003483",
+        "TSIMB003763",
         "VZIMB000230",
         "VZIMB000254",
         "VZIMB000691",
@@ -11964,6 +12009,7 @@
       ],
       "eds": [
         "BCIMB000734",
+        "BSIMB000643",
         "CMIMB001141",
         "CSIMB000023",
         "CSIMB000151",
@@ -12030,6 +12076,8 @@
         "HGIMB004952",
         "HGIMB005005",
         "HGIMB005034",
+        "MCIMB009536",
+        "MCIMB009676",
         "MCIMB011986",
         "MCIMB012476",
         "MSIMB000292",
@@ -12058,14 +12106,19 @@
         "YNIMB000012",
         "YNIMB000024",
         "YNIMB000036",
+        "ZSIMB000620",
         "ZSIMB000900",
         "ZSIMB001233",
+        "ZSIMB001653",
         "ZSIMB001834",
         "ZSIMB002015",
+        "ZSIMB002213",
+        "ZSIMB002225",
         "ZSIMB002295"
       ],
       "coincidentes": [
         "BCIMB000734",
+        "BSIMB000643",
         "CMIMB001141",
         "CSIMB000023",
         "CSIMB000151",
@@ -12131,6 +12184,8 @@
         "HGIMB004952",
         "HGIMB005005",
         "HGIMB005034",
+        "MCIMB009536",
+        "MCIMB009676",
         "MCIMB011986",
         "MCIMB012476",
         "MSIMB000292",
@@ -12154,36 +12209,40 @@
         "TLIMB002095",
         "TLIMB002100",
         "TSIMB002865",
+        "TSIMB003763",
         "YNIMB000012",
         "YNIMB000024",
+        "ZSIMB000620",
         "ZSIMB000900",
         "ZSIMB001233",
+        "ZSIMB001653",
         "ZSIMB001834",
         "ZSIMB002015",
+        "ZSIMB002213",
         "ZSIMB002295"
       ]
     }
   },
   "auditoria_clues": {
     "Consulta externa": {
-      "clues_sinba": 10194,
-      "clues_eds": 139,
-      "clues_compartidas": 133,
-      "clues_solo_sinba": 10061,
-      "clues_solo_eds": 6
+      "clues_sinba": 10205,
+      "clues_eds": 147,
+      "clues_compartidas": 142,
+      "clues_solo_sinba": 10063,
+      "clues_solo_eds": 5
     },
     "Cirugías": {
-      "clues_sinba": 567,
-      "clues_eds": 77,
-      "clues_compartidas": 75,
-      "clues_solo_sinba": 492,
+      "clues_sinba": 569,
+      "clues_eds": 84,
+      "clues_compartidas": 82,
+      "clues_solo_sinba": 487,
       "clues_solo_eds": 2
     },
     "Hospitalizaciones": {
-      "clues_sinba": 629,
-      "clues_eds": 100,
-      "clues_compartidas": 96,
-      "clues_solo_sinba": 533,
+      "clues_sinba": 630,
+      "clues_eds": 107,
+      "clues_compartidas": 103,
+      "clues_solo_sinba": 527,
       "clues_solo_eds": 4
     }
   },

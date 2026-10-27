@@ -84,7 +84,7 @@ function matchingClues(area) {
     (c) =>
       (entity === "ALL" || c.startsWith(entity)) &&
       (clue === "ALL" || c === clue) &&
-      inGroup(c)
+      inGroup(c),
   );
 }
 function filteredScenario(s) {
@@ -135,8 +135,8 @@ function updateEntities() {
   $("entity").replaceChildren(
     new Option("todas las entidades", "ALL"),
     ...prefixes.map(
-      (x) => new Option((ENTITY_NAMES[x] || x) + " (" + x + ")", x)
-    )
+      (x) => new Option((ENTITY_NAMES[x] || x) + " (" + x + ")", x),
+    ),
   );
   $("entity").value = prefixes.includes(previous) ? previous : "ALL";
   updateClues();
@@ -164,7 +164,7 @@ function updateClues() {
       (c) =>
         (entity === "ALL" || c.startsWith(entity)) &&
         (!term ||
-          `${c} ${unitNames[c] || ""}`.toLocaleLowerCase("es").includes(term))
+          `${c} ${unitNames[c] || ""}`.toLocaleLowerCase("es").includes(term)),
     )
     .sort();
   $("clues").replaceChildren(
@@ -175,11 +175,11 @@ function updateClues() {
         " (" +
         clues.length +
         ")",
-      "ALL"
+      "ALL",
     ),
     ...clues.map(
-      (c) => new Option(unitNames[c] ? `${c} — ${unitNames[c]}` : c, c)
-    )
+      (c) => new Option(unitNames[c] ? `${c} — ${unitNames[c]}` : c, c),
+    ),
   );
   $("clues").value = clues.includes(previous) ? previous : "ALL";
   render();
@@ -195,7 +195,7 @@ function scenarioName(s) {
 }
 function visibleScenarios(area) {
   return data.escenarios.filter(
-    (s) => s.area === area && !HIDDEN.has(s.id) && s.id !== "integral_triple"
+    (s) => s.area === area && !HIDDEN.has(s.id) && s.id !== "integral_triple",
   );
 }
 function mainScenario(area) {
@@ -204,7 +204,9 @@ function mainScenario(area) {
       (s) =>
         s.sinba_year === 2025 &&
         s.sinba_sources.length ===
-          Math.max(...visibleScenarios(area).map((x) => x.sinba_sources.length))
+          Math.max(
+            ...visibleScenarios(area).map((x) => x.sinba_sources.length),
+          ),
     ) || visibleScenarios(area)[0];
   return base
     ? { ...base, id: "integral_triple", sinba_sources: [...base.sinba_sources] }
@@ -230,7 +232,7 @@ function seriesFor(s, rows, isCumulative) {
         {
           name: "SINBA 2026",
           data: rows.map((r) =>
-            isCumulative ? (c += r.sinba2026 || 0) : r.sinba2026 || 0
+            isCumulative ? (c += r.sinba2026 || 0) : r.sinba2026 || 0,
           ),
           color: "#A57F2C",
         },
@@ -270,8 +272,8 @@ function graphOption(s, rows, isCumulative, compact = false) {
           .map(
             (x) =>
               `${x.marker} ${x.seriesName}: <strong>${fmt(
-                x.value ?? 0
-              )}</strong>`
+                x.value ?? 0,
+              )}</strong>`,
           )
           .join("<br>"),
     },
@@ -306,7 +308,7 @@ function graphOption(s, rows, isCumulative, compact = false) {
               "Nov",
               "Dic",
             ][r.month - 1]
-          : `S${String(r.week).padStart(2, "0")}`
+          : `S${String(r.week).padStart(2, "0")}`,
       ),
       axisLabel: {
         fontSize: compact ? 10 : 12,
@@ -322,8 +324,8 @@ function graphOption(s, rows, isCumulative, compact = false) {
           v >= 1000000
             ? (v / 1000000).toFixed(1) + "M"
             : v >= 1000
-            ? Math.round(v / 1000) + "k"
-            : v,
+              ? Math.round(v / 1000) + "k"
+              : v,
       },
     },
     series: series.map((x) => ({
@@ -382,7 +384,7 @@ function renderMatrix(cut) {
         : s.series.filter((r) => r.week >= start && r.week <= cut);
     const instance = echarts.init(plot);
     instance.setOption(
-      graphOption(s, rows, $("view").value === "cumulative", true)
+      graphOption(s, rows, $("view").value === "cumulative", true),
     );
     smallCharts.push(instance);
   }
@@ -392,7 +394,7 @@ function monthlyRows(s, cut) {
   const jan4 = new Date(Date.UTC(2026, 0, 4));
   const monday = new Date(jan4);
   monday.setUTCDate(
-    jan4.getUTCDate() - ((jan4.getUTCDay() + 6) % 7) + (cut - 1) * 7
+    jan4.getUTCDate() - ((jan4.getUTCDay() + 6) % 7) + (cut - 1) * 7,
   );
   const sunday = new Date(monday);
   sunday.setUTCDate(monday.getUTCDate() + 6);
@@ -446,9 +448,9 @@ function render() {
     matchingClues(s.area).filter((c) => {
       const z = details.areas[s.area]?.[c]?.[s.eds_source] || {};
       return s.series.some(
-        (r) => r.week <= cut && (z[`2026-${r.week}`] || 0) > 0
+        (r) => r.week <= cut && (z[`2026-${r.week}`] || 0) > 0,
       );
-    }).length
+    }).length,
   );
   const yearTotal = (year) => {
     const sourceSet = s.sinba_sources;
@@ -481,14 +483,14 @@ function render() {
     warning.textContent = `No existen CLUES coincidentes para ${
       s.area
     } con el criterio actual (actividad SINBA y EDS en 2026). CLUES con actividad: SINBA ${fmt(
-      diag?.sinba?.length || 0
+      diag?.sinba?.length || 0,
     )}, EDS ${fmt(
-      diag?.eds?.length || 0
+      diag?.eds?.length || 0,
     )}. Los filtros pueden mostrar unidades disponibles para diagnóstico, pero sus registros NO se contabilizan hasta confirmar la coincidencia. Revisa nombres de CLUES, fechas y cobertura.`;
   $("filterNotice").textContent = `Grupo: ${
     $("group").value === "hraes" ? "HRAES" : "Unidades generales"
   } · Unidades comparables identificadas en ambos sistemas: ${fmt(
-    s.clues_compartidas
+    s.clues_compartidas,
   )} CLUES · ${$("entity").selectedOptions[0].text} · ${
     $("clues").value === "ALL" ? "todas las CLUES" : $("clues").value
   }. Los indicadores y reportes usan este filtro.`;
@@ -496,17 +498,16 @@ function render() {
     (monthly
       ? "Evolución mensual"
       : isCumulative
-      ? "Evolución acumulada"
-      : "Evolución semanal") + " · comparación integral";
-  $(
-    "chartSubtitle"
-  ).textContent = `Semanas ISO ${start}–${cut} · ${scenarioName(s)} · ${
-    monthly
-      ? "volumen mensual (mes final no necesariamente comparable: revisar cobertura)"
-      : isCumulative
-      ? "acumulado"
-      : "volumen semanal"
-  }`;
+        ? "Evolución acumulada"
+        : "Evolución semanal") + " · comparación integral";
+  $("chartSubtitle").textContent =
+    `Semanas ISO ${start}–${cut} · ${scenarioName(s)} · ${
+      monthly
+        ? "volumen mensual (mes final no necesariamente comparable: revisar cobertura)"
+        : isCumulative
+          ? "acumulado"
+          : "volumen semanal"
+    }`;
   const triple = s.id === "integral_triple";
   const third = [];
   if (triple) {
@@ -541,7 +542,7 @@ function render() {
     ratio === null
       ? `En el periodo seleccionado no existe un volumen de referencia SINBA 2025 válido para calcular la relación de ${edsModule} 2026. Los conteos corresponden a registros (filas), sin deduplicación de eventos.`
       : `En el periodo seleccionado, los registros generados en ${edsModule} durante 2026 representan el ${ratio.toFixed(
-          1
+          1,
         )}% de los registros reportados en SINBA en el mismo periodo de 2025. Este indicador permite dimensionar el avance del registro en ${edsModule} respecto al volumen observado el año previo. No representa el porcentaje de unidades que utilizan el sistema ni la proporción de registros migrados desde SINBA. Los conteos corresponden a registros (filas), sin deduplicación de eventos.`;
 }
 function rebuild() {
@@ -561,7 +562,7 @@ function download() {
       .map((r) =>
         triple
           ? `${r.week},${r.sinba},${r.sinba2026},${r.eds}`
-          : `${r.week},${r.sinba},${r.eds}`
+          : `${r.week},${r.sinba},${r.eds}`,
       ),
   ];
   const blob = new Blob(["\ufeff" + lines.join("\r\n")], {
@@ -578,7 +579,7 @@ async function init() {
   try {
     if (!window.echarts)
       throw new Error(
-        "No se pudo cargar ECharts. Comprueba la conexión a internet."
+        "No se pudo cargar ECharts. Comprueba la conexión a internet.",
       );
     const [r, q, d, ad, md] = await Promise.all([
       fetch("data/series_semanales.json"),
@@ -589,7 +590,7 @@ async function init() {
     ]);
     if (!r.ok || !q.ok || !d.ok || !ad.ok || !md.ok)
       throw new Error(
-        "Faltan los JSON: ejecuta el procesador antes de publicar."
+        "Faltan los JSON: ejecuta el procesador antes de publicar.",
       );
     data = await r.json();
     quality = await q.json();
@@ -672,15 +673,15 @@ async function init() {
       ...Array.from(
         { length: last },
         (_, i) =>
-          new Option("Semana " + String(i + 1).padStart(2, "0"), String(i + 1))
-      )
+          new Option("Semana " + String(i + 1).padStart(2, "0"), String(i + 1)),
+      ),
     );
     $("weekStart").replaceChildren(
       ...Array.from(
         { length: last },
         (_, i) =>
-          new Option("Semana " + String(i + 1).padStart(2, "0"), String(i + 1))
-      )
+          new Option("Semana " + String(i + 1).padStart(2, "0"), String(i + 1)),
+      ),
     );
     $("weekStart").value = "1";
     $("week").value = String(last);
@@ -722,9 +723,8 @@ async function init() {
     rebuild();
     if (window.setupReports) window.setupReports();
     $("updatedAt").textContent = data.metadata.fecha_proceso;
-    $(
-      "status"
-    ).textContent = `Procesado: ${data.metadata.fecha_proceso} · Última semana completa: ${data.metadata.ultima_semana_completa} · ${data.metadata.metodo_cruce}`;
+    $("status").textContent =
+      `Procesado: ${data.metadata.fecha_proceso} · Última semana completa: ${data.metadata.ultima_semana_completa} · ${data.metadata.metodo_cruce}`;
   } catch (e) {
     $("status").textContent = "Error: " + e.message;
     console.error(e);
@@ -756,8 +756,8 @@ function renderAudit() {
     areaName === "Consulta externa"
       ? [...INTEGRAL, "eds_moce"]
       : areaName === "Cirugías"
-      ? ["sinba_proc", "sinba_proc_q", "eds_cir"]
-      : ["sinba_egr", "eds_hosp"];
+        ? ["sinba_proc", "sinba_proc_q", "eds_cir"]
+        : ["sinba_egr", "eds_hosp"];
   const tb = $("quality");
   tb.replaceChildren();
   for (const key of relevant) {
@@ -963,8 +963,8 @@ function renderTerritory(s, cut) {
     sort === "alpha"
       ? a.name.localeCompare(b.name, "es")
       : sort === "desc"
-      ? (b.p25 ?? -1) - (a.p25 ?? -1)
-      : (a.p25 ?? Infinity) - (b.p25 ?? Infinity)
+        ? (b.p25 ?? -1) - (a.p25 ?? -1)
+        : (a.p25 ?? Infinity) - (b.p25 ?? Infinity),
   );
   const tooltip = (o) => {
     const porcentaje = (v) =>
@@ -1083,8 +1083,8 @@ function renderTerritory(s, cut) {
             v >= 1000000
               ? (v / 1000000).toFixed(1) + "M"
               : v >= 1000
-              ? Math.round(v / 1000) + " mil"
-              : v,
+                ? Math.round(v / 1000) + " mil"
+                : v,
         },
         splitLine: { lineStyle: { color: "#e6ece8" } },
       },
@@ -1143,7 +1143,7 @@ function renderTerritory(s, cut) {
         },
       ],
     },
-    true
+    true,
   );
   if (mapReady) {
     const byCode = Object.fromEntries(values.map((v) => [v.code, v]));
@@ -1191,7 +1191,7 @@ function renderTerritory(s, cut) {
             roam: false,
             selectedMode: false,
             layoutCenter: ["50%", "50%"],
-            layoutSize: "110%",
+            layoutSize: "175%",
             // Evitar desplazamientos adicionales
             left: "center",
             top: "middle",
@@ -1201,7 +1201,7 @@ function renderTerritory(s, cut) {
           },
         ],
       },
-      true
+      true,
     );
   }
 }
@@ -1216,9 +1216,9 @@ function renderWeekComparison(s, start, end) {
       final = sums(end, key),
       delta = final - initial;
     return `${label}: S${String(start).padStart(2, "0")} ${fmt(
-      initial
+      initial,
     )} → S${String(end).padStart(2, "0")} ${fmt(final)} (incremento +${fmt(
-      delta
+      delta,
     )})`;
   };
   const weekComparisonElement = $("weekComparison");

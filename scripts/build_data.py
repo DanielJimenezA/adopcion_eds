@@ -150,16 +150,16 @@ def build(config_path,as_of=None):
     for area,(left,right) in AREA.items():
         s=set().union(*(set(c for c,y,w in grouped[k] if y==2026) for k in left))
         e=set(c for c,y,w in grouped[right] if y==2026)
-        cohort=s&e;cohorts[area]=cohort
-        audit[area]={'clues_sinba':len(s),'clues_eds':len(e),'clues_compartidas':len(cohort),'clues_solo_sinba':len(s-e),'clues_solo_eds':len(e-s)}
-        catalogos_clues[area]={'sinba':sorted(s),'eds':sorted(e),'coincidentes':sorted(cohort)}
+        cohort=e;cohorts[area]=cohort
+        audit[area]={'clues_sinba':len(s),'clues_eds':len(e),'clues_compartidas':len(s&e),'clues_universo_eds':len(e),'clues_solo_sinba':len(s-e),'clues_solo_eds':len(e-s),'eds_con_sinba_2025':len(e & set().union(*(set(c for c,y,w in grouped[k] if y==2025) for k in left))),'eds_sin_sinba_2025':len(e - set().union(*(set(c for c,y,w in grouped[k] if y==2025) for k in left)))}
+        catalogos_clues[area]={'sinba':sorted(s),'eds':sorted(e),'coincidentes':sorted(s&e),'universo_eds':sorted(e),'sinba_2025':sorted(set().union(*(set(c for c,y,w in grouped[k] if y==2025) for k in left))),'sinba_2026':sorted(s)}
         for k in left+[right]:
             counter={};excluded=0
             for (c,y,w),n in grouped[k].items():
                 if c in cohort:counter[(y,w)]=counter.get((y,w),0)+n
                 else:excluded+=n
             weekly[k]=counter;exclusions[k]={'registros_excluidos_por_no_pertenecer_al_cruce':excluded}
-    # Desglose por CLUES del universo común, conservando ceros en semanas sin actividad.
+    # Desglose por todas las CLUES EDS, conservando ceros en semanas sin actividad.
     detalle_clues = {}
     for area, (left, right) in AREA.items():
         detalle_clues[area] = {}
@@ -189,8 +189,8 @@ def build(config_path,as_of=None):
     results=[]
     for sid,area,left,year,right in SCENARIOS:
         series=[{'week':w,'sinba':sum(weekly[k].get((year,w),0) for k in left),'eds':weekly[right].get((2026,w),0)} for w in range(1,maxweek+1)]
-        results.append({'id':sid,'area':area,'sinba_sources':left,'sinba_year':year,'eds_source':right,'eds_year':2026,'clues_compartidas':len(cohorts[area]),'series':series,'sinba_total':sum(r['sinba'] for r in series),'eds_total':sum(r['eds'] for r in series)})
-    meta={'fecha_proceso':today.isoformat(),'ultima_semana_completa':end.isoformat(),'ultima_semana_iso':maxweek,'semana_iso_anio':2026,'metodo_cruce':'Intersección fija por área: CLUES con actividad en SINBA 2026 y EDS 2026','nota':'Se cuentan filas, no eventos clínicos deduplicados; escenarios CE simples conservados para auditoría'}
+        results.append({'id':sid,'area':area,'sinba_sources':left,'sinba_year':year,'eds_source':right,'eds_year':2026,'clues_compartidas':len(cohorts[area]),'clues_universo_eds':len(cohorts[area]),'series':series,'sinba_total':sum(r['sinba'] for r in series),'eds_total':sum(r['eds'] for r in series)})
+    meta={'fecha_proceso':today.isoformat(),'ultima_semana_completa':end.isoformat(),'ultima_semana_iso':maxweek,'semana_iso_anio':2026,'metodo_cruce':'Universo EDS por área: todas las CLUES con actividad EDS 2026, sin exigir histórico SINBA','nota':'Se cuentan filas, no eventos clínicos deduplicados; escenarios CE simples conservados para auditoría'}
     # Auditoría por CLUES filtrable; sin CLUES se informa por separado como dato global.
     quality_by_clues={}
     for area,(left,right) in AREA.items():
@@ -202,10 +202,10 @@ def build(config_path,as_of=None):
                 entry['clues_faltante']=0
                 entry['excluidas_cruce']=0
                 quality_by_clues[area][c][k]=entry
-    (out/'auditoria_clues.json').write_text(json.dumps({'areas':quality_by_clues,'nota':'La auditoría filtrada solo incluye CLUES válidas de la cohorte común. Registros sin CLUES no pueden asignarse a entidad o unidad. Las exclusiones del cruce se consultan en el resumen global.'},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
+    (out/'auditoria_clues.json').write_text(json.dumps({'areas':quality_by_clues,'nota':'La auditoría filtrada incluye todas las CLUES con actividad EDS. Registros sin CLUES no pueden asignarse a entidad o unidad.'},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     (out/'detalle_clues.json').write_text(json.dumps({'metadata': {'ultima_semana_iso':maxweek, 'nota':'Conteos por CLUES y semana; publicar únicamente en un entorno autorizado'}, 'areas':detalle_clues},ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     (out/'series_semanales.json').write_text(json.dumps({'metadata':meta,'escenarios':results},ensure_ascii=False,indent=2),encoding='utf-8')
-    (out/'resumen_calidad.json').write_text(json.dumps({'fuentes':quality,'exclusiones_cruce':exclusions,'cohortes':{a:len(c) for a,c in cohorts.items()},'catalogos_clues':catalogos_clues,'auditoria_clues':audit,'advertencias':['Módulos SINBA sumados pueden contener eventos repetidos.','La cohorte se establece con actividad de ambos sistemas en 2026.','Las exclusiones por CLUES y fecha pueden solaparse.']},ensure_ascii=False,indent=2),encoding='utf-8')
+    (out/'resumen_calidad.json').write_text(json.dumps({'fuentes':quality,'exclusiones_cruce':exclusions,'cohortes':{a:len(c) for a,c in cohorts.items()},'catalogos_clues':catalogos_clues,'auditoria_clues':audit,'advertencias':['Módulos SINBA sumados pueden contener eventos repetidos.','El universo se establece por actividad EDS 2026; SINBA no condiciona la inclusión.','Las exclusiones por CLUES y fecha pueden solaparse.']},ensure_ascii=False,indent=2),encoding='utf-8')
     print('JSON generados en',out)
     return results
 

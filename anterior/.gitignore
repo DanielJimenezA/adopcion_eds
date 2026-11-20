@@ -1,0 +1,4 @@
+insumos/
+__pycache__/
+.venv/
+*.parquet

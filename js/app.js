@@ -113,19 +113,30 @@ function filteredScenario(s) {
   }
   return { ...s, series, clues_compartidas: clues.length };
 }
-// Las opciones provienen del universo común. Si es vacío, se muestran las CLUES
-// disponibles de ambas fuentes para diagnosticar por qué no hay coincidencias;
-// nunca se incorporan esas unidades a los conteos comparables.
+// EDS define el universo; SINBA aporta referencias históricas opcionales.
 function availableClues(area) {
-  const shared = Object.keys(details.areas[area] || {}).filter(inGroup);
-  const diag = quality?.catalogos_clues?.[area];
-  if (shared.length || !diag) return { values: shared, diagnostic: false };
-  return {
-    values: [...new Set([...(diag.sinba || []), ...(diag.eds || [])])]
-      .filter(inGroup)
-      .sort(),
-    diagnostic: true,
-  };
+  return { values: Object.keys(details.areas[area] || {}).filter(inGroup), diagnostic: false };
+}
+// Compara solo CLUES con registros SINBA en el año solicitado.
+// La ausencia histórica no equivale a cero y no afecta la serie EDS completa.
+function historicalComparison(s, year, cut, entityCode = null) {
+  const area = details.areas[s.area] || {};
+  let sinba = 0, eds = 0, comparable = 0, withoutHistory = 0;
+  const weeks = s.series.filter(r => r.week <= cut).map(r => r.week);
+  for (const c of matchingClues(s.area)) {
+    if (entityCode && !c.startsWith(entityCode)) continue;
+    const src = area[c] || {};
+    const hasHistory = s.sinba_sources.some(k =>
+      Object.keys(src[k] || {}).some(key => key.startsWith(`${year}-`) && (src[k][key] || 0) > 0)
+    );
+    if (!hasHistory) { withoutHistory++; continue; }
+    comparable++;
+    for (const w of weeks) {
+      for (const k of s.sinba_sources) sinba += (src[k] || {})[`${year}-${w}`] || 0;
+      eds += (src[s.eds_source] || {})[`2026-${w}`] || 0;
+    }
+  }
+  return { sinba, eds, comparable, withoutHistory, ratio: sinba > 0 ? 100 * eds / sinba : null };
 }
 function updateEntities() {
   const area = $("area").value,
@@ -365,7 +376,7 @@ function renderMatrix(cut) {
     const subtitle = document.createElement("p");
     subtitle.textContent = `SINBA: ${s.sinba_sources
       .map((k) => names[k])
-      .join(" + ")} · ${fmt(s.clues_compartidas)} CLUES`;
+      .join(" + ")} · ${fmt(s.clues_compartidas)} CLUES EDS`;
     head.append(title, subtitle);
     const plot = document.createElement("div");
     plot.className = "small-chart";
@@ -470,30 +481,21 @@ function render() {
     .filter((r) => r.week <= cut)
     .reduce((v, r) => v + r.eds, 0);
   $("eds").textContent = fmt(edsCorte);
+  const ref25 = historicalComparison(s, 2025, cut);
+  const ref26 = historicalComparison(s, 2026, cut);
   $("shareTitle").textContent = "Relación EDS 2026 / SINBA 2025";
-  $("shareExplanation").textContent = "Volumen de EDS respecto al año previo";
-  $("share").textContent = yearTotal(2025)
-    ? pct(edsCorte / yearTotal(2025))
-    : "No calculable";
+  $("shareExplanation").textContent = "Solo CLUES con referencia histórica SINBA 2025";
+  $("share").textContent = ref25.ratio === null ? "No calculable" : pct(ref25.ratio / 100);
   $("emptyNotice").hidden = s.clues_compartidas !== 0;
   const warning = $("cohortWarning");
-  const diag = quality?.catalogos_clues?.[s.area];
-  warning.hidden = s.clues_compartidas !== 0;
+  warning.hidden = ref25.withoutHistory === 0 && ref26.withoutHistory === 0;
   if (!warning.hidden)
-    warning.textContent = `No existen CLUES coincidentes para ${
-      s.area
-    } con el criterio actual (actividad SINBA y EDS en 2026). CLUES con actividad: SINBA ${fmt(
-      diag?.sinba?.length || 0,
-    )}, EDS ${fmt(
-      diag?.eds?.length || 0,
-    )}. Los filtros pueden mostrar unidades disponibles para diagnóstico, pero sus registros NO se contabilizan hasta confirmar la coincidencia. Revisa nombres de CLUES, fechas y cobertura.`;
+    warning.textContent = `Referencia histórica no disponible: ${fmt(ref25.withoutHistory)} CLUES sin SINBA 2025 y ${fmt(ref26.withoutHistory)} sin SINBA 2026. Sus registros EDS sí se incluyen en los gráficos, indicadores y avance; no se consideran en los porcentajes del año sin referencia. Las categorías pueden solaparse.`;
   $("filterNotice").textContent = `Grupo: ${
     $("group").value === "hraes" ? "HRAES" : "Unidades generales"
-  } · Unidades comparables identificadas en ambos sistemas: ${fmt(
-    s.clues_compartidas,
-  )} CLUES · ${$("entity").selectedOptions[0].text} · ${
+  } · Universo EDS: ${fmt(s.clues_compartidas)} CLUES · Con referencia SINBA 2025: ${fmt(ref25.comparable)} · Con referencia SINBA 2026: ${fmt(ref26.comparable)} · ${$("entity").selectedOptions[0].text} · ${
     $("clues").value === "ALL" ? "todas las CLUES" : $("clues").value
-  }. Los indicadores y reportes usan este filtro.`;
+  }. Todas las CLUES EDS se incluyen en los volúmenes; las relaciones históricas utilizan solo unidades comparables.`;
   $("chartTitle").textContent =
     (monthly
       ? "Evolución mensual"
@@ -535,15 +537,15 @@ function render() {
   chart.setOption(graphOption(s, rows, isCumulative), true);
   renderTerritory(s, cut);
   renderWeekComparison(s, start, cut);
-  const historical = yearTotal(2025);
-  const ratio = historical ? (100 * edsCorte) / historical : null;
+  const ratio = ref25.ratio;
   const edsModule = names[s.eds_source];
   $("executiveReading").textContent =
-    ratio === null
-      ? `En el periodo seleccionado no existe un volumen de referencia SINBA 2025 válido para calcular la relación de ${edsModule} 2026. Los conteos corresponden a registros (filas), sin deduplicación de eventos.`
-      : `En el periodo seleccionado, los registros generados en ${edsModule} durante 2026 representan el ${ratio.toFixed(
-          1,
-        )}% de los registros reportados en SINBA en el mismo periodo de 2025. Este indicador permite dimensionar el avance del registro en ${edsModule} respecto al volumen observado el año previo. No representa el porcentaje de unidades que utilizan el sistema ni la proporción de registros migrados desde SINBA. Los conteos corresponden a registros (filas), sin deduplicación de eventos.`;
+    `En el periodo seleccionado, ${fmt(s.clues_compartidas)} CLUES del universo EDS están incluidas en el tablero. ` +
+    `${fmt(ref25.withoutHistory)} no cuentan con referencia SINBA 2025 y ${fmt(ref26.withoutHistory)} no cuentan con referencia SINBA 2026. ` +
+    (ratio === null
+      ? `No es posible calcular una relación histórica SINBA 2025 para esta selección. `
+      : `Entre las ${fmt(ref25.comparable)} CLUES con referencia SINBA 2025, el volumen ${edsModule} 2026 representa el ${ratio.toFixed(1)}% del volumen SINBA 2025 en las semanas comparadas. `) +
+    `Las CLUES sin histórico permanecen en los gráficos y conteos EDS. La relación no mide el porcentaje de adopción ni de unidades usuarias; se cuentan filas, no eventos deduplicados.`;
 }
 function rebuild() {
   updateEntities();
@@ -597,6 +599,8 @@ async function init() {
     details = await d.json();
     auditDetails = await ad.json();
     monthlyDetails = await md.json();
+    if (!data.metadata?.metodo_cruce?.startsWith("Universo EDS por área"))
+      throw new Error("Los JSON todavía corresponden al cruce antiguo SINBA–EDS. Ejecuta python scripts/build_data.py y recarga el tablero.");
 
     chart = echarts.init($("chart"));
     // window.addEventListener("resize", () => {
@@ -790,7 +794,7 @@ function renderAudit() {
   }
   $("auditContext").textContent = `Registros atribuibles a ${
     cohort.length
-  } CLUES compartidas seleccionadas del grupo ${
+  } CLUES del universo EDS seleccionadas del grupo ${
     $("group").value === "hraes" ? "HRAES" : "general"
   }; ${
     $("entity").selectedOptions[0]?.text || "todas las entidades"
@@ -949,11 +953,13 @@ function territoryValues(s, cut) {
     o.eds += ec;
     if (ec > 0) o.withEds++;
   }
-  return Object.values(out).map((o) => ({
-    ...o,
-    p25: o.s25 ? (100 * o.eds) / o.s25 : null,
-    p26: o.s26 ? (100 * o.eds) / o.s26 : null,
-  }));
+  return Object.values(out).map((o) => {
+    const h25 = historicalComparison(s, 2025, cut, o.code);
+    const h26 = historicalComparison(s, 2026, cut, o.code);
+    return { ...o, comparable25: h25.comparable, comparable26: h26.comparable,
+      withoutHistory25: h25.withoutHistory, withoutHistory26: h26.withoutHistory,
+      p25: h25.ratio, p26: h26.ratio };
+  });
 }
 function renderTerritory(s, cut) {
   if (!barChart) return;
@@ -978,12 +984,14 @@ function renderTerritory(s, cut) {
           Cobertura de establecimientos
         </div>
   
-        <div>CLUES comparables: <b>${fmt(o.clues)}</b></div>
+        <div>CLUES del universo EDS: <b>${fmt(o.clues)}</b></div>
         <div style="font-size:11px;color:#66736d;">
-          Unidades incluidas en el universo común de comparación.
+          CLUES EDS incluidas, con o sin histórico SINBA.
         </div>
   
         <div>CLUES con EDS: <b>${fmt(o.withEds)}</b></div>
+        <div>Sin histórico 2025: <b>${fmt(o.withoutHistory25)}</b></div>
+        <div>Sin histórico 2026: <b>${fmt(o.withoutHistory26)}</b></div>
         <div style="font-size:11px;color:#66736d;">
           Unidades con registros EDS en el periodo evaluado.
         </div>
@@ -1002,8 +1010,7 @@ function renderTerritory(s, cut) {
         <div>EDS / SINBA 2026: <b>${porcentaje(o.p26)}</b></div>
   
         <div style="margin-top:8px;font-size:11px;color:#66736d;">
-          Los porcentajes expresan la relación entre volúmenes
-          de registros, no el porcentaje de adopción de EDS.
+          Los porcentajes se calculan únicamente con CLUES que tienen referencia SINBA del año correspondiente; no miden adopción EDS.
           Los valores corresponden al corte temporal aplicado al mapa.
         </div>
       </div>

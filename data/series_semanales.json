@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "fecha_proceso": "2026-11-11",
-    "ultima_semana_completa": "2026-11-08",
-    "ultima_semana_iso": 45,
+    "fecha_proceso": "2026-11-19",
+    "ultima_semana_completa": "2026-11-15",
+    "ultima_semana_iso": 46,
     "semana_iso_anio": 2026,
-    "metodo_cruce": "Intersección fija por área: CLUES con actividad en SINBA 2026 y EDS 2026",
+    "metodo_cruce": "Universo EDS por área: todas las CLUES con actividad EDS 2026, sin exigir histórico SINBA",
     "nota": "Se cuentan filas, no eventos clínicos deduplicados; escenarios CE simples conservados para auditoría"
   },
   "escenarios": [
@@ -17,236 +17,242 @@
       "sinba_year": 2025,
       "eds_source": "eds_moce",
       "eds_year": 2026,
-      "clues_compartidas": 168,
+      "clues_compartidas": 205,
+      "clues_universo_eds": 205,
       "series": [
         {
           "week": 1,
-          "sinba": 9463,
+          "sinba": 11790,
           "eds": 39
         },
         {
           "week": 2,
-          "sinba": 32637,
+          "sinba": 40615,
           "eds": 611
         },
         {
           "week": 3,
-          "sinba": 42941,
+          "sinba": 53315,
           "eds": 1536
         },
         {
           "week": 4,
-          "sinba": 42803,
+          "sinba": 52376,
           "eds": 2081
         },
         {
           "week": 5,
-          "sinba": 41922,
+          "sinba": 51592,
           "eds": 2605
         },
         {
           "week": 6,
-          "sinba": 38800,
+          "sinba": 47223,
           "eds": 1911
         },
         {
           "week": 7,
-          "sinba": 44836,
+          "sinba": 55399,
           "eds": 2657
         },
         {
           "week": 8,
-          "sinba": 45027,
+          "sinba": 55797,
           "eds": 2589
         },
         {
           "week": 9,
-          "sinba": 44048,
+          "sinba": 54284,
           "eds": 2989
         },
         {
           "week": 10,
-          "sinba": 45112,
+          "sinba": 54439,
           "eds": 3194
         },
         {
           "week": 11,
-          "sinba": 46921,
+          "sinba": 57069,
           "eds": 3598
         },
         {
           "week": 12,
-          "sinba": 40258,
+          "sinba": 49381,
           "eds": 3259
         },
         {
           "week": 13,
-          "sinba": 46189,
+          "sinba": 57023,
           "eds": 4928
         },
         {
           "week": 14,
-          "sinba": 44442,
+          "sinba": 54217,
           "eds": 2819
         },
         {
           "week": 15,
-          "sinba": 45931,
+          "sinba": 57608,
           "eds": 5557
         },
         {
           "week": 16,
-          "sinba": 29971,
-          "eds": 7142
+          "sinba": 37311,
+          "eds": 7143
         },
         {
           "week": 17,
-          "sinba": 39856,
+          "sinba": 48571,
           "eds": 7890
         },
         {
           "week": 18,
-          "sinba": 33759,
+          "sinba": 41600,
           "eds": 6699
         },
         {
           "week": 19,
-          "sinba": 38340,
+          "sinba": 46771,
           "eds": 6785
         },
         {
           "week": 20,
-          "sinba": 44621,
+          "sinba": 54793,
           "eds": 8822
         },
         {
           "week": 21,
-          "sinba": 45188,
-          "eds": 9247
+          "sinba": 55068,
+          "eds": 9253
         },
         {
           "week": 22,
-          "sinba": 44704,
-          "eds": 11660
+          "sinba": 54385,
+          "eds": 11778
         },
         {
           "week": 23,
-          "sinba": 46255,
-          "eds": 11749
+          "sinba": 56192,
+          "eds": 12031
         },
         {
           "week": 24,
-          "sinba": 47111,
-          "eds": 12586
+          "sinba": 57184,
+          "eds": 13014
         },
         {
           "week": 25,
-          "sinba": 45810,
-          "eds": 13493
+          "sinba": 55899,
+          "eds": 14145
         },
         {
           "week": 26,
-          "sinba": 45238,
-          "eds": 11040
+          "sinba": 55722,
+          "eds": 11722
         },
         {
           "week": 27,
-          "sinba": 46268,
-          "eds": 13970
+          "sinba": 57066,
+          "eds": 14817
         },
         {
           "week": 28,
-          "sinba": 48219,
-          "eds": 14224
+          "sinba": 58735,
+          "eds": 15184
         },
         {
           "week": 29,
-          "sinba": 46538,
-          "eds": 13802
+          "sinba": 56618,
+          "eds": 14957
         },
         {
           "week": 30,
-          "sinba": 44687,
-          "eds": 14214
+          "sinba": 54350,
+          "eds": 15604
         },
         {
           "week": 31,
-          "sinba": 43839,
-          "eds": 14098
+          "sinba": 52712,
+          "eds": 15454
         },
         {
           "week": 32,
-          "sinba": 47118,
-          "eds": 14883
+          "sinba": 55942,
+          "eds": 16245
         },
         {
           "week": 33,
-          "sinba": 48483,
-          "eds": 15859
+          "sinba": 58846,
+          "eds": 17254
         },
         {
           "week": 34,
-          "sinba": 50143,
-          "eds": 17168
+          "sinba": 60322,
+          "eds": 18961
         },
         {
           "week": 35,
-          "sinba": 48494,
-          "eds": 18210
+          "sinba": 58608,
+          "eds": 20199
         },
         {
           "week": 36,
-          "sinba": 53038,
-          "eds": 18886
+          "sinba": 62934,
+          "eds": 20703
         },
         {
           "week": 37,
-          "sinba": 55366,
-          "eds": 21135
+          "sinba": 65472,
+          "eds": 23110
         },
         {
           "week": 38,
-          "sinba": 44466,
-          "eds": 17297
+          "sinba": 52442,
+          "eds": 18797
         },
         {
           "week": 39,
-          "sinba": 54310,
-          "eds": 24866
+          "sinba": 63739,
+          "eds": 27203
         },
         {
           "week": 40,
-          "sinba": 55322,
-          "eds": 27592
+          "sinba": 65343,
+          "eds": 30181
         },
         {
           "week": 41,
-          "sinba": 53570,
-          "eds": 25836
+          "sinba": 63642,
+          "eds": 28097
         },
         {
           "week": 42,
-          "sinba": 52112,
-          "eds": 28181
+          "sinba": 61480,
+          "eds": 30739
         },
         {
           "week": 43,
-          "sinba": 51573,
-          "eds": 27311
+          "sinba": 61847,
+          "eds": 29505
         },
         {
           "week": 44,
-          "sinba": 47085,
-          "eds": 25991
+          "sinba": 56019,
+          "eds": 28287
         },
         {
           "week": 45,
-          "sinba": 56685,
-          "eds": 25507
+          "sinba": 64869,
+          "eds": 27451
+        },
+        {
+          "week": 46,
+          "sinba": 64502,
+          "eds": 34665
         }
       ],
-      "sinba_total": 2019499,
-      "eds_total": 526516
+      "sinba_total": 2511112,
+      "eds_total": 597068
     },
     {
       "id": "integral_2025",
@@ -260,236 +266,242 @@
       "sinba_year": 2025,
       "eds_source": "eds_moce",
       "eds_year": 2026,
-      "clues_compartidas": 168,
+      "clues_compartidas": 205,
+      "clues_universo_eds": 205,
       "series": [
         {
           "week": 1,
-          "sinba": 11922,
+          "sinba": 14815,
           "eds": 39
         },
         {
           "week": 2,
-          "sinba": 40104,
+          "sinba": 49607,
           "eds": 611
         },
         {
           "week": 3,
-          "sinba": 52933,
+          "sinba": 65415,
           "eds": 1536
         },
         {
           "week": 4,
-          "sinba": 52879,
+          "sinba": 64615,
           "eds": 2081
         },
         {
           "week": 5,
-          "sinba": 51911,
+          "sinba": 63702,
           "eds": 2605
         },
         {
           "week": 6,
-          "sinba": 48723,
+          "sinba": 59238,
           "eds": 1911
         },
         {
           "week": 7,
-          "sinba": 55818,
+          "sinba": 68681,
           "eds": 2657
         },
         {
           "week": 8,
-          "sinba": 56184,
+          "sinba": 69490,
           "eds": 2589
         },
         {
           "week": 9,
-          "sinba": 54494,
+          "sinba": 67050,
           "eds": 2989
         },
         {
           "week": 10,
-          "sinba": 56311,
+          "sinba": 67811,
           "eds": 3194
         },
         {
           "week": 11,
-          "sinba": 57867,
+          "sinba": 70347,
           "eds": 3598
         },
         {
           "week": 12,
-          "sinba": 49593,
+          "sinba": 60805,
           "eds": 3259
         },
         {
           "week": 13,
-          "sinba": 56240,
+          "sinba": 69519,
           "eds": 4928
         },
         {
           "week": 14,
-          "sinba": 54610,
+          "sinba": 66756,
           "eds": 2819
         },
         {
           "week": 15,
-          "sinba": 56057,
+          "sinba": 70150,
           "eds": 5557
         },
         {
           "week": 16,
-          "sinba": 36396,
-          "eds": 7142
+          "sinba": 45195,
+          "eds": 7143
         },
         {
           "week": 17,
-          "sinba": 47792,
+          "sinba": 58371,
           "eds": 7890
         },
         {
           "week": 18,
-          "sinba": 41174,
+          "sinba": 50563,
           "eds": 6699
         },
         {
           "week": 19,
-          "sinba": 46623,
+          "sinba": 56903,
           "eds": 6785
         },
         {
           "week": 20,
-          "sinba": 54824,
+          "sinba": 67320,
           "eds": 8822
         },
         {
           "week": 21,
-          "sinba": 54921,
-          "eds": 9247
+          "sinba": 67141,
+          "eds": 9253
         },
         {
           "week": 22,
-          "sinba": 54740,
-          "eds": 11660
+          "sinba": 66732,
+          "eds": 11778
         },
         {
           "week": 23,
-          "sinba": 57295,
-          "eds": 11749
+          "sinba": 69466,
+          "eds": 12031
         },
         {
           "week": 24,
-          "sinba": 57787,
-          "eds": 12586
+          "sinba": 70114,
+          "eds": 13014
         },
         {
           "week": 25,
-          "sinba": 56292,
-          "eds": 13493
+          "sinba": 68528,
+          "eds": 14145
         },
         {
           "week": 26,
-          "sinba": 55306,
-          "eds": 11040
+          "sinba": 67795,
+          "eds": 11722
         },
         {
           "week": 27,
-          "sinba": 57293,
-          "eds": 13970
+          "sinba": 70286,
+          "eds": 14817
         },
         {
           "week": 28,
-          "sinba": 59376,
-          "eds": 14224
+          "sinba": 72131,
+          "eds": 15184
         },
         {
           "week": 29,
-          "sinba": 56895,
-          "eds": 13802
+          "sinba": 69142,
+          "eds": 14957
         },
         {
           "week": 30,
-          "sinba": 54796,
-          "eds": 14214
+          "sinba": 66590,
+          "eds": 15604
         },
         {
           "week": 31,
-          "sinba": 54142,
-          "eds": 14098
+          "sinba": 65031,
+          "eds": 15454
         },
         {
           "week": 32,
-          "sinba": 57677,
-          "eds": 14883
+          "sinba": 68529,
+          "eds": 16245
         },
         {
           "week": 33,
-          "sinba": 59362,
-          "eds": 15859
+          "sinba": 71918,
+          "eds": 17254
         },
         {
           "week": 34,
-          "sinba": 60779,
-          "eds": 17168
+          "sinba": 73101,
+          "eds": 18961
         },
         {
           "week": 35,
-          "sinba": 59040,
-          "eds": 18210
+          "sinba": 71289,
+          "eds": 20199
         },
         {
           "week": 36,
-          "sinba": 64178,
-          "eds": 18886
+          "sinba": 76332,
+          "eds": 20703
         },
         {
           "week": 37,
-          "sinba": 67139,
-          "eds": 21135
+          "sinba": 79626,
+          "eds": 23110
         },
         {
           "week": 38,
-          "sinba": 53988,
-          "eds": 17297
+          "sinba": 63983,
+          "eds": 18797
         },
         {
           "week": 39,
-          "sinba": 65630,
-          "eds": 24866
+          "sinba": 77440,
+          "eds": 27203
         },
         {
           "week": 40,
-          "sinba": 66789,
-          "eds": 27592
+          "sinba": 79457,
+          "eds": 30181
         },
         {
           "week": 41,
-          "sinba": 65251,
-          "eds": 25836
+          "sinba": 78250,
+          "eds": 28097
         },
         {
           "week": 42,
-          "sinba": 63563,
-          "eds": 28181
+          "sinba": 75651,
+          "eds": 30739
         },
         {
           "week": 43,
-          "sinba": 63131,
-          "eds": 27311
+          "sinba": 75932,
+          "eds": 29505
         },
         {
           "week": 44,
-          "sinba": 58029,
-          "eds": 25991
+          "sinba": 69202,
+          "eds": 28287
         },
         {
           "week": 45,
-          "sinba": 68541,
-          "eds": 25507
+          "sinba": 80127,
+          "eds": 27451
+        },
+        {
+          "week": 46,
+          "sinba": 79578,
+          "eds": 34665
         }
       ],
-      "sinba_total": 2474395,
-      "eds_total": 526516
+      "sinba_total": 3079724,
+      "eds_total": 597068
     },
     {
       "id": "ce_2026",
@@ -500,236 +512,242 @@
       "sinba_year": 2026,
       "eds_source": "eds_moce",
       "eds_year": 2026,
-      "clues_compartidas": 168,
+      "clues_compartidas": 205,
+      "clues_universo_eds": 205,
       "series": [
         {
           "week": 1,
-          "sinba": 19239,
+          "sinba": 21976,
           "eds": 39
         },
         {
           "week": 2,
-          "sinba": 43644,
+          "sinba": 50724,
           "eds": 611
         },
         {
           "week": 3,
-          "sinba": 54751,
+          "sinba": 64531,
           "eds": 1536
         },
         {
           "week": 4,
-          "sinba": 57687,
+          "sinba": 67503,
           "eds": 2081
         },
         {
           "week": 5,
-          "sinba": 55081,
+          "sinba": 64593,
           "eds": 2605
         },
         {
           "week": 6,
-          "sinba": 50942,
+          "sinba": 59495,
           "eds": 1911
         },
         {
           "week": 7,
-          "sinba": 57894,
+          "sinba": 68179,
           "eds": 2657
         },
         {
           "week": 8,
-          "sinba": 58565,
+          "sinba": 67751,
           "eds": 2589
         },
         {
           "week": 9,
-          "sinba": 56602,
+          "sinba": 65069,
           "eds": 2989
         },
         {
           "week": 10,
-          "sinba": 58688,
+          "sinba": 68535,
           "eds": 3194
         },
         {
           "week": 11,
-          "sinba": 61373,
+          "sinba": 71651,
           "eds": 3598
         },
         {
           "week": 12,
-          "sinba": 53007,
+          "sinba": 61657,
           "eds": 3259
         },
         {
           "week": 13,
-          "sinba": 59886,
+          "sinba": 70261,
           "eds": 4928
         },
         {
           "week": 14,
-          "sinba": 37747,
+          "sinba": 43069,
           "eds": 2819
         },
         {
           "week": 15,
-          "sinba": 54548,
+          "sinba": 62866,
           "eds": 5557
         },
         {
           "week": 16,
-          "sinba": 54465,
-          "eds": 7142
+          "sinba": 63949,
+          "eds": 7143
         },
         {
           "week": 17,
-          "sinba": 56441,
+          "sinba": 66390,
           "eds": 7890
         },
         {
           "week": 18,
-          "sinba": 46483,
+          "sinba": 54279,
           "eds": 6699
         },
         {
           "week": 19,
-          "sinba": 46681,
+          "sinba": 54603,
           "eds": 6785
         },
         {
           "week": 20,
-          "sinba": 53550,
+          "sinba": 63612,
           "eds": 8822
         },
         {
           "week": 21,
-          "sinba": 51879,
-          "eds": 9247
+          "sinba": 61707,
+          "eds": 9253
         },
         {
           "week": 22,
-          "sinba": 51574,
-          "eds": 11660
+          "sinba": 61433,
+          "eds": 11778
         },
         {
           "week": 23,
-          "sinba": 50948,
-          "eds": 11749
+          "sinba": 60384,
+          "eds": 12031
         },
         {
           "week": 24,
-          "sinba": 51633,
-          "eds": 12586
+          "sinba": 61551,
+          "eds": 13014
         },
         {
           "week": 25,
-          "sinba": 50165,
-          "eds": 13493
+          "sinba": 59979,
+          "eds": 14145
         },
         {
           "week": 26,
-          "sinba": 47615,
-          "eds": 11040
+          "sinba": 57009,
+          "eds": 11722
         },
         {
           "week": 27,
-          "sinba": 47711,
-          "eds": 13970
+          "sinba": 56760,
+          "eds": 14817
         },
         {
           "week": 28,
-          "sinba": 50695,
-          "eds": 14224
+          "sinba": 60135,
+          "eds": 15184
         },
         {
           "week": 29,
-          "sinba": 48924,
-          "eds": 13802
+          "sinba": 58337,
+          "eds": 14957
         },
         {
           "week": 30,
-          "sinba": 47952,
-          "eds": 14214
+          "sinba": 57838,
+          "eds": 15604
         },
         {
           "week": 31,
-          "sinba": 46323,
-          "eds": 14098
+          "sinba": 55601,
+          "eds": 15454
         },
         {
           "week": 32,
-          "sinba": 47225,
-          "eds": 14883
+          "sinba": 56652,
+          "eds": 16245
         },
         {
           "week": 33,
-          "sinba": 48696,
-          "eds": 15859
+          "sinba": 58691,
+          "eds": 17254
         },
         {
           "week": 34,
-          "sinba": 51576,
-          "eds": 17168
+          "sinba": 61898,
+          "eds": 18961
         },
         {
           "week": 35,
-          "sinba": 49484,
-          "eds": 18210
+          "sinba": 59462,
+          "eds": 20199
         },
         {
           "week": 36,
-          "sinba": 48402,
-          "eds": 18886
+          "sinba": 58235,
+          "eds": 20703
         },
         {
           "week": 37,
-          "sinba": 49305,
-          "eds": 21135
+          "sinba": 59848,
+          "eds": 23110
         },
         {
           "week": 38,
-          "sinba": 40123,
-          "eds": 17297
+          "sinba": 48247,
+          "eds": 18797
         },
         {
           "week": 39,
-          "sinba": 47325,
-          "eds": 24866
+          "sinba": 57675,
+          "eds": 27203
         },
         {
           "week": 40,
-          "sinba": 45277,
-          "eds": 27592
+          "sinba": 56224,
+          "eds": 30181
         },
         {
           "week": 41,
-          "sinba": 44691,
-          "eds": 25836
+          "sinba": 56292,
+          "eds": 28097
         },
         {
           "week": 42,
-          "sinba": 42361,
-          "eds": 28181
+          "sinba": 53281,
+          "eds": 30739
         },
         {
           "week": 43,
-          "sinba": 39527,
-          "eds": 27311
+          "sinba": 50971,
+          "eds": 29505
         },
         {
           "week": 44,
-          "sinba": 34381,
-          "eds": 25991
+          "sinba": 45127,
+          "eds": 28287
         },
         {
           "week": 45,
-          "sinba": 20092,
-          "eds": 25507
+          "sinba": 31811,
+          "eds": 27451
+        },
+        {
+          "week": 46,
+          "sinba": 31983,
+          "eds": 34665
         }
       ],
-      "sinba_total": 2191158,
-      "eds_total": 526516
+      "sinba_total": 2647824,
+      "eds_total": 597068
     },
     {
       "id": "integral_2026",
@@ -743,236 +761,242 @@
       "sinba_year": 2026,
       "eds_source": "eds_moce",
       "eds_year": 2026,
-      "clues_compartidas": 168,
+      "clues_compartidas": 205,
+      "clues_universo_eds": 205,
       "series": [
         {
           "week": 1,
-          "sinba": 22513,
+          "sinba": 25982,
           "eds": 39
         },
         {
           "week": 2,
-          "sinba": 52990,
+          "sinba": 61903,
           "eds": 611
         },
         {
           "week": 3,
-          "sinba": 67047,
+          "sinba": 79198,
           "eds": 1536
         },
         {
           "week": 4,
-          "sinba": 70442,
+          "sinba": 82851,
           "eds": 2081
         },
         {
           "week": 5,
-          "sinba": 67411,
+          "sinba": 79294,
           "eds": 2605
         },
         {
           "week": 6,
-          "sinba": 61760,
+          "sinba": 72405,
           "eds": 1911
         },
         {
           "week": 7,
-          "sinba": 70202,
+          "sinba": 83109,
           "eds": 2657
         },
         {
           "week": 8,
-          "sinba": 70828,
+          "sinba": 82157,
           "eds": 2589
         },
         {
           "week": 9,
-          "sinba": 68184,
+          "sinba": 78885,
           "eds": 2989
         },
         {
           "week": 10,
-          "sinba": 70821,
+          "sinba": 83305,
           "eds": 3194
         },
         {
           "week": 11,
-          "sinba": 74051,
+          "sinba": 86928,
           "eds": 3598
         },
         {
           "week": 12,
-          "sinba": 63788,
+          "sinba": 74650,
           "eds": 3259
         },
         {
           "week": 13,
-          "sinba": 71765,
+          "sinba": 84847,
           "eds": 4928
         },
         {
           "week": 14,
-          "sinba": 45551,
+          "sinba": 52303,
           "eds": 2819
         },
         {
           "week": 15,
-          "sinba": 65519,
+          "sinba": 76116,
           "eds": 5557
         },
         {
           "week": 16,
-          "sinba": 65977,
-          "eds": 7142
+          "sinba": 78017,
+          "eds": 7143
         },
         {
           "week": 17,
-          "sinba": 68441,
+          "sinba": 80984,
           "eds": 7890
         },
         {
           "week": 18,
-          "sinba": 56047,
+          "sinba": 65819,
           "eds": 6699
         },
         {
           "week": 19,
-          "sinba": 56626,
+          "sinba": 66494,
           "eds": 6785
         },
         {
           "week": 20,
-          "sinba": 64799,
+          "sinba": 77366,
           "eds": 8822
         },
         {
           "week": 21,
-          "sinba": 62710,
-          "eds": 9247
+          "sinba": 75017,
+          "eds": 9253
         },
         {
           "week": 22,
-          "sinba": 62708,
-          "eds": 11660
+          "sinba": 75212,
+          "eds": 11778
         },
         {
           "week": 23,
-          "sinba": 62441,
-          "eds": 11749
+          "sinba": 74462,
+          "eds": 12031
         },
         {
           "week": 24,
-          "sinba": 62653,
-          "eds": 12586
+          "sinba": 75265,
+          "eds": 13014
         },
         {
           "week": 25,
-          "sinba": 61188,
-          "eds": 13493
+          "sinba": 73447,
+          "eds": 14145
         },
         {
           "week": 26,
-          "sinba": 57897,
-          "eds": 11040
+          "sinba": 69696,
+          "eds": 11722
         },
         {
           "week": 27,
-          "sinba": 57901,
-          "eds": 13970
+          "sinba": 69212,
+          "eds": 14817
         },
         {
           "week": 28,
-          "sinba": 61951,
-          "eds": 14224
+          "sinba": 73792,
+          "eds": 15184
         },
         {
           "week": 29,
-          "sinba": 59538,
-          "eds": 13802
+          "sinba": 71212,
+          "eds": 14957
         },
         {
           "week": 30,
-          "sinba": 58488,
-          "eds": 14214
+          "sinba": 70529,
+          "eds": 15604
         },
         {
           "week": 31,
-          "sinba": 55957,
-          "eds": 14098
+          "sinba": 67235,
+          "eds": 15454
         },
         {
           "week": 32,
-          "sinba": 58075,
-          "eds": 14883
+          "sinba": 69720,
+          "eds": 16245
         },
         {
           "week": 33,
-          "sinba": 59103,
-          "eds": 15859
+          "sinba": 71345,
+          "eds": 17254
         },
         {
           "week": 34,
-          "sinba": 61561,
-          "eds": 17168
+          "sinba": 74149,
+          "eds": 18961
         },
         {
           "week": 35,
-          "sinba": 59631,
-          "eds": 18210
+          "sinba": 71824,
+          "eds": 20199
         },
         {
           "week": 36,
-          "sinba": 59094,
-          "eds": 18886
+          "sinba": 71093,
+          "eds": 20703
         },
         {
           "week": 37,
-          "sinba": 59804,
-          "eds": 21135
+          "sinba": 72773,
+          "eds": 23110
         },
         {
           "week": 38,
-          "sinba": 48981,
-          "eds": 17297
+          "sinba": 58856,
+          "eds": 18797
         },
         {
           "week": 39,
-          "sinba": 57945,
-          "eds": 24866
+          "sinba": 70613,
+          "eds": 27203
         },
         {
           "week": 40,
-          "sinba": 54889,
-          "eds": 27592
+          "sinba": 68086,
+          "eds": 30181
         },
         {
           "week": 41,
-          "sinba": 54433,
-          "eds": 25836
+          "sinba": 68304,
+          "eds": 28097
         },
         {
           "week": 42,
-          "sinba": 51809,
-          "eds": 28181
+          "sinba": 65050,
+          "eds": 30739
         },
         {
           "week": 43,
-          "sinba": 48385,
-          "eds": 27311
+          "sinba": 62233,
+          "eds": 29505
         },
         {
           "week": 44,
-          "sinba": 41990,
-          "eds": 25991
+          "sinba": 54794,
+          "eds": 28287
         },
         {
           "week": 45,
-          "sinba": 24959,
-          "eds": 25507
+          "sinba": 39552,
+          "eds": 27451
+        },
+        {
+          "week": 46,
+          "sinba": 39836,
+          "eds": 34665
         }
       ],
-      "sinba_total": 2658853,
-      "eds_total": 526516
+      "sinba_total": 3225920,
+      "eds_total": 597068
     },
     {
       "id": "proc_2025",
@@ -983,236 +1007,242 @@
       "sinba_year": 2025,
       "eds_source": "eds_cir",
       "eds_year": 2026,
-      "clues_compartidas": 100,
+      "clues_compartidas": 113,
+      "clues_universo_eds": 113,
       "series": [
         {
           "week": 1,
-          "sinba": 1490,
+          "sinba": 1666,
           "eds": 25
         },
         {
           "week": 2,
-          "sinba": 2661,
+          "sinba": 2990,
           "eds": 79
         },
         {
           "week": 3,
-          "sinba": 2599,
+          "sinba": 3003,
           "eds": 87
         },
         {
           "week": 4,
-          "sinba": 2754,
+          "sinba": 3153,
           "eds": 113
         },
         {
           "week": 5,
-          "sinba": 2691,
+          "sinba": 3126,
           "eds": 140
         },
         {
           "week": 6,
-          "sinba": 2644,
+          "sinba": 3017,
           "eds": 136
         },
         {
           "week": 7,
-          "sinba": 2740,
+          "sinba": 3142,
           "eds": 171
         },
         {
           "week": 8,
-          "sinba": 2818,
+          "sinba": 3191,
           "eds": 186
         },
         {
           "week": 9,
-          "sinba": 2793,
+          "sinba": 3139,
           "eds": 257
         },
         {
           "week": 10,
-          "sinba": 2894,
+          "sinba": 3295,
           "eds": 283
         },
         {
           "week": 11,
-          "sinba": 2958,
+          "sinba": 3378,
           "eds": 273
         },
         {
           "week": 12,
-          "sinba": 2916,
+          "sinba": 3326,
           "eds": 233
         },
         {
           "week": 13,
-          "sinba": 3009,
+          "sinba": 3551,
           "eds": 317
         },
         {
           "week": 14,
-          "sinba": 3095,
+          "sinba": 3579,
           "eds": 232
         },
         {
           "week": 15,
-          "sinba": 2968,
+          "sinba": 3354,
           "eds": 355
         },
         {
           "week": 16,
-          "sinba": 2515,
+          "sinba": 2852,
           "eds": 597
         },
         {
           "week": 17,
-          "sinba": 2729,
+          "sinba": 3112,
           "eds": 665
         },
         {
           "week": 18,
-          "sinba": 2641,
+          "sinba": 2975,
           "eds": 636
         },
         {
           "week": 19,
-          "sinba": 2630,
+          "sinba": 2967,
           "eds": 632
         },
         {
           "week": 20,
-          "sinba": 2858,
+          "sinba": 3233,
           "eds": 692
         },
         {
           "week": 21,
-          "sinba": 2943,
-          "eds": 730
+          "sinba": 3267,
+          "eds": 731
         },
         {
           "week": 22,
-          "sinba": 2984,
-          "eds": 856
+          "sinba": 3357,
+          "eds": 863
         },
         {
           "week": 23,
-          "sinba": 3074,
-          "eds": 1191
+          "sinba": 3412,
+          "eds": 1238
         },
         {
           "week": 24,
-          "sinba": 3023,
-          "eds": 1064
+          "sinba": 3366,
+          "eds": 1145
         },
         {
           "week": 25,
-          "sinba": 2987,
-          "eds": 1027
+          "sinba": 3340,
+          "eds": 1115
         },
         {
           "week": 26,
-          "sinba": 2903,
-          "eds": 984
+          "sinba": 3222,
+          "eds": 1070
         },
         {
           "week": 27,
-          "sinba": 2985,
-          "eds": 1206
+          "sinba": 3371,
+          "eds": 1278
         },
         {
           "week": 28,
-          "sinba": 3072,
-          "eds": 1224
+          "sinba": 3478,
+          "eds": 1306
         },
         {
           "week": 29,
-          "sinba": 3060,
-          "eds": 1140
+          "sinba": 3450,
+          "eds": 1244
         },
         {
           "week": 30,
-          "sinba": 2944,
-          "eds": 1229
+          "sinba": 3411,
+          "eds": 1324
         },
         {
           "week": 31,
-          "sinba": 2984,
-          "eds": 1247
+          "sinba": 3388,
+          "eds": 1362
         },
         {
           "week": 32,
-          "sinba": 3092,
-          "eds": 1310
+          "sinba": 3447,
+          "eds": 1416
         },
         {
           "week": 33,
-          "sinba": 3121,
-          "eds": 1333
+          "sinba": 3492,
+          "eds": 1420
         },
         {
           "week": 34,
-          "sinba": 2958,
-          "eds": 1521
+          "sinba": 3324,
+          "eds": 1624
         },
         {
           "week": 35,
-          "sinba": 3105,
-          "eds": 1380
+          "sinba": 3422,
+          "eds": 1509
         },
         {
           "week": 36,
-          "sinba": 3284,
-          "eds": 1631
+          "sinba": 3620,
+          "eds": 1826
         },
         {
           "week": 37,
-          "sinba": 3207,
-          "eds": 1630
+          "sinba": 3577,
+          "eds": 1825
         },
         {
           "week": 38,
-          "sinba": 2772,
-          "eds": 1381
+          "sinba": 3073,
+          "eds": 1554
         },
         {
           "week": 39,
-          "sinba": 3213,
-          "eds": 1462
+          "sinba": 3592,
+          "eds": 1624
         },
         {
           "week": 40,
-          "sinba": 3272,
-          "eds": 1388
+          "sinba": 3623,
+          "eds": 1543
         },
         {
           "week": 41,
-          "sinba": 2961,
-          "eds": 1453
+          "sinba": 3341,
+          "eds": 1608
         },
         {
           "week": 42,
-          "sinba": 3249,
-          "eds": 1320
+          "sinba": 3620,
+          "eds": 1495
         },
         {
           "week": 43,
-          "sinba": 3382,
-          "eds": 1350
+          "sinba": 3737,
+          "eds": 1503
         },
         {
           "week": 44,
-          "sinba": 2870,
-          "eds": 1351
+          "sinba": 3209,
+          "eds": 1517
         },
         {
           "week": 45,
-          "sinba": 3218,
-          "eds": 1121
+          "sinba": 3537,
+          "eds": 1437
+        },
+        {
+          "week": 46,
+          "sinba": 4273,
+          "eds": 1709
         }
       ],
-      "sinba_total": 131066,
-      "eds_total": 37638
+      "sinba_total": 151998,
+      "eds_total": 42395
     },
     {
       "id": "proc_total_2025",
@@ -1224,236 +1254,242 @@
       "sinba_year": 2025,
       "eds_source": "eds_cir",
       "eds_year": 2026,
-      "clues_compartidas": 100,
+      "clues_compartidas": 113,
+      "clues_universo_eds": 113,
       "series": [
         {
           "week": 1,
-          "sinba": 1554,
+          "sinba": 1739,
           "eds": 25
         },
         {
           "week": 2,
-          "sinba": 2823,
+          "sinba": 3178,
           "eds": 79
         },
         {
           "week": 3,
-          "sinba": 2754,
+          "sinba": 3187,
           "eds": 87
         },
         {
           "week": 4,
-          "sinba": 2897,
+          "sinba": 3345,
           "eds": 113
         },
         {
           "week": 5,
-          "sinba": 2900,
+          "sinba": 3383,
           "eds": 140
         },
         {
           "week": 6,
-          "sinba": 2800,
+          "sinba": 3201,
           "eds": 136
         },
         {
           "week": 7,
-          "sinba": 2919,
+          "sinba": 3348,
           "eds": 171
         },
         {
           "week": 8,
-          "sinba": 3071,
+          "sinba": 3480,
           "eds": 186
         },
         {
           "week": 9,
-          "sinba": 2982,
+          "sinba": 3365,
           "eds": 257
         },
         {
           "week": 10,
-          "sinba": 3090,
+          "sinba": 3519,
           "eds": 283
         },
         {
           "week": 11,
-          "sinba": 3198,
+          "sinba": 3656,
           "eds": 273
         },
         {
           "week": 12,
-          "sinba": 3127,
+          "sinba": 3565,
           "eds": 233
         },
         {
           "week": 13,
-          "sinba": 3207,
+          "sinba": 3798,
           "eds": 317
         },
         {
           "week": 14,
-          "sinba": 3289,
+          "sinba": 3839,
           "eds": 232
         },
         {
           "week": 15,
-          "sinba": 3178,
+          "sinba": 3597,
           "eds": 355
         },
         {
           "week": 16,
-          "sinba": 2706,
+          "sinba": 3079,
           "eds": 597
         },
         {
           "week": 17,
-          "sinba": 2890,
+          "sinba": 3308,
           "eds": 665
         },
         {
           "week": 18,
-          "sinba": 2804,
+          "sinba": 3154,
           "eds": 636
         },
         {
           "week": 19,
-          "sinba": 2785,
+          "sinba": 3136,
           "eds": 632
         },
         {
           "week": 20,
-          "sinba": 3037,
+          "sinba": 3448,
           "eds": 692
         },
         {
           "week": 21,
-          "sinba": 3136,
-          "eds": 730
+          "sinba": 3497,
+          "eds": 731
         },
         {
           "week": 22,
-          "sinba": 3198,
-          "eds": 856
+          "sinba": 3607,
+          "eds": 863
         },
         {
           "week": 23,
-          "sinba": 3299,
-          "eds": 1191
+          "sinba": 3672,
+          "eds": 1238
         },
         {
           "week": 24,
-          "sinba": 3232,
-          "eds": 1064
+          "sinba": 3606,
+          "eds": 1145
         },
         {
           "week": 25,
-          "sinba": 3201,
-          "eds": 1027
+          "sinba": 3584,
+          "eds": 1115
         },
         {
           "week": 26,
-          "sinba": 3103,
-          "eds": 984
+          "sinba": 3461,
+          "eds": 1070
         },
         {
           "week": 27,
-          "sinba": 3171,
-          "eds": 1206
+          "sinba": 3598,
+          "eds": 1278
         },
         {
           "week": 28,
-          "sinba": 3314,
-          "eds": 1224
+          "sinba": 3775,
+          "eds": 1306
         },
         {
           "week": 29,
-          "sinba": 3259,
-          "eds": 1140
+          "sinba": 3696,
+          "eds": 1244
         },
         {
           "week": 30,
-          "sinba": 3150,
-          "eds": 1229
+          "sinba": 3681,
+          "eds": 1324
         },
         {
           "week": 31,
-          "sinba": 3176,
-          "eds": 1247
+          "sinba": 3621,
+          "eds": 1362
         },
         {
           "week": 32,
-          "sinba": 3314,
-          "eds": 1310
+          "sinba": 3713,
+          "eds": 1416
         },
         {
           "week": 33,
-          "sinba": 3315,
-          "eds": 1333
+          "sinba": 3729,
+          "eds": 1420
         },
         {
           "week": 34,
-          "sinba": 3154,
-          "eds": 1521
+          "sinba": 3573,
+          "eds": 1624
         },
         {
           "week": 35,
-          "sinba": 3285,
-          "eds": 1380
+          "sinba": 3616,
+          "eds": 1509
         },
         {
           "week": 36,
-          "sinba": 3550,
-          "eds": 1631
+          "sinba": 3935,
+          "eds": 1826
         },
         {
           "week": 37,
-          "sinba": 3442,
-          "eds": 1630
+          "sinba": 3850,
+          "eds": 1825
         },
         {
           "week": 38,
-          "sinba": 2951,
-          "eds": 1381
+          "sinba": 3282,
+          "eds": 1554
         },
         {
           "week": 39,
-          "sinba": 3429,
-          "eds": 1462
+          "sinba": 3848,
+          "eds": 1624
         },
         {
           "week": 40,
-          "sinba": 3520,
-          "eds": 1388
+          "sinba": 3906,
+          "eds": 1543
         },
         {
           "week": 41,
-          "sinba": 3202,
-          "eds": 1453
+          "sinba": 3620,
+          "eds": 1608
         },
         {
           "week": 42,
-          "sinba": 3498,
-          "eds": 1320
+          "sinba": 3903,
+          "eds": 1495
         },
         {
           "week": 43,
-          "sinba": 3611,
-          "eds": 1350
+          "sinba": 4008,
+          "eds": 1503
         },
         {
           "week": 44,
-          "sinba": 3079,
-          "eds": 1351
+          "sinba": 3464,
+          "eds": 1517
         },
         {
           "week": 45,
-          "sinba": 3433,
-          "eds": 1121
+          "sinba": 3796,
+          "eds": 1437
+        },
+        {
+          "week": 46,
+          "sinba": 4604,
+          "eds": 1709
         }
       ],
-      "sinba_total": 140033,
-      "eds_total": 37638
+      "sinba_total": 162970,
+      "eds_total": 42395
     },
     {
       "id": "proc_2026",
@@ -1464,236 +1500,242 @@
       "sinba_year": 2026,
       "eds_source": "eds_cir",
       "eds_year": 2026,
-      "clues_compartidas": 100,
+      "clues_compartidas": 113,
+      "clues_universo_eds": 113,
       "series": [
         {
           "week": 1,
-          "sinba": 1968,
+          "sinba": 2225,
           "eds": 25
         },
         {
           "week": 2,
-          "sinba": 2526,
+          "sinba": 2945,
           "eds": 79
         },
         {
           "week": 3,
-          "sinba": 2896,
+          "sinba": 3340,
           "eds": 87
         },
         {
           "week": 4,
-          "sinba": 2893,
+          "sinba": 3333,
           "eds": 113
         },
         {
           "week": 5,
-          "sinba": 2974,
+          "sinba": 3413,
           "eds": 140
         },
         {
           "week": 6,
-          "sinba": 2718,
+          "sinba": 3151,
           "eds": 136
         },
         {
           "week": 7,
-          "sinba": 3021,
+          "sinba": 3450,
           "eds": 171
         },
         {
           "week": 8,
-          "sinba": 2966,
+          "sinba": 3388,
           "eds": 186
         },
         {
           "week": 9,
-          "sinba": 3044,
+          "sinba": 3470,
           "eds": 257
         },
         {
           "week": 10,
-          "sinba": 3304,
+          "sinba": 3761,
           "eds": 283
         },
         {
           "week": 11,
-          "sinba": 3251,
+          "sinba": 3681,
           "eds": 273
         },
         {
           "week": 12,
-          "sinba": 2752,
+          "sinba": 3100,
           "eds": 233
         },
         {
           "week": 13,
-          "sinba": 3017,
+          "sinba": 3396,
           "eds": 317
         },
         {
           "week": 14,
-          "sinba": 2512,
+          "sinba": 2883,
           "eds": 232
         },
         {
           "week": 15,
-          "sinba": 2754,
+          "sinba": 3140,
           "eds": 355
         },
         {
           "week": 16,
-          "sinba": 2862,
+          "sinba": 3285,
           "eds": 597
         },
         {
           "week": 17,
-          "sinba": 3115,
+          "sinba": 3552,
           "eds": 665
         },
         {
           "week": 18,
-          "sinba": 2913,
+          "sinba": 3305,
           "eds": 636
         },
         {
           "week": 19,
-          "sinba": 2715,
+          "sinba": 3049,
           "eds": 632
         },
         {
           "week": 20,
-          "sinba": 2925,
+          "sinba": 3273,
           "eds": 692
         },
         {
           "week": 21,
-          "sinba": 2956,
-          "eds": 730
+          "sinba": 3320,
+          "eds": 731
         },
         {
           "week": 22,
-          "sinba": 2995,
-          "eds": 856
+          "sinba": 3328,
+          "eds": 863
         },
         {
           "week": 23,
-          "sinba": 3197,
-          "eds": 1191
+          "sinba": 3563,
+          "eds": 1238
         },
         {
           "week": 24,
-          "sinba": 2771,
-          "eds": 1064
+          "sinba": 3160,
+          "eds": 1145
         },
         {
           "week": 25,
-          "sinba": 2854,
-          "eds": 1027
+          "sinba": 3260,
+          "eds": 1115
         },
         {
           "week": 26,
-          "sinba": 2963,
-          "eds": 984
+          "sinba": 3350,
+          "eds": 1070
         },
         {
           "week": 27,
-          "sinba": 2848,
-          "eds": 1206
+          "sinba": 3214,
+          "eds": 1278
         },
         {
           "week": 28,
-          "sinba": 2952,
-          "eds": 1224
+          "sinba": 3395,
+          "eds": 1306
         },
         {
           "week": 29,
-          "sinba": 2990,
-          "eds": 1140
+          "sinba": 3374,
+          "eds": 1244
         },
         {
           "week": 30,
-          "sinba": 2854,
-          "eds": 1229
+          "sinba": 3261,
+          "eds": 1324
         },
         {
           "week": 31,
-          "sinba": 2887,
-          "eds": 1247
+          "sinba": 3301,
+          "eds": 1362
         },
         {
           "week": 32,
-          "sinba": 2881,
-          "eds": 1310
+          "sinba": 3396,
+          "eds": 1416
         },
         {
           "week": 33,
-          "sinba": 2920,
-          "eds": 1333
+          "sinba": 3320,
+          "eds": 1420
         },
         {
           "week": 34,
-          "sinba": 3000,
-          "eds": 1521
+          "sinba": 3465,
+          "eds": 1624
         },
         {
           "week": 35,
-          "sinba": 2906,
-          "eds": 1380
+          "sinba": 3310,
+          "eds": 1509
         },
         {
           "week": 36,
-          "sinba": 3005,
-          "eds": 1631
+          "sinba": 3412,
+          "eds": 1826
         },
         {
           "week": 37,
-          "sinba": 3270,
-          "eds": 1630
+          "sinba": 3623,
+          "eds": 1825
         },
         {
           "week": 38,
-          "sinba": 2493,
-          "eds": 1381
+          "sinba": 2904,
+          "eds": 1554
         },
         {
           "week": 39,
-          "sinba": 2689,
-          "eds": 1462
+          "sinba": 3101,
+          "eds": 1624
         },
         {
           "week": 40,
-          "sinba": 2686,
-          "eds": 1388
+          "sinba": 3061,
+          "eds": 1543
         },
         {
           "week": 41,
-          "sinba": 2763,
-          "eds": 1453
+          "sinba": 3139,
+          "eds": 1608
         },
         {
           "week": 42,
-          "sinba": 2461,
-          "eds": 1320
+          "sinba": 2904,
+          "eds": 1495
         },
         {
           "week": 43,
-          "sinba": 2383,
-          "eds": 1350
+          "sinba": 2806,
+          "eds": 1503
         },
         {
           "week": 44,
-          "sinba": 2274,
-          "eds": 1351
+          "sinba": 2933,
+          "eds": 1517
         },
         {
           "week": 45,
-          "sinba": 1190,
-          "eds": 1121
+          "sinba": 1977,
+          "eds": 1437
+        },
+        {
+          "week": 46,
+          "sinba": 1516,
+          "eds": 1709
         }
       ],
-      "sinba_total": 126314,
-      "eds_total": 37638
+      "sinba_total": 146533,
+      "eds_total": 42395
     },
     {
       "id": "proc_total_2026",
@@ -1705,236 +1747,242 @@
       "sinba_year": 2026,
       "eds_source": "eds_cir",
       "eds_year": 2026,
-      "clues_compartidas": 100,
+      "clues_compartidas": 113,
+      "clues_universo_eds": 113,
       "series": [
         {
           "week": 1,
-          "sinba": 2120,
+          "sinba": 2401,
           "eds": 25
         },
         {
           "week": 2,
-          "sinba": 2768,
+          "sinba": 3270,
           "eds": 79
         },
         {
           "week": 3,
-          "sinba": 3201,
+          "sinba": 3740,
           "eds": 87
         },
         {
           "week": 4,
-          "sinba": 3181,
+          "sinba": 3706,
           "eds": 113
         },
         {
           "week": 5,
-          "sinba": 3263,
+          "sinba": 3774,
           "eds": 140
         },
         {
           "week": 6,
-          "sinba": 2956,
+          "sinba": 3460,
           "eds": 136
         },
         {
           "week": 7,
-          "sinba": 3290,
+          "sinba": 3807,
           "eds": 171
         },
         {
           "week": 8,
-          "sinba": 3191,
+          "sinba": 3699,
           "eds": 186
         },
         {
           "week": 9,
-          "sinba": 3261,
+          "sinba": 3771,
           "eds": 257
         },
         {
           "week": 10,
-          "sinba": 3541,
+          "sinba": 4082,
           "eds": 283
         },
         {
           "week": 11,
-          "sinba": 3483,
+          "sinba": 4009,
           "eds": 273
         },
         {
           "week": 12,
-          "sinba": 2955,
+          "sinba": 3376,
           "eds": 233
         },
         {
           "week": 13,
-          "sinba": 3291,
+          "sinba": 3760,
           "eds": 317
         },
         {
           "week": 14,
-          "sinba": 2675,
+          "sinba": 3117,
           "eds": 232
         },
         {
           "week": 15,
-          "sinba": 2957,
+          "sinba": 3414,
           "eds": 355
         },
         {
           "week": 16,
-          "sinba": 3097,
+          "sinba": 3592,
           "eds": 597
         },
         {
           "week": 17,
-          "sinba": 3376,
+          "sinba": 3886,
           "eds": 665
         },
         {
           "week": 18,
-          "sinba": 3123,
+          "sinba": 3577,
           "eds": 636
         },
         {
           "week": 19,
-          "sinba": 2949,
+          "sinba": 3353,
           "eds": 632
         },
         {
           "week": 20,
-          "sinba": 3182,
+          "sinba": 3604,
           "eds": 692
         },
         {
           "week": 21,
-          "sinba": 3246,
-          "eds": 730
+          "sinba": 3691,
+          "eds": 731
         },
         {
           "week": 22,
-          "sinba": 3214,
-          "eds": 856
+          "sinba": 3614,
+          "eds": 863
         },
         {
           "week": 23,
-          "sinba": 3524,
-          "eds": 1191
+          "sinba": 3985,
+          "eds": 1238
         },
         {
           "week": 24,
-          "sinba": 3009,
-          "eds": 1064
+          "sinba": 3492,
+          "eds": 1145
         },
         {
           "week": 25,
-          "sinba": 3133,
-          "eds": 1027
+          "sinba": 3615,
+          "eds": 1115
         },
         {
           "week": 26,
-          "sinba": 3207,
-          "eds": 984
+          "sinba": 3687,
+          "eds": 1070
         },
         {
           "week": 27,
-          "sinba": 3088,
-          "eds": 1206
+          "sinba": 3491,
+          "eds": 1278
         },
         {
           "week": 28,
-          "sinba": 3205,
-          "eds": 1224
+          "sinba": 3697,
+          "eds": 1306
         },
         {
           "week": 29,
-          "sinba": 3286,
-          "eds": 1140
+          "sinba": 3703,
+          "eds": 1244
         },
         {
           "week": 30,
-          "sinba": 3063,
-          "eds": 1229
+          "sinba": 3517,
+          "eds": 1324
         },
         {
           "week": 31,
-          "sinba": 3168,
-          "eds": 1247
+          "sinba": 3638,
+          "eds": 1362
         },
         {
           "week": 32,
-          "sinba": 3074,
-          "eds": 1310
+          "sinba": 3656,
+          "eds": 1416
         },
         {
           "week": 33,
-          "sinba": 3163,
-          "eds": 1333
+          "sinba": 3644,
+          "eds": 1420
         },
         {
           "week": 34,
-          "sinba": 3165,
-          "eds": 1521
+          "sinba": 3726,
+          "eds": 1624
         },
         {
           "week": 35,
-          "sinba": 3091,
-          "eds": 1380
+          "sinba": 3592,
+          "eds": 1509
         },
         {
           "week": 36,
-          "sinba": 3245,
-          "eds": 1631
+          "sinba": 3731,
+          "eds": 1826
         },
         {
           "week": 37,
-          "sinba": 3501,
-          "eds": 1630
+          "sinba": 3944,
+          "eds": 1825
         },
         {
           "week": 38,
-          "sinba": 2702,
-          "eds": 1381
+          "sinba": 3199,
+          "eds": 1554
         },
         {
           "week": 39,
-          "sinba": 2910,
-          "eds": 1462
+          "sinba": 3392,
+          "eds": 1624
         },
         {
           "week": 40,
-          "sinba": 2919,
-          "eds": 1388
+          "sinba": 3395,
+          "eds": 1543
         },
         {
           "week": 41,
-          "sinba": 3012,
-          "eds": 1453
+          "sinba": 3487,
+          "eds": 1608
         },
         {
           "week": 42,
-          "sinba": 2702,
-          "eds": 1320
+          "sinba": 3218,
+          "eds": 1495
         },
         {
           "week": 43,
-          "sinba": 2606,
-          "eds": 1350
+          "sinba": 3068,
+          "eds": 1503
         },
         {
           "week": 44,
-          "sinba": 2458,
-          "eds": 1351
+          "sinba": 3160,
+          "eds": 1517
         },
         {
           "week": 45,
-          "sinba": 1338,
-          "eds": 1121
+          "sinba": 2176,
+          "eds": 1437
+        },
+        {
+          "week": 46,
+          "sinba": 1687,
+          "eds": 1709
         }
       ],
-      "sinba_total": 136889,
-      "eds_total": 37638
+      "sinba_total": 160603,
+      "eds_total": 42395
     },
     {
       "id": "egr_2025",
@@ -1945,236 +1993,242 @@
       "sinba_year": 2025,
       "eds_source": "eds_hosp",
       "eds_year": 2026,
-      "clues_compartidas": 130,
+      "clues_compartidas": 146,
+      "clues_universo_eds": 146,
       "series": [
         {
           "week": 1,
-          "sinba": 3590,
+          "sinba": 3731,
           "eds": 172
         },
         {
           "week": 2,
-          "sinba": 6207,
+          "sinba": 6416,
           "eds": 239
         },
         {
           "week": 3,
-          "sinba": 6428,
+          "sinba": 6696,
           "eds": 261
         },
         {
           "week": 4,
-          "sinba": 6552,
+          "sinba": 6804,
           "eds": 288
         },
         {
           "week": 5,
-          "sinba": 6649,
+          "sinba": 6913,
           "eds": 317
         },
         {
           "week": 6,
-          "sinba": 6316,
+          "sinba": 6548,
           "eds": 270
         },
         {
           "week": 7,
-          "sinba": 6742,
+          "sinba": 6989,
           "eds": 334
         },
         {
           "week": 8,
-          "sinba": 6833,
+          "sinba": 7107,
           "eds": 347
         },
         {
           "week": 9,
-          "sinba": 6642,
+          "sinba": 6916,
           "eds": 518
         },
         {
           "week": 10,
-          "sinba": 6921,
+          "sinba": 7205,
           "eds": 595
         },
         {
           "week": 11,
-          "sinba": 7018,
+          "sinba": 7329,
           "eds": 603
         },
         {
           "week": 12,
-          "sinba": 6713,
+          "sinba": 7014,
           "eds": 567
         },
         {
           "week": 13,
-          "sinba": 6872,
+          "sinba": 7156,
           "eds": 755
         },
         {
           "week": 14,
-          "sinba": 6904,
+          "sinba": 7230,
           "eds": 757
         },
         {
           "week": 15,
-          "sinba": 6872,
+          "sinba": 7214,
           "eds": 1202
         },
         {
           "week": 16,
-          "sinba": 6077,
+          "sinba": 6341,
           "eds": 1605
         },
         {
           "week": 17,
-          "sinba": 6710,
+          "sinba": 7007,
           "eds": 1888
         },
         {
           "week": 18,
-          "sinba": 6511,
+          "sinba": 6809,
           "eds": 1743
         },
         {
           "week": 19,
-          "sinba": 6475,
+          "sinba": 6758,
           "eds": 1857
         },
         {
           "week": 20,
-          "sinba": 6850,
-          "eds": 1963
+          "sinba": 7134,
+          "eds": 1964
         },
         {
           "week": 21,
-          "sinba": 6870,
-          "eds": 1834
+          "sinba": 7187,
+          "eds": 1881
         },
         {
           "week": 22,
-          "sinba": 6704,
-          "eds": 2006
+          "sinba": 7032,
+          "eds": 2163
         },
         {
           "week": 23,
-          "sinba": 6843,
-          "eds": 2604
+          "sinba": 7165,
+          "eds": 2821
         },
         {
           "week": 24,
-          "sinba": 6908,
-          "eds": 2698
+          "sinba": 7219,
+          "eds": 2936
         },
         {
           "week": 25,
-          "sinba": 6924,
-          "eds": 2886
+          "sinba": 7226,
+          "eds": 3206
         },
         {
           "week": 26,
-          "sinba": 6435,
-          "eds": 2815
+          "sinba": 6729,
+          "eds": 3119
         },
         {
           "week": 27,
-          "sinba": 6623,
-          "eds": 2981
+          "sinba": 6889,
+          "eds": 3306
         },
         {
           "week": 28,
-          "sinba": 6847,
-          "eds": 2996
+          "sinba": 7113,
+          "eds": 3344
         },
         {
           "week": 29,
-          "sinba": 6818,
-          "eds": 3235
+          "sinba": 7102,
+          "eds": 3577
         },
         {
           "week": 30,
-          "sinba": 6663,
-          "eds": 3354
+          "sinba": 6921,
+          "eds": 3709
         },
         {
           "week": 31,
-          "sinba": 6622,
-          "eds": 3345
+          "sinba": 6894,
+          "eds": 3857
         },
         {
           "week": 32,
-          "sinba": 6665,
-          "eds": 3383
+          "sinba": 6945,
+          "eds": 3745
         },
         {
           "week": 33,
-          "sinba": 6669,
-          "eds": 3436
+          "sinba": 6931,
+          "eds": 3793
         },
         {
           "week": 34,
-          "sinba": 6750,
-          "eds": 3746
+          "sinba": 7027,
+          "eds": 4125
         },
         {
           "week": 35,
-          "sinba": 6655,
-          "eds": 3581
+          "sinba": 6951,
+          "eds": 4054
         },
         {
           "week": 36,
-          "sinba": 7024,
-          "eds": 3991
+          "sinba": 7289,
+          "eds": 4453
         },
         {
           "week": 37,
-          "sinba": 7088,
-          "eds": 4268
+          "sinba": 7305,
+          "eds": 4757
         },
         {
           "week": 38,
-          "sinba": 6506,
-          "eds": 3872
+          "sinba": 6726,
+          "eds": 4229
         },
         {
           "week": 39,
-          "sinba": 7183,
-          "eds": 4067
+          "sinba": 7479,
+          "eds": 4485
         },
         {
           "week": 40,
-          "sinba": 7227,
-          "eds": 4162
+          "sinba": 7556,
+          "eds": 4685
         },
         {
           "week": 41,
-          "sinba": 6721,
-          "eds": 4286
+          "sinba": 7034,
+          "eds": 4676
         },
         {
           "week": 42,
-          "sinba": 6920,
-          "eds": 4109
+          "sinba": 7201,
+          "eds": 4499
         },
         {
           "week": 43,
-          "sinba": 7182,
-          "eds": 4303
+          "sinba": 7440,
+          "eds": 4711
         },
         {
           "week": 44,
-          "sinba": 6552,
-          "eds": 4372
+          "sinba": 6790,
+          "eds": 4756
         },
         {
           "week": 45,
-          "sinba": 6948,
-          "eds": 3848
+          "sinba": 7215,
+          "eds": 4731
+        },
+        {
+          "week": 46,
+          "sinba": 7749,
+          "eds": 4735
         }
       ],
-      "sinba_total": 300229,
-      "eds_total": 102459
+      "sinba_total": 320432,
+      "eds_total": 116635
     },
     {
       "id": "egr_2026",
@@ -2185,236 +2239,242 @@
       "sinba_year": 2026,
       "eds_source": "eds_hosp",
       "eds_year": 2026,
-      "clues_compartidas": 130,
+      "clues_compartidas": 146,
+      "clues_universo_eds": 146,
       "series": [
         {
           "week": 1,
-          "sinba": 5056,
+          "sinba": 5261,
           "eds": 172
         },
         {
           "week": 2,
-          "sinba": 6400,
+          "sinba": 6661,
           "eds": 239
         },
         {
           "week": 3,
-          "sinba": 6812,
+          "sinba": 7130,
           "eds": 261
         },
         {
           "week": 4,
-          "sinba": 6845,
+          "sinba": 7190,
           "eds": 288
         },
         {
           "week": 5,
-          "sinba": 7062,
+          "sinba": 7354,
           "eds": 317
         },
         {
           "week": 6,
-          "sinba": 6544,
+          "sinba": 6831,
           "eds": 270
         },
         {
           "week": 7,
-          "sinba": 7132,
+          "sinba": 7409,
           "eds": 334
         },
         {
           "week": 8,
-          "sinba": 7013,
+          "sinba": 7264,
           "eds": 347
         },
         {
           "week": 9,
-          "sinba": 7063,
+          "sinba": 7299,
           "eds": 518
         },
         {
           "week": 10,
-          "sinba": 7276,
+          "sinba": 7572,
           "eds": 595
         },
         {
           "week": 11,
-          "sinba": 7525,
+          "sinba": 7789,
           "eds": 603
         },
         {
           "week": 12,
-          "sinba": 6581,
+          "sinba": 6840,
           "eds": 567
         },
         {
           "week": 13,
-          "sinba": 6966,
+          "sinba": 7227,
           "eds": 755
         },
         {
           "week": 14,
-          "sinba": 6154,
+          "sinba": 6381,
           "eds": 757
         },
         {
           "week": 15,
-          "sinba": 6442,
+          "sinba": 6711,
           "eds": 1202
         },
         {
           "week": 16,
-          "sinba": 6816,
+          "sinba": 7119,
           "eds": 1605
         },
         {
           "week": 17,
-          "sinba": 7090,
+          "sinba": 7383,
           "eds": 1888
         },
         {
           "week": 18,
-          "sinba": 6718,
+          "sinba": 6961,
           "eds": 1743
         },
         {
           "week": 19,
-          "sinba": 6428,
+          "sinba": 6687,
           "eds": 1857
         },
         {
           "week": 20,
-          "sinba": 6637,
-          "eds": 1963
+          "sinba": 6938,
+          "eds": 1964
         },
         {
           "week": 21,
-          "sinba": 6663,
-          "eds": 1834
+          "sinba": 6953,
+          "eds": 1881
         },
         {
           "week": 22,
-          "sinba": 6433,
-          "eds": 2006
+          "sinba": 6704,
+          "eds": 2163
         },
         {
           "week": 23,
-          "sinba": 6898,
-          "eds": 2604
+          "sinba": 7175,
+          "eds": 2821
         },
         {
           "week": 24,
-          "sinba": 6437,
-          "eds": 2698
+          "sinba": 6695,
+          "eds": 2936
         },
         {
           "week": 25,
-          "sinba": 6583,
-          "eds": 2886
+          "sinba": 6847,
+          "eds": 3206
         },
         {
           "week": 26,
-          "sinba": 6702,
-          "eds": 2815
+          "sinba": 6979,
+          "eds": 3119
         },
         {
           "week": 27,
-          "sinba": 6473,
-          "eds": 2981
+          "sinba": 6733,
+          "eds": 3306
         },
         {
           "week": 28,
-          "sinba": 6709,
-          "eds": 2996
+          "sinba": 6964,
+          "eds": 3344
         },
         {
           "week": 29,
-          "sinba": 6761,
-          "eds": 3235
+          "sinba": 7034,
+          "eds": 3577
         },
         {
           "week": 30,
-          "sinba": 6678,
-          "eds": 3354
+          "sinba": 6920,
+          "eds": 3709
         },
         {
           "week": 31,
-          "sinba": 6689,
-          "eds": 3345
+          "sinba": 6942,
+          "eds": 3857
         },
         {
           "week": 32,
-          "sinba": 6494,
-          "eds": 3383
+          "sinba": 6771,
+          "eds": 3745
         },
         {
           "week": 33,
-          "sinba": 6605,
-          "eds": 3436
+          "sinba": 6889,
+          "eds": 3793
         },
         {
           "week": 34,
-          "sinba": 6608,
-          "eds": 3746
+          "sinba": 6840,
+          "eds": 4125
         },
         {
           "week": 35,
-          "sinba": 6539,
-          "eds": 3581
+          "sinba": 6912,
+          "eds": 4054
         },
         {
           "week": 36,
-          "sinba": 6734,
-          "eds": 3991
+          "sinba": 7091,
+          "eds": 4453
         },
         {
           "week": 37,
-          "sinba": 6973,
-          "eds": 4268
+          "sinba": 7350,
+          "eds": 4757
         },
         {
           "week": 38,
-          "sinba": 6108,
-          "eds": 3872
+          "sinba": 6374,
+          "eds": 4229
         },
         {
           "week": 39,
-          "sinba": 6265,
-          "eds": 4067
+          "sinba": 6595,
+          "eds": 4485
         },
         {
           "week": 40,
-          "sinba": 6182,
-          "eds": 4162
+          "sinba": 6566,
+          "eds": 4685
         },
         {
           "week": 41,
-          "sinba": 5914,
-          "eds": 4286
+          "sinba": 6407,
+          "eds": 4676
         },
         {
           "week": 42,
-          "sinba": 5546,
-          "eds": 4109
+          "sinba": 6057,
+          "eds": 4499
         },
         {
           "week": 43,
-          "sinba": 5151,
-          "eds": 4303
+          "sinba": 5732,
+          "eds": 4711
         },
         {
           "week": 44,
-          "sinba": 4929,
-          "eds": 4372
+          "sinba": 5636,
+          "eds": 4756
         },
         {
           "week": 45,
-          "sinba": 2767,
-          "eds": 3848
+          "sinba": 3962,
+          "eds": 4731
+        },
+        {
+          "week": 46,
+          "sinba": 2980,
+          "eds": 4735
         }
       ],
-      "sinba_total": 290401,
-      "eds_total": 102459
+      "sinba_total": 308115,
+      "eds_total": 116635
     }
   ]
 }

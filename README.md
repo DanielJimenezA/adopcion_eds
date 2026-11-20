@@ -51,7 +51,7 @@ Las rutas usan `/` para ser compatibles con JSON y Windows.
 
 El procesador genera `data/detalle_clues.json` adicional a los JSON existentes.
 Se obtiene el estado a partir de los dos primeros caracteres de CLUES; comprobar que los prefijos corresponden al catálogo institucional.
-La cohorte permanece fija por área, definida por coincidencia de CLUES con actividad SINBA 2026 y EDS 2026.
+El universo permanece fijo por área y está definido por todas las CLUES con actividad EDS 2026. SINBA 2025 y SINBA 2026 son referencias históricas opcionales, no filtros de inclusión. Los porcentajes históricos se calculan únicamente con CLUES que cuentan con referencia SINBA del año correspondiente.
 Los filtros recalculan las series, KPI, CSV y presentaciones. En los informes completos, el filtro de entidad se aplica por área; una CLUES seleccionada sólo filtra el área donde existe, y las demás áreas se muestran completas.
 **Privacidad:** el desglose por CLUES revela actividad a nivel de unidad; no publique `detalle_clues.json` en GitHub Pages público sin autorización y evaluación de divulgación. GitHub Pages es público incluso si el repositorio tiene restricciones.
 
@@ -72,3 +72,13 @@ python -m http.server 8085
 ```
 
 La plantilla se integra como imágenes de fondo, por lo que sus elementos institucionales no son editables individualmente en los informes. El texto y los gráficos exportados se superponen sobre esos fondos.
+
+## Actualización: universo EDS sin exigir SINBA
+
+Después de sustituir los archivos del proyecto, **es obligatorio reconstruir los cinco JSON** con `python scripts/build_data.py --config config/sources.json`. Los JSON incluidos como ejemplo en el paquete pueden pertenecer a la versión anterior y no reflejan el nuevo universo; el tablero advierte de ello.
+
+- Las CLUES con actividad EDS 2026 aparecen aunque no tengan SINBA 2025, SINBA 2026 o ambos.
+- El volumen EDS mostrado en los gráficos y tarjetas incluye todas esas unidades.
+- El porcentaje EDS/SINBA de cada año utiliza únicamente CLUES con datos SINBA de ese año, para no mezclar universos.
+- El aviso del tablero informa cuántas CLUES carecen de referencia histórica por año.
+- Los conteos por CLUES no deben publicarse en GitHub Pages sin autorización institucional.

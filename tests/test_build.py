@@ -16,13 +16,15 @@ def test():
    cfg['sources'][key]={'path':f'insumos/{path.name}','clues_column':'clues','date_column':dt}
   cp=root/'config'/'sources.json';cp.write_text(json.dumps(cfg))
   results=build(cp,'2026-10-08');assert len(results)==10
-  assert all(x['clues_compartidas']==1 for x in results)
-  assert results[0]['sinba_total']==1 and results[0]['eds_total']==1
-  assert results[1]['sinba_total']==4 and results[1]['eds_total']==1
+  assert all(x['clues_compartidas']==2 for x in results)
+  assert results[0]['sinba_total']==1 and results[0]['eds_total']==2
+  assert results[1]['sinba_total']==4 and results[1]['eds_total']==2
   assert results[2]['sinba_total']==1
   audit=json.loads((root/'data'/'resumen_calidad.json').read_text())
   assert audit['fuentes']['sinba_ce']['fecha_invalida']==1
   assert audit['fuentes']['sinba_ce']['fuera_periodo']==1
   assert audit['auditoria_clues']['Consulta externa']['clues_compartidas']==1
+  assert len(json.loads((root/'data'/'detalle_clues.json').read_text())['areas']['Consulta externa'])==2
+  assert audit['auditoria_clues']['Consulta externa']['clues_solo_eds']==1
   print('OK: 10 escenarios, CSV + Excel, corte semanal, cohorte y auditoría')
 if __name__=='__main__':test()
